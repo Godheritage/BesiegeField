@@ -4,7 +4,7 @@
 
 <div align="center">
 
-**An Advanced Framework for LLM-Driven Machine Design in Besiege**
+**A Framework for LLM-Driven Machine Design in Besiege**
 
 Paper: [Agentic Design of Compositional Machines](https://arxiv.org/abs/2510.14980)
 
