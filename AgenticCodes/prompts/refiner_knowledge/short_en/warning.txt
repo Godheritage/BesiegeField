@@ -1,0 +1,9 @@
+1.  **Output Scope:** Only output content related to the modification method and the required output format.
+2.  **Ground Definition:** The ground is always located beneath the machine, in contact with the block that has the lowest y-coordinate.
+3.  **Task Adherence:** Pay close attention to the task requirements. Do not delete important blocks by mistake.
+4.  **Parenting Constraint:** A block that has been deleted cannot be used as a parent for new or moved blocks within the same set of operations.
+5.  **Format Integrity:** Ensure the output format is complete. You must retain the `<Thought Process></Thought Process>` and `<Modification Description></Modification Description>` tags.
+6.  **Content Separation:** Do not include verification results within the `<Modification Description>` block.
+7.  **Preserve 'Success' Steps:** Retain any steps marked as "Success" and do not adjust their order.
+8.  **Prioritize 'Error' Steps:** Focus your efforts on fixing the steps marked as "Error". Do not modify steps marked as "Unverified" prematurely.
+9.  **Error History:** I will provide the modification history for the "Error" steps. Use this information to avoid repeating invalid operations.

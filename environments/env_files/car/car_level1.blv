@@ -1,0 +1,49 @@
+﻿<Level>
+	<LevelSettings EditorVersion="0.9" UseVoting="False" CurtainMode="False" AllowExcessPlayers="True" HidePlayerLabels="False" AllowCopyMachine="True" allowModMachines="True" Environment="None">
+		<DisableFire Enabled="False" Locked="False" />
+		<DisableExplosions Enabled="False" Locked="False" />
+		<DisableProjectiles Enabled="False" Locked="False" />
+		<ZeroG Enabled="False" Locked="False" />
+		<InfiniteAmmo Enabled="False" Locked="False" />
+		<Invincibility Enabled="False" Locked="False" />
+		<ExplosiveCannonballs Enabled="False" Locked="False" />
+		<DisableBounds Enabled="False" Locked="False" />
+	</LevelSettings>
+	<CustomData>
+		<StringArray key="requiredMods" />
+	</CustomData>
+	<Objects>
+		<Object ID="867142176830899365" Prefab="9001">
+			<Position x="0" y="5.05" z="0" />
+			<Data />
+		</Object>
+		<Object ID="-2253736021937505122" Prefab="7000">
+			<Position x="12" y="0" z="480" />
+			<Scale x="1" y="10" z="1000" />
+			<Data>
+				<Boolean key="bmt-Disable Texture">True</Boolean>
+				<Single key="bmt-friction">0</Single>
+				<Boolean key="bmt-lel-enable-physics">False</Boolean>
+			</Data>
+		</Object>
+		<Object ID="4744968438989434713" Prefab="7000">
+			<Position x="-12" y="0" z="480" />
+			<Scale x="1" y="10" z="1000" />
+			<Data>
+				<Boolean key="bmt-Disable Texture">True</Boolean>
+				<Single key="bmt-friction">0</Single>
+				<Boolean key="bmt-lel-enable-physics">False</Boolean>
+			</Data>
+		</Object>
+		<Object ID="7076873716025293570" Prefab="7000">
+			<Position x="0" y="1.251" z="-16" />
+			<Rotation x="0" y="0.7071068" z="0" w="0.7071068" />
+			<Scale x="1" y="10" z="30" />
+			<Data>
+				<Boolean key="bmt-Disable Texture">True</Boolean>
+				<Single key="bmt-friction">0</Single>
+				<Boolean key="bmt-lel-enable-physics">False</Boolean>
+			</Data>
+		</Object>
+	</Objects>
+</Level>

@@ -1,0 +1,9 @@
+Construction Idea:
+Describe your construction idea here, and keep it concise.
+JSON:
+```json
+    [
+        {"id":"0","order_id":0,"parent":-1,"bp_id":-1}, //This is the initial structure and must be placed at the top of the list.
+        // The complete JSON including both the initial structure and the new blocks
+    ]
+```

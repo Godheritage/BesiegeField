@@ -1,0 +1,70 @@
+### **Machine Modification Guide**
+
+Please follow the steps below to analyze and modify the machine structure.
+
+**Step 1: Analyze & Plan**
+1.  **Diagnose the Current Machine**: Analyze its power, balance, structure, and overall movement to identify design flaws or areas for optimization.
+2.  **Devise a Modification Plan**: Based on your diagnosis, decide which blocks to **move, remove,** or **add**.
+3.  **Evaluate Modification Impact**: When planning, you must consider the impact of your changes on:
+    *   **Task Objective**: Will the modification help complete the task?
+    *   **Structural Stability**: Will it cause overlaps? Is the center of gravity balanced?
+    *   **Functionality**: Are power and transmission working correctly? Is the orientation of special blocks correct?
+4.  **Briefly Describe Modifications**: Before generating commands, describe your modification plan in a sentence or two using natural language.
+
+**Step 2: Execute Modification Operations**
+Use the following three command formats for modifications. Output only the operation commands, with each command on a new line.
+
+1.  **Add Block (Add)**
+    *   Format: Non-Linear: Add [block type ID] to [order_id] in [building_point]
+                Linear: Add [block type ID] to [order_id_a] in [building_point_a] to [order_id_b] in [building_point_b]
+    *   Rules:
+        *   Can only be added to original blocks. You cannot add new blocks onto other newly added blocks.
+        *   Linear blocks require specifying two connection points.
+
+2.  **Remove Block (Remove)**
+    *   Format: Remove [order_id]
+    *   Rules:
+        *   Can only remove original blocks.
+        *   Cannot remove a block that has child blocks.
+
+3.  **Move Block (Move)**
+    *   Move [order_id] to [new_parent_order_id] in [new_building_point]
+    *   Rules:
+        *   Moves the target block and all its child blocks as a single unit.
+        *   The new parent's `order_id` must be smaller than the `order_id` of the block being moved.
+        *   Linear blocks cannot be moved.
+        *   The move must change the block's original position.
+
+**Step 3: Request Environment Feedback**
+To verify the effect of your modifications, request data for key components during the simulation using the format below.
+
+*   **Request Format**:
+    ```
+    <Required Feedback>
+    [
+        {
+            "order_id": int,
+            "duration": [float, float],
+            "properties": ["position", "rotation", "velocity", "length"]
+        }
+    ]
+    </Required Feedback>
+    ```
+*   **Rules**:
+    *   Total game time is 5 seconds, sampled every 0.2s. The `duration` must not exceed this range.
+    *   `order_id` and `duration` are mandatory.
+    *   The `length` property is only applicable to linear blocks.
+
+### **Global Rules & Reference Info**
+
+*   **Core Requirements**:
+    *   You must modify the blocks mentioned in the design flaws.
+    *   The `order_id` of all blocks must remain unchanged throughout the entire process.
+    *   The brackets `[]` in commands must be kept.
+*   **Coordinate System Reference**: All blocks initially face the Z+ direction.
+    *   **Facing Z+**: Front(z+), Back(z-), Left(x-), Right(x+), Up(y+), Down(y-)
+    *   **Facing Z-**: Front(z-), Back(z+), Left(x+), Right(x-), Up(y+), Down(y-)
+    *   **Facing X+**: Front(x+), Back(x-), Left(z+), Right(z-), Up(y+), Down(y-)
+    *   **Facing X-**: Front(x-), Back(x+), Left(z-), Right(z+), Up(y+), Down(y-)
+    *   **Facing Y+**: Front(y+), Back(y-), Left(x-), Right(x+), Up(z-), Down(z+)
+    *   **Facing Y-**: Front(y-), Back(y+), Left(x-), Right(x+), Up(z+), Down(z-)

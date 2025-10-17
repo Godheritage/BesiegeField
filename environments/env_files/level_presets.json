@@ -1,0 +1,36 @@
+{
+    "presets": {
+      "car_level1": {
+        "template_path": "car/car_level1.blv",
+        "random_region_ranges": [
+          [-15, 15],
+          [0, 0],
+          [10, 980]
+        ],
+        "random_items": [
+          {
+            "item_id": "race_stones",
+            "count": 150,
+            "scale_min": [0.5, 0.5, 0.5],
+            "scale_max": [2.0, 2.0, 2.0],
+            "rotation_range": [[0, 0], [0, 360], [0, 0]]
+          },
+          {
+            "item_id": "wind",
+            "count": 1,
+            "rotation_range": [[0, 0], [0, 90], [0, 0]]
+          }
+        ],
+        "random_groups": [
+          {
+            "group_id": "cone_groups",
+            "count": 20,
+            "uniform_scale_min": 0.8,
+            "uniform_scale_max": 1.2,
+            "rotation_range": [[0, 0], [0, 360], [0, 0]]
+          }
+        ]
+      }
+    }
+  }
+  

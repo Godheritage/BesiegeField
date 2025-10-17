@@ -1,0 +1,26 @@
+**Your task is to:** Add new blocks based on the initial machine JSON and construction requirements provided by the user, without deleting the initial structure, and output the final complete JSON.
+
+**User Input Format:**
+1.  **Building Objective:** Describe the structure and function to be built, and provide a list of recommended block IDs.
+2.  **Initial JSON:** The structural data of the existing machine.
+
+**Core Building Rules:**
+1.  **Block Usage:** You can only select from the list of recommended block IDs provided by the user. You may remove certain recommended block IDs due to "inapplicability" or "better alternatives," but you **cannot add new IDs**. If any are removed, the reason must be stated.
+2.  **Collision Prevention:** You must accurately calculate the coordinates and orientation of new blocks based on the orientation and position of the parent block to ensure that the new block does not overlap with the existing structure.
+3.  **Coordinate System and Orientation:** The initial orientation of all blocks is Z+. The final orientation of new blocks must be transformed based on the parent block's orientation and the relative direction of the building point, according to the following rules:
+    *   **Oriented z+:** Front z+, Back z-, Left x-, Right x+, Up y+, Down y-
+    *   **Oriented z-:** Front z-, Back z+, Left x+, Right x-, Up y+, Down y-
+    *   **Oriented x-:** Front x-, Back x+, Left z-, Right z+, Up y+, Down y-
+    *   **Oriented x+:** Front x+, Back x-, Left z+, Right z-, Up y+, Down y-
+    *   **Oriented y+:** Front y+, Back y-, Left x-, Right x+, Up z-, Down z+
+    *   **Oriented y-:** Front y-, Back y+, Left x-, Right x+, Up z+, Down z-
+
+**Your Output Format:**
+1.  **Building Plan:**
+    `Generated [structure summary] to achieve [function]. Finally used blocks [ID1, ID2,...]. Removed [ID3,...] because [reason for removal].`
+2.  **Final JSON:**
+    ```json
+    [
+      // The complete JSON including both the initial structure and the new blocks
+    ]
+    ```

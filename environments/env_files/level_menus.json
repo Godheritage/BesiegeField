@@ -1,0 +1,331 @@
+{
+    "car/car_level1":{"instructions":[
+            "sleep 3",
+            "LoadMachine:",
+            "sleep 1",
+            "ToggleSimulate:_",
+            "WaitingStop 5"
+        ],
+        "win_condition":"Car_distance",
+        "deafult_prompt":"Design a machine to move forward on a straight road.",
+        "block_limitations":[0,1,2,9,15,16,22,35,41,63]
+    },
+    "car/car_level2":{"instructions":[
+            "sleep 3",
+            "LoadMachine:",
+            "sleep 1",
+            "ToggleSimulate:_",
+            "WaitingStop 5"
+        ],
+        "win_condition":"Car_distance",
+        "deafult_prompt":"There is a quarter-pipe on a straight road, design a machine that can drive by it.",
+        "block_limitations":[0,1,2,9,15,16,22,35,41,63]
+    },
+    "car/car_level3":{"instructions":[
+            "sleep 3",
+            "LoadMachine:",
+            "sleep 1",
+            "ToggleSimulate:_",
+            "WaitingStop 5"
+        ],
+        "win_condition":"Car_distance",
+        "deafult_prompt":"There is a quarter-cylinder on a straight road, design a machine that can drive by it.",
+        "block_limitations":[0,1,2,9,15,16,22,35,41,63]
+    },
+    "car/car_level4":{"instructions":[
+            "sleep 3",
+            "LoadMachine:",
+            "sleep 1",
+            "ToggleSimulate:_",
+            "WaitingStop 5"
+        ],
+        "win_condition":"Car_distance",
+        "deafult_prompt":"There is a cone as wide as the road. In front of the cone, there are two blocks lying on both sides of the straight road, leaving a gap in the middle. Design a machine that can drive over this setup.",
+        "block_limitations":[0,1,2,9,15,16,22,35,41,63]
+    },
+    "car/car_level5":{"instructions":[
+            "sleep 3",
+            "LoadMachine:",
+            "sleep 1",
+            "ToggleSimulate:_",
+            "WaitingStop 20"
+        ],
+        "win_condition":"Car_distance",
+        "deafult_prompt":"There is a track with two consecutive curved sections: the first is a 90-degree right turn, and the second is a 90-degree left turn. Design a machine that cannot actively steer and can travel from the starting point to the end point along this track.",
+        "block_limitations":[0,1,2,9,15,16,19,22,35,40,41,63]
+    },
+    "catapult/catapult_level1":{
+            "instructions":[
+            "sleep 3",
+            "LoadMachine:",
+            "sleep 1",
+            "ToggleSimulate:_",
+            "SwitchKey:L_T",
+            "WaitingStop 5"
+        ],
+        "win_condition":"Boulder_throw",
+        "deafult_prompt":"Design a machine to throw a boulder (type id 36) in a parabolic trajectory.",
+        "block_limitations":[0,1,2,5,7,9,15,16,22,30,35,36,41,63]
+    },
+    "catapult/catapult_level2":{
+            "instructions":[
+            "sleep 3",
+            "LoadMachine:",
+            "sleep 1",
+            "ToggleSimulate:_",
+            "SwitchKey:L_T",
+            "WaitingStop 5"
+        ],
+        "win_condition":"Boulder_throw",
+        "deafult_prompt":"Design a machine to throw a boulder (type id 36) in a parabolic trajectory, there are fences surrounding the spawn point.",
+        "block_limitations":[0,1,2,5,7,9,15,16,22,30,35,36,41,63]
+    },
+    "catapult/catapult_level3":{
+            "instructions":[
+            "sleep 3",
+            "LoadMachine:",
+            "sleep 1",
+            "ToggleSimulate:_",
+            "SwitchKey:L_T",
+            "WaitingStop 5"
+        ],
+        "win_condition":"Boulder_throw",
+        "deafult_prompt":"There is a large square - shaped area. In the center of this area, there is a square enclosure. Design a catapult within the central square enclosure that can launch a boulder (type id 36) as far as possible.",
+        "block_limitations":[0,1,2,5,7,9,15,16,22,30,35,36,41,63]
+    },
+    "catapult/catapult_level4":{
+            "instructions":[
+            "sleep 3",
+            "LoadMachine:",
+            "sleep 1",
+            "ToggleSimulate:_",
+            "SwitchKey:L_T",
+            "WaitingStop 5"
+        ],
+        "win_condition":"Boulder_throw",
+        "deafult_prompt":"There is a large square area. In the center, there's a square enclosure. Around the enclosure, there is a ring of inward - sloping ramps. Design a catapult within the central square enclosure that can launch a boulder (type id 36) as far as possible.",
+        "block_limitations":[0,1,2,5,7,9,15,16,22,30,35,36,41,63]
+    },
+    "catapult/catapult_level5":{
+            "instructions":[
+            "sleep 3",
+            "LoadMachine:",
+            "sleep 1",
+            "ToggleSimulate:_",
+            "SwitchKey:L_T",
+            "WaitingStop 5"
+        ],
+        "win_condition":"Boulder_throw",
+        "deafult_prompt":"There is a large square area. In the center, there's a square enclosure. Around the enclosure, there is a ring of inward - sloping ramps. Design a catapult within the central square enclosure that can launch a boulder (type id 36) as far as possible.",
+        "block_limitations":[0,1,2,5,7,9,15,16,22,30,35,36,41,63]
+    },
+    "catapult/catapult_level6":{
+            "instructions":[
+            "sleep 3",
+            "LoadMachine:",
+            "sleep 1",
+            "ToggleSimulate:_",
+            "SwitchKey:L_T",
+            "WaitingStop 5"
+        ],
+        "win_condition":"Boulder_throw",
+        "deafult_prompt":"There is a large square area. In the center, there's a square enclosure. Around the enclosure, there is a ring of inward - sloping ramps. Design a catapult within the central square enclosure that can launch a boulder (type id 36) as far as possible.",
+        "block_limitations":[0,1,2,5,7,9,15,16,22,30,35,36,41,63]
+    },
+    "catapult/catapult_level7":{
+            "instructions":[
+            "sleep 3",
+            "LoadMachine:",
+            "sleep 1",
+            "ToggleSimulate:_",
+            "SwitchKey:L_T",
+            "WaitingStop 5"
+        ],
+        "win_condition":"Boulder_throw",
+        "deafult_prompt":"There is a large square area. In the center, there's a square enclosure. Around the enclosure, there is a ring of inward - sloping ramps, and there is a global downward wind. Design a catapult within the central square enclosure that can launch a boulder (type id 36) as far as possible.",
+        "block_limitations":[0,1,2,5,7,9,15,16,22,30,35,36,41,63]
+    },
+    "catapult/catapult_level8":{
+            "instructions":[
+            "sleep 3",
+            "LoadMachine:",
+            "sleep 1",
+            "ToggleSimulate:_",
+            "SwitchKey:L_T",
+            "WaitingStop 5"
+        ],
+        "win_condition":"Boulder_throw_with_target",
+        "target_name":"Trigger",
+        "deafult_prompt":"There is a square enclosure, and in front of it, there is a large ring lying on the ground. Design a catapult within this square enclosure that can launch a boulder (type id 36) into the ring.",
+        "block_limitations":[0,1,2,5,7,9,15,16,22,30,35,36,41,63]
+
+    },
+    "catapult/catapult_level9":{
+            "instructions":[
+            "sleep 3",
+            "LoadMachine:",
+            "sleep 1",
+            "ToggleSimulate:_",
+            "SwitchKey:L_T",
+            "WaitingStop 5"
+        ],
+        "win_condition":"Boulder_throw_with_target",
+        "target_name":"Trigger",
+        "deafult_prompt":"There is a square enclosure, and in front of it, there is a large ring standing upright. Design a catapult within this square enclosure that can launch a boulder (type id 36) through the ring.",
+        "block_limitations":[0,1,2,5,7,9,15,16,22,30,35,36,41,63]
+    },
+    "catapult/catapult_level10":{
+            "instructions":[
+            "sleep 3",
+            "LoadMachine:",
+            "sleep 1",
+            "ToggleSimulate:_",
+            "SwitchKey:L_T",
+            "WaitingStop 5"
+        ],
+        "win_condition":"Boulder_throw_with_target",
+        "target_name":"Trigger",
+        "deafult_prompt":"There is a square enclosure, and in front of it, there is a large ring standing upright. Design a catapult within this square enclosure that can launch a boulder (type id 36) through the ring.",
+        "block_limitations":[0,1,2,5,7,9,15,16,22,30,35,36,41,63]
+    },
+    "catapult/catapult_level11":{
+            "instructions":[
+            "sleep 3",
+            "LoadMachine:",
+            "sleep 1",
+            "ToggleSimulate:_",
+            "SwitchKey:L_T",
+            "WaitingStop 5"
+        ],
+        "win_condition":"Boulder_throw_with_target",
+        "target_name":"Trigger",
+        "deafult_prompt":"There is a square enclosure. In front of the enclosure, there are two large rings standing upright and aligned with each other. Design a catapult within this square enclosure that can launch a boulder (type id 36) to pass through both upright rings in sequence.",
+        "block_limitations":[0,1,2,5,7,9,15,16,22,30,35,36,41,63]
+    },
+    "delivery/delivery_level1":{"instructions":[
+            "sleep 3",
+            "LoadMachine:",
+            "sleep 1",
+            "ToggleSimulate:_",
+            "WaitingStop 5"
+        ],
+        "win_condition":"Target_deliver",
+        "target_name":"IronOre",
+        "deafult_prompt":"There is an iron ball on a straight road. Design a machine can move forward on the straight road and deliver the ball to the end.",
+        "block_limitations":[0,1,2,9,15,16,22,27,35,41,63]
+    },
+    "delivery/delivery_level2":{"instructions":[
+            "sleep 3",
+            "LoadMachine:",
+            "sleep 1",
+            "ToggleSimulate:_",
+            "WaitingStop 5"
+        ],
+        "win_condition":"Target_deliver",
+        "target_name":"IronOre",
+        "deafult_prompt":"There is an iron ball on a straight road, and there is a quarter-pipe behind it. Design a machine can move forward on the straight road and deliver the ball to the end.",
+        "block_limitations":[0,1,2,9,15,16,22,27,35,41,63]
+    },
+    "delivery/delivery_level3":{"instructions":[
+            "sleep 3",
+            "LoadMachine:",
+            "sleep 1",
+            "ToggleSimulate:_",
+            "WaitingStop 5"
+        ],
+        "win_condition":"Target_deliver",
+        "target_name":"IronOre",
+        "deafult_prompt":"There is an iron ball on a straight track with a machine height - limiting barrier in the front of it. Design a machine that can move forward on the straight track and deliver the iron ball to the end.",
+        "block_limitations":[0,1,2,9,15,16,22,27,35,41,63]
+    },
+    "delivery/delivery_level4":{"instructions":[
+            "sleep 3",
+            "LoadMachine:",
+            "sleep 1",
+            "ToggleSimulate:_",
+            "WaitingStop 5"
+        ],
+        "win_condition":"Target_deliver",
+        "target_name":"IronOre",
+        "deafult_prompt":"There is an iron ball on a straight track with a machine height - limiting barrier in the front of it. There is a quarter-pipe behind the iron ball. Design a machine that can move forward on the straight track and deliver the iron ball to the end.",
+        "block_limitations":[0,1,2,9,15,16,22,27,35,41,63]
+    },
+    "delivery/delivery_level5":{"instructions":[
+            "sleep 3",
+            "LoadMachine:",
+            "sleep 1",
+            "ToggleSimulate:_",
+            "WaitingStop 5"
+        ],
+        "win_condition":"Target_deliver",
+        "target_name":"IronOre"
+    },
+    "delivery/delivery_level6":{"instructions":[
+            "sleep 3",
+            "LoadMachine:",
+            "sleep 1",
+            "ToggleSimulate:_",
+            "WaitingStop 5"
+        ],
+        "win_condition":"Target_deliver",
+        "target_name":"IronOre"
+    },
+    "delivery/delivery_level7":{"instructions":[
+            "sleep 3",
+            "LoadMachine:",
+            "sleep 1",
+            "ToggleSimulate:_",
+            "WaitingStop 5"
+        ],
+        "win_condition":"Target_deliver",
+        "target_name":"IronOre"
+    },
+    "delivery/delivery_level8":{"instructions":[
+            "sleep 3",
+            "LoadMachine:",
+            "sleep 1",
+            "ToggleSimulate:_",
+            "WaitingStop 5"
+        ],
+        "win_condition":"Target_deliver",
+        "target_name":"IronOre",
+        "deafult_prompt":"There is an iron ball on a straight track. Ahead of the iron ball, there is first a quarter-pipe lying flat on the track with its curved surface facing the iron ball. Further ahead, there is a low, elongated cone. Design a machine that can move forward on the straight track and deliver the iron ball to the end, navigating past the flat-lying quarter-pipe and the low elongated cone.",
+        "block_limitations":[0,1,2,9,15,16,22,27,35,41,63]
+    },
+    "delivery/delivery_level9":{"instructions":[
+            "sleep 3",
+            "LoadMachine:",
+            "sleep 1",
+            "ToggleSimulate:_",
+            "WaitingStop 5"
+        ],
+        "win_condition":"Target_deliver",
+        "target_name":"IronOre",
+        "deafult_prompt":"There is a track with a 180 degree curve. At the beginning of the curve, there is an iron ball. At the end of the curved track, there is a low and elongated cone. Design a machine that can move along this curved track and deliver the iron ball to the area beyond the low elongated cone.",
+        "block_limitations":[0,1,2,9,15,16,22,27,35,41,63]
+    },
+    "fetch/fetch_level1":{"instructions":[
+            "sleep 3",
+            "LoadMachine:",
+            "sleep 1",
+            "ToggleSimulate:_",
+            "SwitchKey:UpArrow_T",
+            "sleep 1",
+            "SwitchKey:UpArrow_F",
+            "SwitchKey:V_T",
+            "SwitchKey:V_F",
+            "SwitchKey:M_T",
+            "sleep 10",
+            "SwitchKey:M_F",
+            "SwitchKey:N_T",
+            "sleep 10",
+            "SwitchKey:N_F",
+            "WaitingStop 1"
+        ],
+        "win_condition":"Target_deliver",
+        "target_name":"IronOre",
+        "WHEEL_AUTO_ON":false,
+        "deafult_prompt":"There is a deep well, inside the well, there is an iron ball. Design a machine that can drive near the well, and get the ball out. The automatic control pipeline can let the machine drive near the well and use component to get the ball out(if you have used right blocks).",
+        "block_limitations":[0,1,2,4,9,15,16,22,27,35,41,45,63]
+    }
+}

@@ -1,0 +1,486 @@
+This is a concise list of the blocks you can use for this construction. Please read and follow the rules carefully.
+I. Block Information Format
+Each block's information follows the dict format. Attributes that a block does not have will not appear in the keys.
+1. Characteristic Tags:
+   a. Non-static: The block can actively generate force or movement.
+   b. Non-stable: The connection between the block and its parent block is non-rigid, allowing for movement or rotation.
+   c. Linear: The block is used to connect two existing points rather than being attached to a single point.
+   If there are no tags, it is a regular static and stable block.
+2. Constructible Points:
+   The key is in the format of Point ID, coordinates (relative coordinates), orientation (relative orientation).
+II. Key Special Rules
+1. Powered Wheel Rule (applicable to all powered wheels): The direction of power provided by the wheel is not the same as its orientation.
+   - Forward (Z+ direction): The wheel should face sideways (X+ or X-).
+   - Left turn (power pushes towards X-): The wheel should face forward (Z+).
+   - Right turn (power pushes towards X+): The wheel should face backward (Z-).
+   - When the wheel faces up or down (Y+ or Y-), it does not provide power.
+2. Linear Blocks (reinforcing Bar, rubber band):
+   - They do not have their own connection points but connect two other blocks.
+   - Reinforcing Bar: Used to reinforce static structures with no collision volume.
+   - Rubber band: Generates a contracting pull force along the line connecting its two ends when stretched.
+3. Non-connecting Blocks (bombs, boulders):
+   - These blocks are placed at the specified location but do not form a physical connection with any other block. Containers are usually needed to hold them.
+
+```json
+[
+    {
+        "Name": "Starting Block",
+        "Description": "The root block of the mechanism. It cannot be placed or deleted, and only one can exist at a time. Its initial position is fixed, and its initial orientation is z+.",
+        "Type ID": 0,
+        "Size": [1, 1, 1],
+        "Constructible Points Properties": [
+            {"ID": 0, "Coordinates": [0, 0, 0.5], "Orientation": "Front"},
+            {"ID": 1, "Coordinates": [0, 0, -0.5], "Orientation": "Back"},
+            {"ID": 2, "Coordinates": [-0.5, 0, 0], "Orientation": "Left"},
+            {"ID": 3, "Coordinates": [0.5, 0, 0], "Orientation": "Right"},
+            {"ID": 4, "Coordinates": [0, 0.5, 0], "Orientation": "Up"},
+            {"ID": 5, "Coordinates": [0, -0.5, 0], "Orientation": "Down"}
+        ],
+        "Mass": 0.25
+    },
+    {
+        "Name": "Small Wooden Block",
+        "Description": "A basic construction block, cubic in shape.",
+        "Type ID": 15,
+        "Size": [1, 1, 1],
+        "Constructible Points Properties": [
+            {"ID": 0, "Coordinates": [0, 0, 1], "Orientation": "Front"},
+            {"ID": 1, "Coordinates": [-0.5, 0, 0.5], "Orientation": "Left"},
+            {"ID": 2, "Coordinates": [0.5, 0, 0.5], "Orientation": "Right"},
+            {"ID": 3, "Coordinates": [0, 0.5, 0.5], "Orientation": "Up"},
+            {"ID": 4, "Coordinates": [0, -0.5, 0.5], "Orientation": "Down"}
+        ],
+        "Mass": 0.3
+    },
+    {
+        "Name": "Wooden Block",
+        "Description": "A basic construction block.",
+        "Type ID": 1,
+        "Size": [1, 1, 2],
+        "Constructible Points Properties": [
+            {"ID": 0, "Coordinates": [0, 0, 2], "Orientation": "Front"},
+            {"ID": 1, "Coordinates": [-0.5, 0, 0.5], "Orientation": "Left"},
+            {"ID": 2, "Coordinates": [-0.5, 0, 1.5], "Orientation": "Left"},
+            {"ID": 3, "Coordinates": [0.5, 0, 0.5], "Orientation": "Right"},
+            {"ID": 4, "Coordinates": [0.5, 0, 1.5], "Orientation": "Right"},
+            {"ID": 5, "Coordinates": [0, 0.5, 0.5], "Orientation": "Up"},
+            {"ID": 6, "Coordinates": [0, 0.5, 1.5], "Orientation": "Up"},
+            {"ID": 7, "Coordinates": [0, -0.5, 0.5], "Orientation": "Down"},
+            {"ID": 8, "Coordinates": [0, -0.5, 1.5], "Orientation": "Down"}
+        ],
+        "Mass": 0.5
+    },
+    {
+        "Name": "Wooden Rod",
+        "Description": "A basic construction block, slender and fragile.",
+        "Type ID": 41,
+        "Size": [1, 1, 2],
+        "Constructible Points Properties": [
+            {"ID": 0, "Coordinates": [0, 0, 2], "Orientation": "Front"},
+            {"ID": 1, "Coordinates": [-0.5, 0, 0.5], "Orientation": "Left"},
+            {"ID": 2, "Coordinates": [-0.5, 0, 1.5], "Orientation": "Left"},
+            {"ID": 3, "Coordinates": [0.5, 0, 0.5], "Orientation": "Right"},
+            {"ID": 4, "Coordinates": [0.5, 0, 1.5], "Orientation": "Right"},
+            {"ID": 5, "Coordinates": [0, 0.5, 0.5], "Orientation": "Up"},
+            {"ID": 6, "Coordinates": [0, 0.5, 1.5], "Orientation": "Up"},
+            {"ID": 7, "Coordinates": [0, -0.5, 0.5], "Orientation": "Down"},
+            {"ID": 8, "Coordinates": [0, -0.5, 1.5], "Orientation": "Down"}
+        ],
+        "Mass": 0.5
+    },
+    {
+        "Name": "Log",
+        "Description": "A basic construction block.",
+        "Type ID": 63,
+        "Size": [1, 1, 3],
+        "Constructible Points Properties": [
+            {"ID": 0, "Coordinates": [0, 0, 3], "Orientation": "Front"},
+            {"ID": 1, "Coordinates": [-0.5, 0, 0.5], "Orientation": "Left"},
+            {"ID": 2, "Coordinates": [-0.5, 0, 1.5], "Orientation": "Left"},
+            {"ID": 3, "Coordinates": [-0.5, 0, 2.5], "Orientation": "Left"},
+            {"ID": 4, "Coordinates": [0.5, 0, 0.5], "Orientation": "Right"},
+            {"ID": 5, "Coordinates": [0.5, 0, 1.5], "Orientation": "Right"},
+            {"ID": 6, "Coordinates": [0.5, 0, 2.5], "Orientation": "Right"},
+            {"ID": 7, "Coordinates": [0, 0.5, 0.5], "Orientation": "Up"},
+            {"ID": 8, "Coordinates": [0, 0.5, 1.5], "Orientation": "Up"},
+            {"ID": 9, "Coordinates": [0, 0.5, 2.5], "Orientation": "Up"},
+            {"ID": 10, "Coordinates": [0, -0.5, 0.5], "Orientation": "Down"},
+            {"ID": 11, "Coordinates": [0, -0.5, 1.5], "Orientation": "Down"},
+            {"ID": 12, "Coordinates": [0, -0.5, 2.5], "Orientation": "Down"}
+        ],
+        "Mass": 1
+    },
+    {
+        "Name": "Steering Hinge",
+        "Description": "Powered, used to control the rotation of sub-blocks. It can swing left and right along the axis perpendicular to the placement axis.",
+        "Type ID": 28,
+        "Size": [1, 1, 1],
+        "Constructible Points Properties": [
+            {"ID": 0, "Coordinates": [0, 0, 1], "Orientation": "Front"}
+        ],
+        "Special Attributes": {
+            "Swing Direction": ["Left", "Right"],
+            "Angle": [-90, 90],
+            "NonStatic":"True",
+            "NonStable":"True"
+        },
+        "Mass": 1
+    },
+    {
+        "Name": "Steering Block",
+        "Description": "Powered, used to control the rotation of sub-blocks. It can rotate clockwise or counterclockwise along the placement axis.",
+        "Type ID": 13,
+        "Size": [1, 1, 1],
+        "Constructible Points Properties": [
+            {"ID": 0, "Coordinates": [0, 0, 1], "Orientation": "Front"},
+            {"ID": 1, "Coordinates": [-0.5, 0, 0.5], "Orientation": "Left"},
+            {"ID": 2, "Coordinates": [0.5, 0, 0.5], "Orientation": "Right"},
+            {"ID": 3, "Coordinates": [0, 0.5, 0.5], "Orientation": "Up"},
+            {"ID": 4, "Coordinates": [0, -0.5, 0.5], "Orientation": "Down"}
+        ],
+        "Special Attributes": {
+            "Rotation Axis": "Front",
+            "NonStatic":"True",
+            "NonStable":"True"
+        },
+        "Mass": 1
+    },
+    {
+        "Name": "Powered Wheel",
+        "Description": "Powered, a mechanical device used to move objects on the ground.",
+        "Type ID": 2,
+        "Size": [2, 2, 0.5],
+        "Constructible Points Properties": [
+            {"ID": 0, "Coordinates": [0, 0, 0.5], "Orientation": "Front"}
+        ],
+        "Special Attributes": {
+            "Rotation Axis": "Front",
+            "PoweredWheel":"True",
+            "NonStatic":"True",
+            "NonStable":"True"
+        },
+        "Mass": 1
+    },
+    {
+        "Name": "Unpowered Wheel",
+        "Description": "A wheel that does not rotate without external force, similar to the powered wheel.",
+        "Type ID": 40,
+        "Size": [2, 2, 0.5],
+        "Constructible Points Properties": [
+            {"ID": 0, "Coordinates": [0, 0, 0.5], "Orientation": "Front"}
+        ],
+        "Special Attributes": {
+            "Rotation Axis": "Front",
+            "NonStable":"True"
+        },
+        "Mass": 1
+    },
+    {
+        "Name": "Large Powered Wheel",
+        "Description": "Similar to the powered wheel, but larger.",
+        "Type ID": 46,
+        "Size": [3, 3, 1],
+        "Constructible Points Properties": [
+            {"ID": 0, "Coordinates": [0, 0, 1], "Orientation": "Front"},
+            {"ID": 1, "Coordinates": [-1.5, 0, 1], "Orientation": "Front"},
+            {"ID": 2, "Coordinates": [1.5, 0, 1], "Orientation": "Front"},
+            {"ID": 3, "Coordinates": [0, 1.5, 1], "Orientation": "Front"},
+            {"ID": 4, "Coordinates": [0, -1.5, 1], "Orientation": "Front"},
+            {"ID": 5, "Coordinates": [-1.5, 0, 0.5], "Orientation": "Left"},
+            {"ID": 6, "Coordinates": [1.5, 0, 0.5], "Orientation": "Right"},
+            {"ID": 7, "Coordinates": [0, 1.5, 0.5], "Orientation": "Up"},
+            {"ID": 8, "Coordinates": [0, -1.5, 0.5], "Orientation": "Down"}
+        ],
+        "Special Attributes": {
+            "Rotation Axis": "Front",
+            "PoweredWheel":"True",
+            "NonStatic":"True",
+            "NonStable":"True"
+        },
+        "Mass": 1
+    },
+    {
+        "Name": "Large Unpowered Wheel",
+        "Description": "Similar to the unpowered wheel, but larger.",
+        "Type ID": 60,
+        "Size": [3, 3, 1],
+        "Constructible Points Properties": [
+            {"ID": 0, "Coordinates": [0, 0, 1], "Orientation": "Front"},
+            {"ID": 1, "Coordinates": [-1.5, 0, 1], "Orientation": "Front"},
+            {"ID": 2, "Coordinates": [1.5, 0, 1], "Orientation": "Front"},
+            {"ID": 3, "Coordinates": [0, 1.5, 1], "Orientation": "Front"},
+            {"ID": 4, "Coordinates": [0, -1.5, 1], "Orientation": "Front"},
+            {"ID": 5, "Coordinates": [-1.5, 0, 0.5], "Orientation": "Left"},
+            {"ID": 6, "Coordinates": [1.5, 0, 0.5], "Orientation": "Right"},
+            {"ID": 7, "Coordinates": [0, 1.5, 0.5], "Orientation": "Up"},
+            {"ID": 8, "Coordinates": [0, -1.5, 0.5], "Orientation": "Down"}
+        ],
+        "Special Attributes": {
+            "Rotation Axis": "Front",
+            "NonStable":"True"
+        },
+        "Mass": 1
+    },
+    {
+        "Name": "Small Wheel",
+        "Description": "It works almost the same as a caster wheel (e.g., shopping cart wheel), but it is not powered.",
+        "Type ID": 50,
+        "Size": [0.5, 1, 1.5],
+        "Special Attributes": {"NonStable":"True"},
+        "Mass": 0.5
+    },
+    {
+        "Name": "Skateboard Wheel",
+        "Description": "Same as the small wheel.",
+        "Type ID": 86,
+        "Size": [1, 1, 1],
+        "Special Attributes": {
+            "NonStable":"True"
+        },
+        "Mass": 0.5
+    },
+    {
+        "Name": "Universal Joint",
+        "Description": "A block that can freely rotate around its placement axis, but it is not powered.",
+        "Type ID": 19,
+        "Size": [1, 1, 1],
+        "Constructible Points Properties": [
+            {"ID": 0, "Coordinates": [0, 0, 1], "Orientation": "Front"},
+            {"ID": 1, "Coordinates": [-0.5, 0, 0.5], "Orientation": "Left"},
+            {"ID": 2, "Coordinates": [0.5, 0, 0.5], "Orientation": "Right"},
+            {"ID": 3, "Coordinates": [0, 0.5, 0.5], "Orientation": "Up"},
+            {"ID": 4, "Coordinates": [0, -0.5, 0.5], "Orientation": "Down"}
+        ],
+        "Special Attributes": {
+            "Rotation Axis": "Front",
+            "NonStable":"True"
+        },
+        "Mass": 0.5
+    },
+    {
+        "Name": "Hinge",
+        "Description": "It can swing up and down along the axis perpendicular to the placement axis, but it is not powered.",
+        "Type ID": 5,
+        "Size": [1, 1, 1],
+        "Constructible Points Properties": [
+            {"ID": 0, "Coordinates": [0, 0, 1], "Orientation": "Front"},
+            {"ID": 1, "Coordinates": [-0.5, 0, 0.5], "Orientation": "Left"},
+            {"ID": 2, "Coordinates": [0.5, 0, 0.5], "Orientation": "Right"},
+            {"ID": 3, "Coordinates": [0, 0.5, 0.5], "Orientation": "Up"},
+            {"ID": 4, "Coordinates": [0, -0.5, 0.5], "Orientation": "Down"}
+        ],
+        "Special Attributes": {
+            "Swing Direction": ["Up", "Down"],
+            "Angle": [-90, 90],
+            "NonStable":"True"
+        },
+        "Mass": 0.5
+    },
+    {
+        "Name": "Ball Joint",
+        "Description": "It can swing freely in all directions, but it is not powered.",
+        "Type ID": 44,
+        "Size": [1, 1, 1],
+        "Constructible Points Properties": [
+            {"ID": 0, "Coordinates": [0, 0, 1], "Orientation": "Front"},
+            {"ID": 1, "Coordinates": [-0.5, 0, 0.5], "Orientation": "Left"},
+            {"ID": 2, "Coordinates": [0.5, 0, 0.5], "Orientation": "Right"},
+            {"ID": 3, "Coordinates": [0, 0.5, 0.5], "Orientation": "Up"},
+            {"ID": 4, "Coordinates": [0, -0.5, 0.5], "Orientation": "Down"}
+        ],
+        "Special Attributes": {
+            "Swing Range": "All directions outward from the build surface",
+            "NonStable":"True"
+        },
+        "Mass": 0.5
+    },
+    {
+        "Name": "Axle Connector",
+        "Description": "Similar to a ball joint.",
+        "Type ID": 76,
+        "Size": [1, 1, 1],
+        "Constructible Points Properties": [
+            {"ID": 0, "Coordinates": [0, 0, 1], "Orientation": "Front"}
+        ],
+        "Special Attributes": {
+            "Swing Range": "All directions outward from the build surface",
+            "NonStable":"True"
+        },
+        "Mass": 0.3
+    },
+    {
+        "Name": "Rotating Block",
+        "Description": "Powered, it can rotate clockwise or counterclockwise along the axis perpendicular to the placement axis. Only sub-blocks placed on Constructible Points 1 to 4 will rotate along with the rotating block. The torque generated by the rotation will be transmitted to the parent block of the rotating block, with the magnitude of the torque depending on the weight of the sub-blocks and all their respective sub-blocks; seen from the normal that points into the block, it turns clockwise, reversing to counter-clockwise only when the block faces x-.",
+        "Type ID": 22,
+        "Size": [1, 1, 1],
+        "Constructible Points Properties": [
+            {"ID": 0, "Coordinates": [0, 0, 1], "Orientation": "Front"},
+            {"ID": 1, "Coordinates": [-0.5, 0, 0.5], "Orientation": "Left"},
+            {"ID": 2, "Coordinates": [0.5, 0, 0.5], "Orientation": "Right"},
+            {"ID": 3, "Coordinates": [0, 0.5, 0.5], "Orientation": "Up"},
+            {"ID": 4, "Coordinates": [0, -0.5, 0.5], "Orientation": "Down"}
+        ],
+        "Special Attributes": {
+            "Rotation Axis": "Front",
+            "NonStatic":"True",
+            "NonStable":"True"
+        },
+        "Mass": 1
+    },
+    {
+        "Name": "Gripper",
+        "Description": "If the build point is unoccupied, it will grab any object that comes into contact with the build point and hold it firmly.",
+        "Type ID": 27,
+        "Size": [1, 1, 1],
+        "Constructible Points Properties": [
+            {"ID": 0, "Coordinates": [0, 0, 1], "Orientation": "Front"}
+        ],
+        "Special Attributes": {
+            "Grip Direction": "Front",
+            "NonStable":"True"
+        },
+        "Mass": 0.5
+    },
+    {
+        "Name": "Metal Spike",
+        "Description": "A weapon.",
+        "Type ID": 20,
+        "Size": [0.2, 0.2, 2.4],
+        "Mass": 0.3
+    },
+    {
+        "Name": "Metal Blade",
+        "Description": "A weapon.",
+        "Type ID": 3,
+        "Size": [1, 0.1, 3.8],
+        "Mass": 0.3
+    },
+    {
+        "Name": "Cannon",
+        "Description": "A weapon that can fire a projectile parallel to the build surface, generating recoil.",
+        "Type ID": 11,
+        "Size": [1, 2.5, 1],
+        "Special Attributes": {
+            "Recoil Direction": "Back"
+        },
+        "Mass": 1.5
+    },
+    {
+        "Name": "Bomb",
+        "Description": "It will explode upon strong impact. If it explodes near a mechanism, it will destroy the mechanism. Even if it is built on other blocks, it will not directly connect to them.",
+        "Type ID": 23,
+        "Size": [1.9, 1.9, 1.9],
+        "Special Attributes": {
+            "NonStable":"True"
+        },
+        "Mass": 0.5
+    },
+    {
+        "Name": "Boulder",
+        "Description": "A rock that will not directly connect to other blocks even if built on them, high mass.",
+        "Type ID": 36,
+        "Size": [1.9, 1.9, 1.9],
+        "Special Attributes": {
+            "NonStable":"True"
+        },
+        "Mass": 5
+    },
+    {
+        "Name": "Non-slip Pad",
+        "Description": "The block with the highest friction.",
+        "Type ID": 49,
+        "Size": [0.8, 0.8, 0.5],
+        "Mass": 0.3
+    },
+    {
+        "Name": "Elastic Pad",
+        "Description": "The block with the highest elasticity.",
+        "Type ID": 87,
+        "Size": [0.8, 0.8, 0.2],
+        "Mass": 0.3
+    },
+    {
+        "Name": "Container",
+        "Description": "It has a railing around the build point. If oriented towards +y, it can hold sub-blocks like a bowl. It is mainly used to hold blocks that cannot directly connect to the mechanism, such as boulders and bombs. Do not place other blocks nearby to avoid overlap.",
+        "Type ID": 30,
+        "Size": [2.4, 3, 2.8],
+        "Constructible Points Properties": [
+            {"ID": 0, "Coordinates": [0, 0, 1], "Orientation": "Front"}
+        ],
+        "Mass": 0.5
+    },
+    {
+        "Name": "Spring",
+        "Description": "It primarily serves as a buffer and shock absorber. It is similar in shape to a wooden block, with all Constructible Points Properties located at the far end of the block.",
+        "Type ID": 16,
+        "Size": [1, 1, 2],
+        "Constructible Points Properties": [
+            {"ID": 0, "Coordinates": [0, 0, 2], "Orientation": "Front"},
+            {"ID": 1, "Coordinates": [-0.5, 0, 1.5], "Orientation": "Left"},
+            {"ID": 2, "Coordinates": [0.5, 0, 1.5], "Orientation": "Right"},
+            {"ID": 3, "Coordinates": [0, 0.5, 1.5], "Orientation": "Up"},
+            {"ID": 4, "Coordinates": [0, -0.5, 1.5], "Orientation": "Down"}
+        ],
+        "Mass": 0.5
+    },
+    {
+        "Name": "Reinforcing Bar",
+        "Description": "The reinforcing bar can be used for reinforcement. Its construction principle is to attach to other blocks. It has no collision volume. Since it is often used to stabilize static structures, it is not suitable for any dynamic structures.",
+        "Type ID": 7,
+        "Special Attributes": {
+            "Linear": "True",
+            "Anti Tension Direction": "Towards the center of the line segment between the two Constructible Points Properties",
+            "Anti Compression Direction": "Outward from the center of the line segment between the two Constructible Points Properties"
+        },
+        "Mass": 0.5
+    },
+    {
+        "Name": "Rubber Band",
+        "Description": "A linear block that attaches to two other blocks and can quickly pull the two ends together. Its tension force is almost entirely dependent on its length.",
+        "Type ID": 9,
+        "Special Attributes": {
+            "Linear": "True",
+            "NonStatic":"True",
+            "Tension Direction": "Towards the center of the line segment between the two Constructible Points Properties"
+        },
+        "Mass": 0.4
+    },
+    {
+        "Name": "Ballast",
+        "Description": "It serves as a counterweight, has a large mass, and is shaped like a cube.",
+        "Type ID": 35,
+        "Size": [1, 1, 1],
+        "Constructible Points Properties": [
+            {"ID": 0, "Coordinates": [0, 0, 1], "Orientation": "Front"},
+            {"ID": 1, "Coordinates": [-0.5, 0, 0.5], "Orientation": "Left"},
+            {"ID": 2, "Coordinates": [0.5, 0, 0.5], "Orientation": "Right"},
+            {"ID": 3, "Coordinates": [0, 0.5, 0.5], "Orientation": "Up"},
+            {"ID": 4, "Coordinates": [0, -0.5, 0.5], "Orientation": "Down"}
+        ],
+        "Mass": 3
+    },
+    {
+        "Name": "Decouper",
+        "Description": "The Decoupler is used to detach two initially attached objects.",
+        "Type ID": 4,
+        "Size": [1, 1, 1],
+        "Constructible Points Properties": [
+            {"ID": 0, "Coordinates": [0, 0, 1], "Orientation": "Front"}
+        ],
+        "Special Attributes": {
+            "Decope Direction": "Back-Front"
+        },
+        "Mass": 0.5
+    },
+    {
+        "Name": "Winch",
+        "Description": "The Winch is a machine block composed of two winches at its end node which connects two blocks by a variable-length rope.",
+        "Type ID": 45,
+        "Special Attributes": {
+            "Linear": "True",
+            "NonStatic":"True"
+        },
+        "Mass": 0.4
+    }
+]
+```

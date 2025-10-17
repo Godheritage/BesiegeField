@@ -1,0 +1,28 @@
+<Three-Dimensional Perception of the World>
+{
+    "Coordinate System": "Left-Handed System or Right-Handed System",
+    "Up": "x or y or z",
+    "Right": "x or y or z",
+    "Forward": "x or y or z",
+    "Frontmost Block": {"order_id": [Center Point Coordinates]},
+    "Rearmost Block": {"order_id": [Center Point Coordinates]},
+    "Leftmost Block": {"order_id": [Center Point Coordinates]},
+    "Rightmost Block": {"order_id": [Center Point Coordinates]},
+    "Topmost Block": {"order_id": [Center Point Coordinates]},
+    "Lowest Block": {"order_id": [Center Point Coordinates]},
+}
+</Three-Dimensional Perception of the World>
+
+<Question Answer>
+Write the answer to the user's question here
+</Question Answer>
+
+<Summary of Design Defects>
+1. Problem description, involving blocks: [order_id_list], belonging to structure: "Structure Name"
+...
+</Summary of Design Defects>
+
+<Give 3D Info>
+Deside whether give modifier 3D information, 3D info may help modifier analyze machine pose, but each block's 3D information is too long, mey hurt midifier performance due to context window length.
+Only Fill "True" or "False" here, do not add additional informations.
+</Give 3D Info>

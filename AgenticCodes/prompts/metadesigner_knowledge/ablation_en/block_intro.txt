@@ -1,0 +1,41 @@
+1. Blocks are mainly divided into five major categories: Basic Blocks, Mobility Blocks, Mechanical Blocks, Weapon Blocks, and Armor Blocks.
+   - **Basic Blocks** are the fundamental components of many machines - structural blocks and some basic moving parts.
+   - **Mobility Blocks** are primarily designed for movement functions - powered and unpowered wheels, steering blocks, and gears.
+   - **Mechanical Blocks** provide various useful auxiliary functions - joints, suspension devices, winches, grabbers, etc.
+   - **Weapon Blocks** offer various types of violent output at different ranges - swords and saws for close combat, and cannons and rockets for long-range.
+   - **Armor Blocks** can protect the machine from damage or provide useful shapes for carrying other blocks - armor plates and wooden panels, as well as half-pipes and brackets.
+
+2. Here is a detailed introduction to the properties and functions of each block:
+
+| Name | Category | Type ID | Function |
+|------|----------|---------|----------|
+| **Start Block** | Basic | 0 | The Start Block is the root block of the machine; it is placed at the starting position by default, cannot be moved, cannot be deleted, and only one can exist at a time. |
+| **Small Wooden Block** | Basic | 15 | A basic structural block, cube-shaped, to which other blocks can be attached from any side, making it particularly suitable for constructing the basic framework of machines. |
+| **Wooden Block** | Basic | 1 | A basic mechanical block, twice the length of a Small Wooden Block. |
+| **Wooden Rod** | Basic | 41 | A basic mechanical block, twice the length of a Small Wooden Block, with the same weight as a Wooden Block, but very fragile. |
+| **Log** | Basic | 63 | A basic mechanical block, more robust, three times the length of a Small Wooden Block. |
+| **Support Block** | Basic | 7 | A non-placeable block used for reinforcement, built by "attaching" to other blocks, with no collision volume. It is often used to increase the stability of static structures and is not suitable for any dynamic structures. |
+| **Steering Hinge** | Mobility | 28 | The Steering Hinge can rotate blocks along an axis perpendicular to the placement axis. This block can rotate child blocks to a 180-degree direction to the left or right, commonly used for vehicle steering. |
+| **Steering Block** | Mobility | 13 | The Steering Block can rotate blocks along its placement axis, similar to the rotating part of a helicopter's rotor. |
+| **Powered Wheel** | Mobility | 2 | Similar to a car wheel, it can drive itself but cannot turn independently. It is a mechanical device used for moving objects on the ground. |
+| **Unpowered Wheel** | Mobility | 40 | A wheel that does not rotate without external force, otherwise similar to a Powered Wheel. |
+| **Powered Large Wheel** | Mobility | 46 | Similar to a Powered Wheel, but with a radius and thickness twice that of a Powered Wheel. |
+| **Unpowered Large Wheel** | Mobility |  | A wheel that does not rotate without external force, otherwise similar to a Powered Large Wheel. |
+| **Small Wheel** | Mobility | 50 | It works almost the same as a caster wheel (like a shopping cart wheel), unpowered. |
+| **Powered Gear** | Mobility | 39 | A Powered Gear can freely rotate around its placement axis. Its teeth can mesh with other gears to transmit power. |
+| **Unpowered Gear** | Mobility | 38 | An Unpowered Gear can mesh with other gears to transfer power but does not rotate actively. |
+| **Unpowered Large Gear** | Mobility | 51 | An Unpowered Large Gear has a radius twice that of an Unpowered Gear, otherwise similar to an Unpowered Gear. |
+| **Universal Joint** | Mechanical | 19 | A block that can freely rotate around its placement axis, similar to a Steering Block but without power. |
+| **Hinge** | Mechanical | 5 | Similar to a Steering Hinge, but without power. |
+| **Ball Joint** | Mechanical | 44 | Can swing 360 degrees along the axis perpendicular to the placement axis, but without power. |
+| **Axle Connector** | Mechanical | 76 | Similar to a Ball Joint. |
+| **Rotating Block** | Mechanical | 22 | Powered, it can rotate clockwise or counterclockwise along the axis perpendicular to the placement axis. |
+| **Spring** | Mechanical | 16 | Shaped like a wooden block, it can buffer forces from all directions. |
+| **Slider** | Mechanical | 42 | A mechanical block that can freely slide along its placement axis, allowing it to extend and retract by one block. |
+| **Decoupler** | Mechanical | 4 | The Decoupler is used to separate two initially connected objects. |
+| **Piston** | Mechanical | 18 | A mechanical block that can extend along its placement axis. It can extend by one block. |
+| **Grabber** | Mechanical | 27 | It will grab and hold onto any object it comes into contact with. |
+| **Rubber Band** | Mechanical | 9 | A linear block that attaches to two other blocks and can quickly pull them together. Its pulling force is almost entirely dependent on its length. |
+| **Boulder** | Weapon | 36 | A stone that does not directly connect to other blocks even when built on them. It can be used as a projectile weapon and is also commonly used as a target in transportation tests. |
+| **Elastic Pad** | Armor | 87 | Increases the elasticity of the contact surface, providing an effect of rebounding and increasing kinetic energy. |
+| **Container** | Armor | 30 | Can hold child blocks like a bowl, mainly used to carry blocks that cannot be directly connected to the machine. The container has some anti-slip capability, and only one block (the target to be carried) can be placed inside. No other blocks can be added. |

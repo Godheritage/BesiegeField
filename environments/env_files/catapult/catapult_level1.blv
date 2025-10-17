@@ -1,0 +1,23 @@
+<Level>
+	<LevelSettings EditorVersion="0.9" UseVoting="False" CurtainMode="False" AllowExcessPlayers="True" HidePlayerLabels="False" AllowCopyMachine="True" allowModMachines="True" Environment="None">
+		<DisableFire Enabled="False" Locked="False" />
+		<DisableExplosions Enabled="False" Locked="False" />
+		<DisableProjectiles Enabled="False" Locked="False" />
+		<ZeroG Enabled="False" Locked="False" />
+		<InfiniteAmmo Enabled="False" Locked="False" />
+		<Invincibility Enabled="False" Locked="False" />
+		<ExplosiveCannonballs Enabled="False" Locked="False" />
+		<DisableBounds Enabled="False" Locked="False" />
+	</LevelSettings>
+	<CustomData>
+		<StringArray key="requiredMods" />
+	</CustomData>
+	<Objects>
+		<Object ID="-6055645786741603022" Prefab="9001">
+			<Position x="0" y="5.05" z="0" />
+			<Data>
+				<Integer key="bmt-lel-team">1</Integer>
+			</Data>
+		</Object>
+	</Objects>
+</Level>

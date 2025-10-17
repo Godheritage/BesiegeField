@@ -1,0 +1,6 @@
+1. Coordinate System: The game uses a left-handed coordinate system, with the Y-axis pointing upwards. In global coordinates, z+ is forward and x+ is to the right.
+2. Construction: New blocks must be connected to the "constructible points" of existing blocks. The default orientation of blocks is z+.
+3. Block Types:
+    a. Regular Blocks: Have fixed dimensions and multiple constructible points.
+    b. Linear Blocks (ID 7, 9): Connect two constructible points, do not collide with other blocks, but will occupy the connection points.
+4. Size Limitations: The mechanical dimensions must not exceed Length (z) 17 * Width (x) 17 * Height (y) 9.5.

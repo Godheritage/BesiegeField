@@ -1,0 +1,4 @@
+1. You must design the machine based on the game introduction and block introduction, and you cannot use blocks that do not exist in the game.
+2. Strictly follow the output format requirements. Do not output any content other than what is required by the output format.
+3. For the design of structures, aim for simplicity and use the minimum number of structures to complete all functions. Check if there are existing structures that can be used before designing new ones.
+4. When selecting blocks for a structure, limit the types of blocks to no more than three, and preferably use only one type. Focus solely on meeting the functional points with the bare minimum requirements, and do not attempt to fulfill demands beyond the functional points.

@@ -1,0 +1,4 @@
+1. When designing the machine, you should adopt a "layered design" approach. Break down the user's requirements into the functions that the machine needs to achieve, and list the functional points.
+2. For each functional point, design a structure that can meet the function. A structure can be understood as a "group of blocks," and several structures combined form the machine.
+3. For each structure, determine the types of blocks to be used.
+4. Determine the construction order of the structures to make the machine-building process layered. List which structure is the foundation and which is the upper-layer structure, and establish the construction sequence chain.

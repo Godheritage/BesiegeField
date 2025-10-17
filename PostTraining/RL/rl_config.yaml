@@ -1,0 +1,103 @@
+hydra:  
+  searchpath:  
+    - pkg://verl.trainer.config  
+
+defaults:  
+  - ppo_trainer  
+  - _self_  
+
+
+actor_rollout_ref:
+  model: 
+    use_shm: false
+    path: /YOUR/MODEL/HERE
+    enable_gradient_checkpointing: true
+    lora_rank: 64
+    lora_alpha: 32
+    target_modules: all-linear
+  ref:
+    log_prob_micro_batch_size_per_gpu: 1
+    fsdp_config:  
+      param_offload: true
+  rollout:  
+    n: 64
+    max_num_seqs: 512
+    max_num_batched_tokens: 4608
+    tensor_model_parallel_size: 2
+    log_prob_micro_batch_size_per_gpu: 1
+    free_cache_engine: false
+    name: vllm
+    temperature: 1.0
+    seed: 42
+    top_p: 0.95
+    max_length: 4608
+    gpu_memory_utilization: 0.7
+    val_kwargs:  
+      temperature: 1.0  
+      do_sample: true   
+  actor:
+    clip_ratio: 0.2
+    clip_ratio_low: 0.2
+    clip_ratio_high: 0.28
+    
+    strategy: fsdp2  
+    fsdp_config:  
+      param_offload: false
+      optimizer_offload: false
+    optim:  
+      lr: 5e-6 
+    ppo_mini_batch_size: 8
+    ppo_micro_batch_size_per_gpu: 1
+    grad_clip: 0.5
+    entropy_coeff: 0
+    use_kl_loss: true
+    kl_loss_coef: 0.001
+    kl_loss_type: low_var_kl
+    policy_loss:
+      loss_mode: vanilla
+      
+data:  
+  train_files: ./dataset/catapult_task.parquet
+  val_files: ./dataset/catapult_task.parquet
+  train_batch_size: 8  
+  max_prompt_length: 3440  
+  max_response_length: 1168  
+  prompt_key: prompt  
+  reward_fn_key: data_source  
+  
+algorithm:
+  use_kl_in_reward: false
+  kl_ctrl:
+    kl_coef: 0.0
+  adv_estimator: grpo_passk 
+  norm_adv_by_std_in_grpo: true
+  
+
+
+reward_model:
+  reward_manager: batch
+custom_reward_function:
+  name: compute_score_batch
+  path: ./verl_adapter.py #You can modify your scoring script
+  reward_kwargs:    
+    tasks: catapult/catapult_level1
+    win_condition: Boulder_throw
+
+trainer:  
+  logger: ['console','tensorboard']
+  default_local_dir: rl_results/rl_ckpt
+  validation_data_dir: rl_results/rl_val
+  rollout_data_dir: rl_results/rl_rollout
+  critic_warmup: 0  
+  val_before_train: false  
+  n_gpus_per_node: 8  
+  nnodes: 1  
+  save_freq: 40
+  max_actor_ckpt_to_keep: 10   
+  max_critic_ckpt_to_keep: 1  
+  test_freq: 10  
+  total_epochs: 25 
+  project_name: besiege_rl  
+  experiment_name: example
+
+

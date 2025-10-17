@@ -1,0 +1,533 @@
+[
+    {
+        "Name": "Starting Block",
+        "Description": "The root of any mechanism; initial orientation is along z+ axis",
+        "tid": 0,
+        "Is Static": "True",
+        "Size": [1, 1, 1],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 0.5], "relative orientation": "Front"},
+            {"ID": 1, "Relative Position": [0, 0, -0.5], "relative orientation": "Back"},
+            {"ID": 2, "Relative Position": [-0.5, 0, 0], "relative orientation": "Left"},
+            {"ID": 3, "Relative Position": [0.5, 0, 0], "relative orientation": "Right"},
+            {"ID": 4, "Relative Position": [0, 0.5, 0], "relative orientation": "Up"},
+            {"ID": 5, "Relative Position": [0, -0.5, 0], "relative orientation": "Down"}
+        ],
+        "Special Attributes": {}
+    },
+    {
+        "Name": "Small Wooden Block",
+        "Description": "A cubic basic construction block",
+        "tid": 15,
+        "Is Static": "True",
+        "Size": [1, 1, 1],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 1], "relative orientation": "Front"},
+            {"ID": 1, "Relative Position": [-0.5, 0, 0.5], "relative orientation": "Left"},
+            {"ID": 2, "Relative Position": [0.5, 0, 0.5], "relative orientation": "Right"},
+            {"ID": 3, "Relative Position": [0, 0.5, 0.5], "relative orientation": "Up"},
+            {"ID": 4, "Relative Position": [0, -0.5, 0.5], "relative orientation": "Down"}
+        ],
+        "Special Attributes": {}
+    },
+    {
+        "Name": "Ballast",
+        "Description": "A heavy cubic block used as a counterweight",
+        "tid": 35,
+        "Is Static": "True",
+        "Size": [1, 1, 1],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 1], "relative orientation": "Front"},
+            {"ID": 1, "Relative Position": [-0.5, 0, 0.5], "relative orientation": "Left"},
+            {"ID": 2, "Relative Position": [0.5, 0, 0.5], "relative orientation": "Right"},
+            {"ID": 3, "Relative Position": [0, 0.5, 0.5], "relative orientation": "Up"},
+            {"ID": 4, "Relative Position": [0, -0.5, 0.5], "relative orientation": "Down"}
+        ],
+        "Special Attributes": {}
+    },
+    {
+        "Name": "Wooden Block",
+        "Description": "Shaped like two small wooden blocks attached together",
+        "tid": 1,
+        "Is Static": "True",
+        "Size": [1, 1, 2],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 2], "relative orientation": "Front"},
+            {"ID": 1, "Relative Position": [-0.5, 0, 0.5], "relative orientation": "Left"},
+            {"ID": 2, "Relative Position": [-0.5, 0, 1.5], "relative orientation": "Left"},
+            {"ID": 3, "Relative Position": [0.5, 0, 0.5], "relative orientation": "Right"},
+            {"ID": 4, "Relative Position": [0.5, 0, 1.5], "relative orientation": "Right"},
+            {"ID": 5, "Relative Position": [0, 0.5, 0.5], "relative orientation": "Up"},
+            {"ID": 6, "Relative Position": [0, 0.5, 1.5], "relative orientation": "Up"},
+            {"ID": 7, "Relative Position": [0, -0.5, 0.5], "relative orientation": "Down"},
+            {"ID": 8, "Relative Position": [0, -0.5, 1.5], "relative orientation": "Down"}
+        ],
+        "Special Attributes": {}
+    },
+    {
+        "Name": "Wooden Rod",
+        "Description": "A slender, fragile construction block",
+        "tid": 41,
+        "Is Static": "True",
+        "Size": [1, 1, 2],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 2], "relative orientation": "Front"},
+            {"ID": 1, "Relative Position": [-0.5, 0, 0.5], "relative orientation": "Left"},
+            {"ID": 2, "Relative Position": [-0.5, 0, 1.5], "relative orientation": "Left"},
+            {"ID": 3, "Relative Position": [0.5, 0, 0.5], "relative orientation": "Right"},
+            {"ID": 4, "Relative Position": [0.5, 0, 1.5], "relative orientation": "Right"},
+            {"ID": 5, "Relative Position": [0, 0.5, 0.5], "relative orientation": "Up"},
+            {"ID": 6, "Relative Position": [0, 0.5, 1.5], "relative orientation": "Up"},
+            {"ID": 7, "Relative Position": [0, -0.5, 0.5], "relative orientation": "Down"},
+            {"ID": 8, "Relative Position": [0, -0.5, 1.5], "relative orientation": "Down"}
+        ],
+        "Special Attributes": {}
+    },
+    {
+        "Name": "Log",
+        "Description": "Shaped like three small wooden blocks arranged in parallel",
+        "tid": 63,
+        "Is Static": "True",
+        "Size": [1, 1, 3],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 3], "relative orientation": "Front"},
+            {"ID": 1, "Relative Position": [-0.5, 0, 0.5], "relative orientation": "Left"},
+            {"ID": 2, "Relative Position": [-0.5, 0, 1.5], "relative orientation": "Left"},
+            {"ID": 3, "Relative Position": [-0.5, 0, 2.5], "relative orientation": "Left"},
+            {"ID": 4, "Relative Position": [0.5, 0, 0.5], "relative orientation": "Right"},
+            {"ID": 5, "Relative Position": [0.5, 0, 1.5], "relative orientation": "Right"},
+            {"ID": 6, "Relative Position": [0.5, 0, 2.5], "relative orientation": "Right"},
+            {"ID": 7, "Relative Position": [0, 0.5, 0.5], "relative orientation": "Up"},
+            {"ID": 8, "Relative Position": [0, 0.5, 1.5], "relative orientation": "Up"},
+            {"ID": 9, "Relative Position": [0, 0.5, 2.5], "relative orientation": "Up"},
+            {"ID": 10, "Relative Position": [0, -0.5, 0.5], "relative orientation": "Down"},
+            {"ID": 11, "Relative Position": [0, -0.5, 1.5], "relative orientation": "Down"},
+            {"ID": 12, "Relative Position": [0, -0.5, 2.5], "relative orientation": "Down"}
+        ],
+        "Special Attributes": {}
+    },
+    {
+        "Name": "Steering Hinge",
+        "Description": "Powered; controls rotation of sub-blocks, swinging left or right along the axis perpendicular to its placement axis.",
+        "tid": 28,
+        "Is Static": "False",
+        "Size": [1, 1, 1],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 1], "relative orientation": "Front"}
+        ],
+        "Special Attributes": {
+            "SwingAngle":["Left","Right"],
+            "Angle":[-90,90]
+        }
+    },
+    {
+        "Name": "Steering Block",
+        "Description": "Powered; rotates blocks along its placement axis",
+        "tid": 13,
+        "Is Static": "False",
+        "Size": [1, 1, 1],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 1], "relative orientation": "Front"},
+            {"ID": 1, "Relative Position": [-0.5, 0, 0.5], "relative orientation": "Left"},
+            {"ID": 2, "Relative Position": [0.5, 0, 0.5], "relative orientation": "Right"},
+            {"ID": 3, "Relative Position": [0, 0.5, 0.5], "relative orientation": "Up"},
+            {"ID": 4, "Relative Position": [0, -0.5, 0.5], "relative orientation": "Down"}
+        ],
+        "Special Attributes": {
+            "RotationAngle":"Front"
+        }
+    },
+    {
+        "Name": "Powered Wheel",
+        "Description": "Radius 1m; provides ground movement.",
+        "tid": 2,
+        "Is Static": "False",
+        "Size": [2,2,0.5],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 0.5], "relative orientation": "Front"}
+        ],
+        "Special Attributes": {
+            "RotationAngle":"Front",
+            "PowerDirectionWhenOnGround":[
+                {"AbsoluteOrientation":"x+","PowerDirection":"z+"},
+                {"AbsoluteOrientation":"x-","PowerDirection":"z+"},
+                {"AbsoluteOrientation":"z+","PowerDirection":"x-"},
+                {"AbsoluteOrientation":"z-","PowerDirection":"x+"}
+            ]
+        }
+    },
+    {
+        "Name": "Unpowered Wheel",
+        "Description": "Identical to the powered wheel but requires external force to rotate.",
+        "tid": 40,
+        "Is Static": "True",
+        "Size": [2,2,0.5],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 0.5], "relative orientation": "Front"}
+        ],
+        "Special Attributes": {
+            "RotationAngle":"Front"
+        }
+    },
+    {
+        "Name": "Large Powered Wheel",
+        "Description": "Larger version of the powered wheel (radius 3m).",
+        "tid": 46,
+        "Is Static": "False",
+        "Size": [3, 3, 1],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 1], "relative orientation": "Front"},
+            {"ID": 1, "Relative Position": [-1.5, 0, 1], "relative orientation": "Front"},
+            {"ID": 2, "Relative Position": [1.5, 0, 1], "relative orientation": "Front"},
+            {"ID": 3, "Relative Position": [0, 1.5, 1], "relative orientation": "Front"},
+            {"ID": 4, "Relative Position": [0, -1.5, 1], "relative orientation": "Front"},
+            {"ID": 5, "Relative Position": [-1.5, 0, 0.5], "relative orientation": "Left"},
+            {"ID": 6, "Relative Position": [1.5, 0, 0.5], "relative orientation": "Right"},
+            {"ID": 7, "Relative Position": [0, 1.5, 0.5], "relative orientation": "Up"},
+            {"ID": 8, "Relative Position": [0, -1.5, 0.5], "relative orientation": "Down"}
+        ],
+        "Special Attributes": {
+            "RotationAngle":"Front",
+            "PowerDirectionWhenOnGround":[
+                {"AbsoluteOrientation":"x+","PowerDirection":"z+"},
+                {"AbsoluteOrientation":"x-","PowerDirection":"z+"},
+                {"AbsoluteOrientation":"z+","PowerDirection":"x-"},
+                {"AbsoluteOrientation":"z-","PowerDirection":"x+"}
+            ]
+        }
+    },
+    {
+        "Name": "Large Unpowered Wheel",
+        "Description": "Unpowered version of the large powered wheel",
+        "tid": 60,
+        "Is Static": "True",
+        "Size": [3, 3, 1],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 1], "relative orientation": "Front"},
+            {"ID": 1, "Relative Position": [-1.5, 0, 1], "relative orientation": "Front"},
+            {"ID": 2, "Relative Position": [1.5, 0, 1], "relative orientation": "Front"},
+            {"ID": 3, "Relative Position": [0, 1.5, 1], "relative orientation": "Front"},
+            {"ID": 4, "Relative Position": [0, -1.5, 1], "relative orientation": "Front"},
+            {"ID": 5, "Relative Position": [-1.5, 0, 0.5], "relative orientation": "Left"},
+            {"ID": 6, "Relative Position": [1.5, 0, 0.5], "relative orientation": "Right"},
+            {"ID": 7, "Relative Position": [0, 1.5, 0.5], "relative orientation": "Up"},
+            {"ID": 8, "Relative Position": [0, -1.5, 0.5], "relative orientation": "Down"}
+        ],
+        "Special Attributes": {
+            "RotationAngle":"Front"
+        }
+    },
+    {
+        "Name": "Small Wheel",
+        "Description": "Functions like a caster wheel (e.g., shopping cart), unpowered, 1.2m long.",
+        "tid": 50,
+        "Is Static": "True",
+        "Size": [0.5,1,1.5],
+        "construable points properties": [
+        ],
+        "Special Attributes": {
+        }
+    },
+    {
+        "Name": "Roller Wheel",
+        "Description": "Similar to the small wheel, but shorter (0.8m).",
+        "tid": 86,
+        "Is Static": "True",
+        "Size": [1,1,1],
+        "construable points properties": [
+        ],
+        "Special Attributes": {
+        }
+    },
+    {
+        "Name": "Universal Joint",
+        "Description": "Freely rotates around its placement axis, unpowered.",
+        "tid": 19,
+        "Is Static": "True",
+        "Size": [1, 1, 1],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 1], "relative orientation": "Front"},
+            {"ID": 1, "Relative Position": [-0.5, 0, 0.5], "relative orientation": "Left"},
+            {"ID": 2, "Relative Position": [0.5, 0, 0.5], "relative orientation": "Right"},
+            {"ID": 3, "Relative Position": [0, 0.5, 0.5], "relative orientation": "Up"},
+            {"ID": 4, "Relative Position": [0, -0.5, 0.5], "relative orientation": "Down"}
+        ],
+        "Special Attributes": {
+            "RotationAngle":"Front"
+        }
+    },
+    {
+        "Name": "Hinge",
+        "Description": "Swings up and down along the axis perpendicular to its placement axis, unpowered.",
+        "tid": 5,
+        "Is Static": "True",
+        "Size": [1, 1, 1],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 1], "relative orientation": "Front"},
+            {"ID": 1, "Relative Position": [-0.5, 0, 0.5], "relative orientation": "Left"},
+            {"ID": 2, "Relative Position": [0.5, 0, 0.5], "relative orientation": "Right"},
+            {"ID": 3, "Relative Position": [0, 0.5, 0.5], "relative orientation": "Up"},
+            {"ID": 4, "Relative Position": [0, -0.5, 0.5], "relative orientation": "Down"}
+        ],
+        "Special Attributes": {
+            "SwingAngle":["Up","Down"],
+            "Angle":[-90,90]
+        }
+    },
+    {
+        "Name": "Ball Joint",
+        "Description": "Swings freely in all directions, unpowered.",
+        "tid": 44,
+        "Is Static": "True",
+        "Size": [1, 1, 1],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 1], "relative orientation": "Front"},
+            {"ID": 1, "Relative Position": [-0.5, 0, 0.5], "relative orientation": "Left"},
+            {"ID": 2, "Relative Position": [0.5, 0, 0.5], "relative orientation": "Right"},
+            {"ID": 3, "Relative Position": [0, 0.5, 0.5], "relative orientation": "Up"},
+            {"ID": 4, "Relative Position": [0, -0.5, 0.5], "relative orientation": "Down"}
+        ],
+        "Special Attributes": {
+            "SwingAngle":"All degrees outside the attachable face."
+        }
+    },
+    {
+        "Name": "Axle Connector",
+        "Description": "Similar to a ball joint but allows unrestricted 360 degree rotation.",
+        "tid": 76,
+        "Is Static": "True",
+        "Size": [1, 1, 1],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 1], "relative orientation": "Front"}
+        ],
+        "Special Attributes": {
+            "SwingAngle":"All degrees outside the attachable face."
+        }
+    },
+    {
+        "Name": "Rotating Block",
+        "Description": "Powered; motor-like block that generates torque and rotates about its local y-axis.",
+        "tid": 22,
+        "Is Static": "False",
+        "Size": [1, 1, 1],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 1], "relative orientation": "Front"},
+            {"ID": 1, "Relative Position": [-0.5, 0, 0.5], "relative orientation": "Left"},
+            {"ID": 2, "Relative Position": [0.5, 0, 0.5], "relative orientation": "Right"},
+            {"ID": 3, "Relative Position": [0, 0.5, 0.5], "relative orientation": "Up"},
+            {"ID": 4, "Relative Position": [0, -0.5, 0.5], "relative orientation": "Down"}
+        ],
+        "Special Attributes": {
+            "RotationAngle":"Front"
+        }
+    },
+    {
+        "Name": "Grabber",
+        "Description": "Grabs objects on contact and can release them.",
+        "tid": 27,
+        "Is Static": "True",
+        "Size": [1, 1, 1],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 1], "relative orientation": "Front"}
+        ],
+        "Special Attributes": {
+            "GrabDirections":"Front"
+        }
+    },
+    {
+        "Name": "Metal Spike",
+        "Description": "Weapon",
+        "tid": 20,
+        "Is Static": "True",
+        "Size": [0.2,0.2,2.4],
+        "construable points properties": [
+        ],
+        "Special Attributes": {
+        }
+    },
+    {
+        "Name": "Metal Blade",
+        "Description": "Weapon",
+        "tid": 3,
+        "Is Static": "True",
+        "Size": [1,0.1,3.8],
+        "construable points properties": [
+        ],
+        "Special Attributes": {
+        }
+    },
+    {
+        "Name": "Cannon",
+        "Description": "A weapon, it can fire a shell parallel to the construction surface, generating recoil.",
+        "tid": 11,
+        "Is Static": "True",
+        "Size": [1,2.5,1],
+        "construable points properties": [
+        ],
+        "Special Attributes": {
+            "RecoilDirection":"Back"
+        }
+    },
+    {
+        "Name": "Bomb",
+        "Description": "It explodes upon a strong impact; if it detonates near machinery, it will destroy the machine. Even when built on another block, it does not connect directly to any other blocks.",
+        "tid": 23,
+        "Is Static": "True",
+        "Size": [1.9,1.9,1.9],
+        "construable points properties": [
+        ],
+        "Special Attributes": {
+        }
+    },
+    {
+        "Name": "Boulder",
+        "Description": "A Boulder, even when built on another block, it does not connect directly to any other blocks.",
+        "tid": 36,
+        "Is Static": "True",
+        "Size": [1.9,1.9,1.9],
+        "construable points properties": [
+        ],
+        "Special Attributes": {
+        }
+    },
+    {
+        "Name": "Grip Pad",
+        "Description": "Block with the highest friction.",
+        "tid": 49,
+        "Is Static": "True",
+        "Size": [0.8,0.8,0.5],
+        "construable points properties": [
+        ],
+        "Special Attributes": {
+        }
+    },
+    {
+        "Name": "Elastic Pad",
+        "Description": "Block with the highest elasticity.",
+        "tid": 87,
+        "Is Static": "True",
+        "Size": [0.8,0.8,0.2],
+        "construable points properties": [
+        ],
+        "Special Attributes": {
+        }
+    },
+    {
+        "Name": "Container",
+        "Description": "Typically used to hold a boulder.",
+        "tid": 30,
+        "Is Static": "True",
+        "Size": [2.4,3,2.8],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 1], "relative orientation": "Front"}
+        ],
+        "Special Attributes": {
+        }
+    },
+    {
+        "Name": "Suspension",
+        "Description": "Shaped like a wooden block, it can buffer forces from all directions.",
+        "tid": 16,
+        "Is Static": "True",
+        "Size": [1, 1, 2],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 2], "relative orientation": "Front"},
+            {"ID": 1, "Relative Position": [-0.5, 0, 1.5], "relative orientation": "Left"},
+            {"ID": 2, "Relative Position": [0.5, 0, 1.5], "relative orientation": "Right"},
+            {"ID": 3, "Relative Position": [0, 0.5, 1.5], "relative orientation": "Up"},
+            {"ID": 4, "Relative Position": [0, -0.5, 1.5], "relative orientation": "Down"}
+        ],
+        "Special Attributes": {}
+    },
+    {
+        "Name": "Brace",
+        "Description": "Reinforces structural strength.",
+        "tid": 7,
+        "Is Static": "True",
+        "Size": [],
+        "construable points properties": [
+        ],
+        "Special Attributes": {
+            "Linear":"True",
+            "Tension-resistant direction": "Points toward the midpoint of the line segment between the two attachment points",
+            "Compression-resistant direction": "From the midpoint of the line segment between the two attachment points, facing outward"
+        }
+    },
+    {
+        "Name": "Spring",
+        "Description": "Can contract; one of the special blocks that can have two parent attachments (without occupying attachable faces).",
+        "tid": 9,
+        "Is Static": "False",
+        "Size": [],
+        "construable points properties": [
+        ],
+        "Special Attributes": {
+            "Linear":"True",
+            "Stretch direction": "Points toward the midpoint of the line segment between the two attachment points"
+        }
+    },
+    {
+        "Name": "Armor Plate (Large)",
+        "Description": "Armor",
+        "tid": 32,
+        "Is Static": "True",
+        "Size": [1.8, 0.9, 0.3],
+        "construable points properties": [
+        ],
+        "Special Attributes": {}
+    },
+    {
+        "Name": "Armor Plate (Small)",
+        "Description": "Armor",
+        "tid": 24,
+        "Is Static": "True",
+        "Size": [0.9, 0.9, 0.3],
+        "construable points properties": [
+        ],
+        "Special Attributes": {}
+    },
+    {
+        "Name": "Piston",
+        "Description": "The Piston is a machine block that can extend along it's placement axis. It extends by 1.1 metres.",
+        "tid": 18,
+        "Is Static": "False",
+        "Size": [1, 1, 2],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 2], "relative orientation": "Front"},
+            {"ID": 1, "Relative Position": [-0.5, 0, 1.5], "relative orientation": "Left"},
+            {"ID": 2, "Relative Position": [0.5, 0, 1.5], "relative orientation": "Right"},
+            {"ID": 3, "Relative Position": [0, 0.5, 1.5], "relative orientation": "Up"},
+            {"ID": 4, "Relative Position": [0, -0.5, 1.5], "relative orientation": "Down"}
+        ],
+        "Special Attributes": {
+            "Powered":true,
+            "Non-Static":true,
+            "Non-Stable":true
+        }
+    },
+    {
+        "Name": "Decouper",
+        "Description": "The Decoupler is used to detach two initially attached objects",
+        "tid": 4,
+        "Is Static": "True",
+        "Size": [1, 1, 1],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 1], "relative orientation": "Front"}
+        ],
+        "Special Attributes": {
+            "DecoupeDirection":"Back-Front"
+        }
+    },
+    {
+        "Name": "Winch",
+        "Description": "The Winch is a machine block composed of two winches at its end node which connects two blocks by a variable-length rope.",
+        "tid": 45,
+        "Is Static": "False",
+        "Size": [],
+        "construable points properties": [
+        ],
+        "Special Attributes": {
+            "Linear":"True"
+        }
+    }
+]

@@ -1,0 +1,18 @@
+```json
+[
+    {"id":"0","order_id":0,"parent":-1,"bp_id":-1},
+    {"id":"Block Type ID","order_id":"Block Order ID","parent":"Parent Block Order ID","bp_id":"Constructible Point ID in Parent Block"},
+    ...
+]
+```
+If it is a linear block (Type ID is 7 or 9, other blocks are not linear blocks), it will be:
+```json
+{
+    "id":"Block Type ID",
+    "order_id":"Block Order ID",
+    "parent_a":"Parent A Block Order ID",
+    "bp_id_a":"Constructible Point ID in Parent A Block",
+    "parent_b":"Parent B Block Order ID",
+    "bp_id_b":"Constructible Point ID in Parent B Block"
+}
+```

@@ -1,0 +1,36 @@
+{
+    "items": {
+      "cube": {
+        "prefab": 7000,
+        "description": "Cube",
+        "enable_physics": true
+      },
+      "race_stones": {
+        "prefab": 7030,
+        "description": "Race Stones"
+      },
+      "race_logs": {
+        "prefab": 7029,
+        "description": "Race Logs"
+      },
+      "pavement": {
+        "prefab": 2020,
+        "description": "Pavement"
+      },
+      "ancient_stone": {
+        "prefab": 10027,
+        "description": "Ancient Stone"
+      },
+      "wind": {
+        "prefab": 8004,
+        "description": "Wind",
+        "lel_global": true
+      },
+      "cone": {
+        "prefab": 9040,
+        "description": "Cone",
+        "enable_physics": true
+      }
+    }
+  }
+  

@@ -1,0 +1,21 @@
+** A. Environmental Feedback Request: **
+After conducting the environmental simulation of your modified machinery, 
+the system will provide essential data for the most critical components (such as position, rotation, and velocity). 
+Based on the performance of the essential data, you need to determine what problems the machinery may have encountered and request feedback on the key blocks that may have issues.
+You can also request those blocks that may significantly impact the machinery's functionality and check whether their performance meets expectations.
+The format for the environmental feedback request is as follows. 
+Please adhere strictly to this format and avoid including any extraneous information:
+<Required Feedback>
+[
+    {
+        "order_id": int,
+        "duration": [float, float],
+        "properties": ["position", "rotation", "velocity", "length"],
+    },
+    ...
+]
+</Required Feedback>
+Both "order_id" and "duration" are mandatory fields. 
+Note that the game runs for a total of 5 seconds, game state samples per 0.2s; do not exceed this duration. 
+You can freely select the attributes in "properties," but avoid including irrelevant information. 
+The "length" attribute is only applicable to linear components.

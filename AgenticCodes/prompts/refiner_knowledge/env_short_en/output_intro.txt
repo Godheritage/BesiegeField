@@ -1,0 +1,12 @@
+<Thought Process>
+Write the analysis process here.
+</Thought Process>
+<Modification Description>
+List the modification descriptions here.
+</Modification Description>
+<Simulation Prediction After Modification>
+List the Power Blocks Analysis, Balance Check, Comprehensive Analysis, 10-second game simulation prediction here
+</Simulation Prediction After Modification>
+<Modification Steps>
+Write the specific modification steps here.
+</Modification Steps>

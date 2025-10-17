@@ -1,0 +1,51 @@
+Executable modification operations:
+
+1. **Add Block Operation**
+   - **Format for Non-linear Blocks:**
+     Add [block type ID] to [order_id] in [building_point]
+   - **Format for Linear Blocks:**
+     Add [block type ID] to [order_id_a] in [building_point_a] to [order_id_b] in [building_point_b]
+   - **Details:**
+     a. Add a new block to the specified Constructible point [building_point] of the parent block [order_id].
+     b. **Constraints:**
+        - Only add blocks to the original blocks provided by the user.
+        - Do not add child blocks to newly added blocks.
+
+2. **Remove Block Operation**
+   - **Format:**
+     Remove [order_id]
+   - **Details:**
+     a. Remove the target block, but do not remove blocks with child blocks.
+     b. Only remove blocks originally provided by the user.
+
+3. **Move Block Operation**
+   - **Format:**
+     Move [order_id] to [new_parent_order_id] in [new_building_point]
+   - **Details:**
+     a. Move the target block and its child blocks as a whole to the new Constructible point.
+     b. **Constraints:**
+        - Only move blocks originally provided by the user.
+        - The target block must be an original block (not a newly added block).
+        - The move must change the block's original position; moves that do not change the position are invalid.
+        - Do not move linear blocks.
+        - [new_parent_order_id] must be less than [order_id].
+
+Game Simulation Prediction After Modification:
+Conduct a 10-second game simulation prediction:
+   1. First, decompose the entire machine into independent "block groups" based on its structure. Generally, non-stable blocks serve as the markers for grouping. If all child blocks of a non-stable block are not connected to other stable blocks, or if they are only connected to other stable blocks through non-stable blocks, then these child blocks form an independent "block group". A Boulder can not connect to other blocks, So it is always an independent "block group".
+   2. Predict the types, magnitudes, and directions of forces acting on each "block group," paying attention to the sequence in which forces occur. Generally, gravity always starts in the first frame, followed by other forces starting from the second frame.
+   3. Based on the forces acting on each block group, predict the movement direction, speed, and potential breakage of different block groups.
+
+### **Global Rules & Reference Info**
+
+*   **Core Requirements**:
+    *   You must modify the blocks mentioned in the design flaws.
+    *   The `order_id` of all blocks must remain unchanged throughout the entire process.
+    *   The brackets `[]` in commands must be kept.
+*   **Coordinate System Reference**: All blocks initially face the Z+ direction.
+    *   **Facing Z+**: Front(z+), Back(z-), Left(x-), Right(x+), Up(y+), Down(y-)
+    *   **Facing Z-**: Front(z-), Back(z+), Left(x+), Right(x-), Up(y+), Down(y-)
+    *   **Facing X+**: Front(x+), Back(x-), Left(z+), Right(z-), Up(y+), Down(y-)
+    *   **Facing X-**: Front(x-), Back(x+), Left(z-), Right(z+), Up(y+), Down(y-)
+    *   **Facing Y+**: Front(y+), Back(y-), Left(x-), Right(x+), Up(z-), Down(z+)
+    *   **Facing Y-**: Front(y-), Back(y+), Left(x-), Right(x+), Up(z+), Down(z-)

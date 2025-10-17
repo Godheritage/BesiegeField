@@ -1,0 +1,168 @@
+﻿<Level>
+	<LevelSettings EditorVersion="0.9" UseVoting="False" CurtainMode="False" AllowExcessPlayers="True" HidePlayerLabels="False" AllowCopyMachine="True" allowModMachines="True" Environment="None">
+		<DisableFire Enabled="False" Locked="False" />
+		<DisableExplosions Enabled="False" Locked="False" />
+		<DisableProjectiles Enabled="False" Locked="False" />
+		<ZeroG Enabled="False" Locked="False" />
+		<InfiniteAmmo Enabled="False" Locked="False" />
+		<Invincibility Enabled="False" Locked="False" />
+		<ExplosiveCannonballs Enabled="False" Locked="False" />
+		<DisableBounds Enabled="False" Locked="False" />
+	</LevelSettings>
+	<CustomData>
+		<StringArray key="requiredMods" />
+	</CustomData>
+	<Objects>
+		<Object ID="-6055645786741603022" Prefab="9001">
+			<Position x="0" y="5.05" z="0" />
+			<Data>
+				<Integer key="bmt-lel-team">1</Integer>
+			</Data>
+		</Object>
+		<Object ID="4999776589631171158" Prefab="7003">
+			<Position x="-394.1517" y="-0.05000019" z="-887.1651" />
+			<Data>
+				<Boolean key="bmt-lel-enable-physics">False</Boolean>
+			</Data>
+		</Object>
+		<Object ID="4613750914371634348" Prefab="7000">
+			<Position x="0" y="0" z="11" />
+			<Scale x="25" y="3" z="0.8" />
+			<Data>
+				<Boolean key="bmt-Disable Texture">True</Boolean>
+				<Boolean key="bmt-lel-enable-physics">False</Boolean>
+			</Data>
+		</Object>
+		<Object ID="8731124862034805956" Prefab="10003">
+			<Position x="0" y="0.5" z="50" />
+			<Data />
+		</Object>
+		<Object ID="3363717833150406459" Prefab="9002">
+			<Position x="0" y="10" z="50" />
+			<Data>
+				<String key="bmt-textline0">Throw stone inside</String>
+			</Data>
+		</Object>
+		<Object ID="8701909312877096990" Prefab="9003">
+			<Position x="0" y="0" z="50" />
+			<Scale x="1.1" y="0.2" z="0.9" />
+			<Data>
+				<String key="lel-logic0-type">Enter</String>
+				<Integer key="lel-logic0-id">19561</Integer>
+				<StringArray key="lel-logic0-targets">
+					<String>60409|Anything</String>
+				</StringArray>
+				<Boolean key="lel-logic0-all-targets">False</Boolean>
+				<StringArray key="lel-logic0-events">
+					<String>21015|GameWin|Progress</String>
+				</StringArray>
+			</Data>
+		</Object>
+		<Object ID="4188154955466458880" Prefab="9003">
+			<Position x="0" y="0" z="45" />
+			<Scale x="0.3" y="0.2" z="0.3" />
+			<Data>
+				<Color key="bmt-colour">
+					<R>0.5019608</R>
+					<G>0.5019608</G>
+					<B>1</B>
+				</Color>
+				<String key="lel-logic0-type">Enter</String>
+				<Integer key="lel-logic0-id">19561</Integer>
+				<StringArray key="lel-logic0-targets">
+					<String>60409|Anything</String>
+				</StringArray>
+				<Boolean key="lel-logic0-all-targets">False</Boolean>
+				<StringArray key="lel-logic0-events">
+					<String>21015|GameWin|Progress</String>
+				</StringArray>
+			</Data>
+		</Object>
+		<Object ID="1825068412308073823" Prefab="9003">
+			<Position x="0" y="0" z="55" />
+			<Scale x="0.3" y="0.2" z="0.3" />
+			<Data>
+				<Color key="bmt-colour">
+					<R>0.5019608</R>
+					<G>0.5019608</G>
+					<B>1</B>
+				</Color>
+				<String key="lel-logic0-type">Enter</String>
+				<Integer key="lel-logic0-id">19561</Integer>
+				<StringArray key="lel-logic0-targets">
+					<String>60409|Anything</String>
+				</StringArray>
+				<Boolean key="lel-logic0-all-targets">False</Boolean>
+				<StringArray key="lel-logic0-events">
+					<String>21015|GameWin|Progress</String>
+				</StringArray>
+			</Data>
+		</Object>
+		<Object ID="5486682327336024470" Prefab="9003">
+			<Position x="-5" y="0" z="50" />
+			<Scale x="0.2" y="0.2" z="0.3" />
+			<Data>
+				<Color key="bmt-colour">
+					<R>0.5019608</R>
+					<G>0.5019608</G>
+					<B>1</B>
+				</Color>
+				<String key="lel-logic0-type">Enter</String>
+				<Integer key="lel-logic0-id">19561</Integer>
+				<StringArray key="lel-logic0-targets">
+					<String>60409|Anything</String>
+				</StringArray>
+				<Boolean key="lel-logic0-all-targets">False</Boolean>
+				<StringArray key="lel-logic0-events">
+					<String>21015|GameWin|Progress</String>
+				</StringArray>
+			</Data>
+		</Object>
+		<Object ID="3411999470224958084" Prefab="9003">
+			<Position x="5" y="0" z="50" />
+			<Scale x="0.2" y="0.2" z="0.3" />
+			<Data>
+				<Color key="bmt-colour">
+					<R>0.5019608</R>
+					<G>0.5019608</G>
+					<B>1</B>
+				</Color>
+				<String key="lel-logic0-type">Enter</String>
+				<Integer key="lel-logic0-id">19561</Integer>
+				<StringArray key="lel-logic0-targets">
+					<String>60409|Anything</String>
+				</StringArray>
+				<Boolean key="lel-logic0-all-targets">False</Boolean>
+				<StringArray key="lel-logic0-events">
+					<String>21015|GameWin|Progress</String>
+				</StringArray>
+			</Data>
+		</Object>
+		<Object ID="-2327960043744445567" Prefab="7000">
+			<Position x="0" y="0" z="-11" />
+			<Scale x="25" y="3" z="0.8" />
+			<Data>
+				<Boolean key="bmt-Disable Texture">True</Boolean>
+				<Boolean key="bmt-lel-enable-physics">False</Boolean>
+			</Data>
+		</Object>
+		<Object ID="-6476205459761758432" Prefab="7000">
+			<Position x="-12" y="0" z="0" />
+			<Rotation x="-7.536445E-15" y="0.7071068" z="-2.304047E-07" w="0.7071068" />
+			<Scale x="25" y="3" z="0.8" />
+			<Data>
+				<Boolean key="bmt-Disable Texture">True</Boolean>
+				<Boolean key="bmt-lel-enable-physics">False</Boolean>
+			</Data>
+		</Object>
+		<Object ID="-732333427225355918" Prefab="7000">
+			<Position x="12" y="0" z="0" />
+			<Rotation x="-7.536446E-15" y="0.7071068" z="-2.304047E-07" w="0.7071068" />
+			<Scale x="25" y="3" z="0.8" />
+			<Data>
+				<Boolean key="bmt-Disable Texture">True</Boolean>
+				<Boolean key="bmt-lel-enable-physics">False</Boolean>
+			</Data>
+		</Object>
+	</Objects>
+</Level>

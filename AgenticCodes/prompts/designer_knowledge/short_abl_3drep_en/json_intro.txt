@@ -1,0 +1,23 @@
+```json
+[
+    {"GP":[0,5.05,0],"GR":[0,0,0,1]},
+    {"id": 0, "Position":[0,0,0], "Rotation":[0,0,0,1]},
+    {"id": Block Type ID, "Position":[x,y,z], "Rotation":[x,y,z,w]},
+]
+```
+If it is a linear block (Type ID is 7 or 9, other blocks are not linear blocks), it will be:
+```json
+{
+    "id":Block Type ID,
+    "Position":[x,y,z],
+    "Rotation":[0,0,0,1],
+    "end-position":[x,y,z]
+}
+```
+Notes:
+0. The "GP","GR" and the dict with "id": 0 must be kept and Do Not modify them.
+1. Block Type ID is int
+2. Position is Block Global Position, is List[float,float,float]
+3. Rotation is Block Global Quaternion, is List[float,float,float,float]
+4. end-position is List[float,float,float], equals to Building Point B Global Position - Building Point A Global Position, this property only appears in Linear Block, do not change the Rotation of linear blocks.
+5. "Position" and "Rotation": Each block’s origin is its connection point. When position and rotation are both zero, the connection point sits at the world origin; the block’s geometric center lies at (0, 0, +depth/2) in the block’s own space. Only Starting Block's connection point is geometric center. A parent block’s “constructible point” gives the world position of a child block’s connection point; the child’s own “constructible points” are expressed relative to that same connection point (its local origin). To obtain the block’s bounding box, treat the connection point as (0, 0, 0): the min corner is (−width/2, −height/2, 0) and the max corner is (+width/2, +height/2, +depth).

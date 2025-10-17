@@ -1,0 +1,31 @@
+```json
+        {
+    "definition": "Construct a machine that can fulfill the user's requirements",
+    "function_points": ["Function Point 1", "Function Point 2", "Function Point 3"],
+    "design_structure": [
+        {
+            "function_name": "Structure 1 Name",
+            "description": "Description of Structure 1",
+            "related_function_points": ["Function Point 1", "Function Point 2"]
+        },
+        {
+            "function_name": "Structure 2 Name",
+            "description": "Description of Structure 2",
+            "related_function_points": ["Function Point 3"]
+        }
+    ],
+    "build_order": ["Structure 2 Name", "Structure 1 Name"],
+    "machine_structure": {
+        "Structure 1 Name": {
+            "block_id": [ID1, ID2, ID3...],
+            "reason": "Reason for use"
+        },
+        "Structure 2 Name": {
+            "block_id": [ID4, ID5, ID6...],
+            "reason": "Reason for use"
+        }
+    }
+}
+```
+
+

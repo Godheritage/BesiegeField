@@ -1,0 +1,61 @@
+﻿<Level>
+	<LevelSettings EditorVersion="0.9" UseVoting="False" CurtainMode="False" AllowExcessPlayers="True" HidePlayerLabels="False" AllowCopyMachine="True" allowModMachines="True" Environment="None">
+		<DisableFire Enabled="False" Locked="False" />
+		<DisableExplosions Enabled="False" Locked="False" />
+		<DisableProjectiles Enabled="False" Locked="False" />
+		<ZeroG Enabled="False" Locked="False" />
+		<InfiniteAmmo Enabled="False" Locked="False" />
+		<Invincibility Enabled="False" Locked="False" />
+		<ExplosiveCannonballs Enabled="False" Locked="False" />
+		<DisableBounds Enabled="False" Locked="False" />
+	</LevelSettings>
+	<CustomData>
+		<StringArray key="requiredMods" />
+	</CustomData>
+	<Objects>
+		<Object ID="-884009775299791626" Prefab="7000">
+			<Position x="11" y="0" z="0" />
+			<Scale x="0.8" y="3" z="22" />
+			<Data>
+				<Boolean key="bmt-Disable Texture">True</Boolean>
+				<Boolean key="bmt-lel-enable-physics">False</Boolean>
+			</Data>
+		</Object>
+		<Object ID="4677978824980636129" Prefab="7000">
+			<Position x="-11" y="0" z="0" />
+			<Scale x="0.8" y="3" z="22" />
+			<Data>
+				<Boolean key="bmt-Disable Texture">True</Boolean>
+				<Boolean key="bmt-lel-enable-physics">False</Boolean>
+			</Data>
+		</Object>
+		<Object ID="-6055645786741603022" Prefab="9001">
+			<Position x="0" y="5.05" z="0" />
+			<Data>
+				<Integer key="bmt-lel-team">1</Integer>
+			</Data>
+		</Object>
+		<Object ID="4999776589631171158" Prefab="7003">
+			<Position x="-394.1517" y="-0.05000019" z="-887.1651" />
+			<Data>
+				<Boolean key="bmt-lel-enable-physics">False</Boolean>
+			</Data>
+		</Object>
+		<Object ID="-2327960043744445567" Prefab="7000">
+			<Position x="0" y="0" z="-11" />
+			<Scale x="22" y="3" z="0.8" />
+			<Data>
+				<Boolean key="bmt-Disable Texture">True</Boolean>
+				<Boolean key="bmt-lel-enable-physics">False</Boolean>
+			</Data>
+		</Object>
+		<Object ID="4613750914371634348" Prefab="7000">
+			<Position x="0" y="0" z="11" />
+			<Scale x="22" y="3" z="0.8" />
+			<Data>
+				<Boolean key="bmt-Disable Texture">True</Boolean>
+				<Boolean key="bmt-lel-enable-physics">False</Boolean>
+			</Data>
+		</Object>
+	</Objects>
+</Level>

@@ -1,0 +1,141 @@
+﻿<Level>
+	<LevelSettings EditorVersion="0.9" UseVoting="False" CurtainMode="False" AllowExcessPlayers="True" HidePlayerLabels="False" AllowCopyMachine="True" allowModMachines="True" Environment="None">
+		<DisableFire Enabled="False" Locked="False" />
+		<DisableExplosions Enabled="False" Locked="False" />
+		<DisableProjectiles Enabled="False" Locked="False" />
+		<ZeroG Enabled="False" Locked="False" />
+		<InfiniteAmmo Enabled="False" Locked="False" />
+		<Invincibility Enabled="False" Locked="False" />
+		<ExplosiveCannonballs Enabled="False" Locked="False" />
+		<DisableBounds Enabled="False" Locked="False" />
+	</LevelSettings>
+	<CustomData>
+		<StringArray key="requiredMods" />
+	</CustomData>
+	<Objects>
+		<Object ID="2412586467805699697" Prefab="9001">
+			<Position x="0" y="20.05" z="0" />
+			<Data />
+		</Object>
+		<Object ID="-3384154052427081208" Prefab="7014">
+			<Position x="0" y="3.600002" z="16" />
+			<Scale x="3" y="3" z="3" />
+			<Data>
+				<Single key="bmt-density">20</Single>
+				<Single key="bmt-lel-mass">2</Single>
+			</Data>
+		</Object>
+		<Object ID="-4319160811122340443" Prefab="7000">
+			<Position x="0" y="15" z="-10" />
+			<Scale x="25" y="4" z="1" />
+			<Data>
+				<Boolean key="bmt-Disable Texture">True</Boolean>
+				<Boolean key="bmt-lel-enable-physics">False</Boolean>
+			</Data>
+		</Object>
+		<Object ID="-5607477789968304500" Prefab="7000">
+			<Position x="10" y="15" z="12" />
+			<Rotation x="-2.512147E-14" y="-0.7071068" z="2.304045E-07" w="0.7071068" />
+			<Scale x="100" y="4" z="1" />
+			<Data>
+				<Boolean key="bmt-Disable Texture">True</Boolean>
+				<Boolean key="bmt-lel-enable-physics">False</Boolean>
+			</Data>
+		</Object>
+		<Object ID="3706308732914094860" Prefab="7000">
+			<Position x="-10" y="15" z="12" />
+			<Rotation x="-2.512147E-14" y="-0.7071068" z="2.304046E-07" w="0.7071068" />
+			<Scale x="100" y="4" z="1" />
+			<Data>
+				<Boolean key="bmt-Disable Texture">True</Boolean>
+				<Boolean key="bmt-lel-enable-physics">False</Boolean>
+			</Data>
+		</Object>
+		<Object ID="4832705560806140793" Prefab="7000">
+			<Position x="0" y="11.3864" z="26" />
+			<Scale x="25" y="4" z="1" />
+			<Data>
+				<Boolean key="bmt-Disable Texture">True</Boolean>
+				<Boolean key="bmt-lel-enable-physics">False</Boolean>
+			</Data>
+		</Object>
+		<Object ID="-5069984004435547123" Prefab="9003">
+			<Position x="0" y="16" z="11" />
+			<Rotation x="0.7071068" y="3.032597E-07" z="-3.161013E-07" w="0.7071068" />
+			<Scale x="2.099999" y="1.799998" z="0.5999999" />
+			<Data>
+				<String key="lel-logic0-type">Enter</String>
+				<Integer key="lel-logic0-id">53327</Integer>
+				<StringArray key="lel-logic0-targets">
+					<String>43341|Picker|Entity|7014|0|-3384154052427081208</String>
+				</StringArray>
+				<Boolean key="lel-logic0-all-targets">False</Boolean>
+				<StringArray key="lel-logic0-events">
+					<String>19398|GameWin|Progress</String>
+				</StringArray>
+			</Data>
+		</Object>
+		<Object ID="2848183032753289372" Prefab="10003">
+			<Position x="0" y="14.25137" z="18.34555" />
+			<Data />
+		</Object>
+		<Object ID="-4095102084279791245" Prefab="7000">
+			<Position x="-6.988298" y="-1" z="18.29786" />
+			<Rotation x="-2.512147E-14" y="-0.7071068" z="2.304045E-07" w="0.7071068" />
+			<Scale x="13.20001" y="15" z="0.9999971" />
+			<Data>
+				<Boolean key="bmt-Disable Texture">True</Boolean>
+				<Boolean key="bmt-lel-enable-physics">False</Boolean>
+			</Data>
+		</Object>
+		<Object ID="-2021608132468816268" Prefab="7000">
+			<Position x="6.68069" y="-1" z="18.29786" />
+			<Rotation x="-2.512147E-14" y="-0.7071068" z="2.304045E-07" w="0.7071068" />
+			<Scale x="13.20001" y="15" z="0.9999971" />
+			<Data>
+				<Boolean key="bmt-Disable Texture">True</Boolean>
+				<Boolean key="bmt-lel-enable-physics">False</Boolean>
+			</Data>
+		</Object>
+		<Object ID="278805146473301246" Prefab="7000">
+			<Position x="0.01170206" y="-1" z="25.29786" />
+			<Scale x="13.20001" y="15" z="0.9999971" />
+			<Data>
+				<Boolean key="bmt-Disable Texture">True</Boolean>
+				<Boolean key="bmt-lel-enable-physics">False</Boolean>
+			</Data>
+		</Object>
+		<Object ID="7978442971258614176" Prefab="7000">
+			<Position x="0.01170206" y="-1" z="11.29786" />
+			<Scale x="13.20001" y="15" z="0.9999971" />
+			<Data>
+				<Boolean key="bmt-Disable Texture">True</Boolean>
+				<Boolean key="bmt-lel-enable-physics">False</Boolean>
+			</Data>
+		</Object>
+		<Object ID="5783933605257504926" Prefab="7000">
+			<Position x="0" y="0.5" z="19" />
+			<Scale x="30" y="0.1" z="22.7" />
+			<Data>
+				<Boolean key="bmt-Disable Texture">True</Boolean>
+				<Boolean key="bmt-lel-enable-physics">False</Boolean>
+			</Data>
+		</Object>
+		<Object ID="-7444067417321521687" Prefab="7000">
+			<Position x="0" y="11.3864" z="11" />
+			<Scale x="25" y="4" z="1" />
+			<Data>
+				<Boolean key="bmt-Disable Texture">True</Boolean>
+				<Boolean key="bmt-lel-enable-physics">False</Boolean>
+			</Data>
+		</Object>
+		<Object ID="-8007140066100910028" Prefab="7000">
+			<Position x="0" y="14.5" z="-15" />
+			<Scale x="30" y="0.1" z="50" />
+			<Data>
+				<Boolean key="bmt-Disable Texture">True</Boolean>
+				<Boolean key="bmt-lel-enable-physics">False</Boolean>
+			</Data>
+		</Object>
+	</Objects>
+</Level>
