@@ -1,8 +1,15 @@
-# 🎮 BesiegeField
+<div align="center">
+  <img src="readme/BesiegeField_logo.png" alt="BesiegeField Logo" width="50%">
+</div>
 
 <div align="center">
 
 **An Advanced Framework for LLM-Driven Machine Design in Besiege**
+
+Paper: [Agentic Design of Compositional Machines](https://arxiv.org/abs/2510.14980)
+
+<a href="https://arxiv.org/abs/2510.14980"><img src="https://img.shields.io/badge/arXiv-2510.14980-b31b1b?style=flat-square&logo=arxiv&logoColor=white"></a>
+<a href="https://besiegefield.github.io/"><img src="https://img.shields.io/badge/Project-Website-42a5f5?style=flat-square&logo=firefox&logoColor=white"></a>
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.8+-green.svg)](https://www.python.org/)
@@ -14,8 +21,8 @@
 </div>
 
 ---
-
 ## 📋 Table of Contents
+
 
 - [Overview](#-overview)
 - [Installation](#-installation)
@@ -255,7 +262,7 @@ cd PostTraining/RL
 If you find this repository useful for your research or projects, please consider citing our work:
 
 ```bibtex
-@article{besiegefield2025,
+@article{zhang2025besiegefield,
   title={Agentic Design of Compositional Machines},
   author={Zhang, Wenqian and Liu, Weiyang and Liu, Zhen},
   journal={arXiv preprint arXiv:2510.14980},
