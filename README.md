@@ -593,9 +593,18 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
+
+## 👏 Acknowledgement
+
+We’d like to thank the developers of Besiege for creating such an inspiring game and for nurturing such a vibrant player community — without them, this project wouldn’t exist.
+
+Big thanks also to the BepInEx team for their amazing modding framework, which made it possible for us to push the boundaries of what’s possible in Besiege.
+
+---
 ## ⭐ Star History
 
 If you find this project helpful, please consider giving it a star! ⭐
 
 ---
+
 
