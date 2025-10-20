@@ -290,10 +290,10 @@ Performance metrics across different models and methods:
 <td align="center">9.00</td>
 <td align="center">3.86</td>
 <td align="center">4.67</td>
-<td align="center">21.95</td>
+<td align="center"><b>21.95</b></td>
 <td align="center">8.68</td>
-<td align="center">9.83</td>
-<td align="center">18.19</td>
+<td align="center"><b>9.83</b></td>
+<td align="center"><b>18.19</b></td>
 <td align="center">8.35</td>
 </tr>
 <tr>
@@ -301,7 +301,7 @@ Performance metrics across different models and methods:
 <td align="center">2.87</td>
 <td align="center">5.22</td>
 <td align="center">1.96</td>
-<td align="center">9.14</td>
+<td align="center"><b>9.14</b></td>
 <td align="center">14.01</td>
 <td align="center">3.71</td>
 <td align="center">2.00</td>
@@ -346,7 +346,7 @@ Performance metrics across different models and methods:
 </tr>
 <tr>
 <td><b>DeepSeek-V3</b></td>
-<td align="center">3.50</td>
+<td align="center"><b>3.50</b></td>
 <td align="center">4.86</td>
 <td align="center">2.17</td>
 <td align="center">3.07</td>
@@ -359,7 +359,7 @@ Performance metrics across different models and methods:
 <tr>
 <td><b>Kimi K2-0711-preview</b></td>
 <td align="center">2.57</td>
-<td align="center">9.05</td>
+<td align="center"><b>9.05</b></td>
 <td align="center">3.72</td>
 <td align="center">2.82</td>
 <td align="center">11.39</td>
@@ -410,14 +410,14 @@ Performance metrics across different models and methods:
 <tbody>
 <tr>
 <td><b>Gemini 2.5 Pro</b></td>
-<td align="center">33.96</td>
-<td align="center">40.85</td>
+<td align="center"><b>33.96</b></td>
+<td align="center"><b>40.85</b></td>
 <td align="center">6.73</td>
-<td align="center">34.34</td>
-<td align="center">41.66</td>
+<td align="center"><b>34.34</b></td>
+<td align="center"><b>41.66</b></td>
 <td align="center">13.96</td>
-<td align="center">29.96</td>
-<td align="center">41.52</td>
+<td align="center"><b>29.96</b></td>
+<td align="center"><b>41.52</b></td>
 <td align="center">7.78</td>
 </tr>
 <tr>
