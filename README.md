@@ -30,6 +30,8 @@ Paper: [Agentic Design of Compositional Machines](https://arxiv.org/abs/2510.149
   - [AgenticFlow Installation](#2-agenticflow-installation)
 - [Quick Start](#-quick-start)
 - [Fine-tuning](#-llm-fine-tuning)
+- [Performance Leaderboard](#-performance-leaderboard)
+- [RL Fine-tuning Results](#-rl-finetuned-llm-results)
 - [Citation](#-citation)
 
 ---
