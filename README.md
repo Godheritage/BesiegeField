@@ -33,6 +33,9 @@ Paper: [Agentic Design of Compositional Machines](https://arxiv.org/abs/2510.149
 - [Performance Leaderboard](#-performance-leaderboard)
 - [RL Fine-tuning Results](#-rl-finetuned-llm-results)
 - [Citation](#-citation)
+- [License](#-license)
+- [Acknowledgement](#-acknowledgement)
+- [Citation](#-citation)
 
 ---
 
