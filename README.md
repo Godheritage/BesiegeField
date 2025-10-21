@@ -38,6 +38,8 @@ Paper: [Agentic Design of Compositional Machines](https://arxiv.org/abs/2510.149
 
 ---
 
+![Teaser](readme/throwing.gif)
+
 ## 🌟 Overview
 
 BesiegeField is a cutting-edge framework that enables Large Language Models (LLMs) to autonomously design and build complex machines in the Besiege physics-based game environment. This project bridges AI reasoning with creative engineering tasks.
