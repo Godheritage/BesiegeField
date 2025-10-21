@@ -20,6 +20,12 @@ Paper: [Agentic Design of Compositional Machines](https://arxiv.org/abs/2510.149
 
 </div>
 
+
+
+<p align="center">
+  <img src="https://github.com/Godheritage/BesiegeField/blob/main/assets/throwing.gif?raw=true" alt="Demo animation" width="800">
+</p>
+
 ---
 ## 📋 Table of Contents
 
@@ -37,10 +43,6 @@ Paper: [Agentic Design of Compositional Machines](https://arxiv.org/abs/2510.149
 - [Citation](#-citation)
 
 ---
-
-<p align="center">
-  <img src="https://github.com/Godheritage/BesiegeField/blob/main/assets/throwing.gif?raw=true" alt="Demo animation" width="800">
-</p>
 
 ## 🌟 Overview
 
