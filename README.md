@@ -246,6 +246,13 @@ cd PostTraining/ColdStart
 ./run_cold_start.sh <model_path>
 ```
 
+If you want to try cold start with [human dataset](https://huggingface.co/datasets/Godheritage/BesiegeField_humandataset_coldstart) (Not Recommended),
+you can run with:
+```bash
+cd PostTraining/ColdStart
+./run_cold_start.sh <model_path> true
+```
+
 #### Step 2: Merge Checkpoints
 
 Fill the paths in `merge_ckpts.py` before running:
