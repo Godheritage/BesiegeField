@@ -39,7 +39,7 @@ Paper: [Agentic Design of Compositional Machines](https://arxiv.org/abs/2510.149
 ---
 
 <p align="center">
-  <img src="https://github.com/Godheritage/BesiegeField/blob/main/asserts/throwing.gif?raw=true" alt="Demo animation" width="800">
+  <img src="https://github.com/Godheritage/BesiegeField/blob/main/assets/throwing.gif?raw=true" alt="Demo animation" width="800">
 </p>
 
 ## 🌟 Overview
