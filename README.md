@@ -222,21 +222,21 @@ pip install -r requirements_rl.txt
 
 ### ❄️ Cold Start Training
 
-#### Step 1: Download Dataset
+<!-- #### Step 1: Download Dataset
 
 ```bash
 cd PostTraining/ColdStart/dataset
 ./download_dataset.sh
-```
+``` -->
 
-#### Step 2: Run Cold Start
+#### Step 1: Run Cold Start (Dataset will download from [huggingface](https://huggingface.co/datasets/Godheritage/BesiegeField_geminidataset_coldstart))
 
 ```bash
-cd ..
-./run_cold_start.sh
+cd PostTraining/ColdStart
+./run_cold_start.sh <model_path>
 ```
 
-#### Step 3: Merge Checkpoints
+#### Step 2: Merge Checkpoints
 
 Fill the paths in `merge_ckpts.py` before running:
 
@@ -248,7 +248,7 @@ python merge_ckpts.py
 
 ### 🎓 Reinforcement Learning
 
-Configure `rl_config.yaml` with your settings, then run:
+Configure `rl_config.yaml` with your settings (**important!**), then run:
 
 ```bash
 cd PostTraining/RL
