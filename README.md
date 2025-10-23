@@ -11,6 +11,8 @@ Paper: [Agentic Design of Compositional Machines](https://arxiv.org/abs/2510.149
 <a href="https://arxiv.org/abs/2510.14980"><img src="https://img.shields.io/badge/arXiv-2510.14980-b31b1b?style=flat-square&logo=arxiv&logoColor=white"></a>
 <a href="https://besiegefield.github.io/"><img src="https://img.shields.io/badge/Project-Website-42a5f5?style=flat-square&logo=firefox&logoColor=white"></a>
 <a href="https://huggingface.co/spaces/Godheritage/BesiegeField-MachineGenerator"><img src="https://img.shields.io/badge/🤗-HuggingFace%20Demo-ff9800?style=flat-square"></a>
+<a href="https://huggingface.co/Godheritage/models"><img src="https://img.shields.io/badge/🤗-Catapult RL%20Model-ff9800?style=flat-square"></a>
+<a href="https://huggingface.co/BesiegeField/Qwen2.5-14B-Instruct-BesiegeField-CarRL"><img src="https://img.shields.io/badge/🤗-Car RL%20Model-ff9800?style=flat-square"></a>
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.8+-green.svg)](https://www.python.org/)
