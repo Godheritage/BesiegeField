@@ -26,13 +26,13 @@ def override_global_config(args: argparse.Namespace, global_config) -> argparse.
             setattr(global_config, k, v)
 
 def run_agentic_pipeline(use_model, task, env_num, user_input,env_loop_run_times
-                         ,continue_root,skip_designer,skip_inspector,skip_refiner,block_limitations):
+                         ,continue_root,skip_designer,skip_inspector,skip_refiner,block_limitations,pass_userinput_to):
     agentic_pipeline = AgenticPipeline(
         save_root=DEFAULT_SAVE_ROOT,
         model_name=use_model,
         tasks=[task] * env_num
     )
-
+    
     agentic_pipeline.run(
         user_input=user_input,
         save=True,
@@ -41,17 +41,20 @@ def run_agentic_pipeline(use_model, task, env_num, user_input,env_loop_run_times
         skip_designer=skip_designer,
         skip_inspector=skip_inspector,
         skip_refiner=skip_refiner,
-        mcts_search_times=env_loop_run_times
+        mcts_search_times=env_loop_run_times,
+        pass_userinput_to=pass_userinput_to
     )
     agentic_pipeline._release_env_manager()
     
     
 
 if __name__ == "__main__":    
+    
     signal.signal(signal.SIGINT, signal_handler)  
     signal.signal(signal.SIGTERM, signal_handler) 
 
     parser = argparse.ArgumentParser(description="Run AgenticPipeline with specified parameters.")
+    
     parser.add_argument("-use_model", type=str, default="gemini-2.5-pro", help="Model name to use")
     parser.add_argument("-task", type=str, default="catapult/catapult_level2", help="Task name")
     parser.add_argument("-env_num", type=int, default=2, help="Number of environments")
@@ -63,13 +66,17 @@ if __name__ == "__main__":
     parser.add_argument("-skip_inspector", type=bool, default=False, help="If skip inspector (e.g. You have finished call inspector in previous experiment)")
     parser.add_argument("-skip_refiner", type=bool, default=False, help="If skip refiner (e.g. You have finished call refiner in previous experiment)")
     parser.add_argument("-WHEEL_AUTO_ON", type=bool, default=True, help="If powered wheel auto working in game")
-    
     parser.add_argument("-overwrite_levelmenu", type=bool, default=True, help="use task deafult config to overwrite prompt and block_limitations")
     
     args = parser.parse_args()
-    override_global_config(args,global_config)
+    
+    pass_userinput_to=[]
+    simulate_menu = LEVELMENUS[args.task]
+    if "pass_userinput_to" in simulate_menu:
+        pass_userinput_to = simulate_menu["pass_userinput_to"]
     
     if args.overwrite_levelmenu:
+        override_global_config(args,global_config)
         args.user_input = LEVELMENUS[args.task]["deafult_prompt"]
         args.block_limitations = LEVELMENUS[args.task]["block_limitations"]
     
@@ -83,5 +90,6 @@ if __name__ == "__main__":
         skip_designer=args.skip_designer,
         skip_inspector=args.skip_inspector,
         skip_refiner=args.skip_refiner,
-        block_limitations=args.block_limitations
+        block_limitations=args.block_limitations,
+        pass_userinput_to=pass_userinput_to
     )

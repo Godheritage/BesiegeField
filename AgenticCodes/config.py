@@ -24,14 +24,6 @@ FORBIDEN_BLOCKS=[85,82,83,79,80,81,78,84]
 WHEEL_AUTO_ON=True
 LINEAR_BLOCKS=["7","9","45"]
 
-TRAIN_INFERENCE_MAP = {
-    "designer":[],
-    "builder":["designer"],
-    "quizzer":["designer","builder"],
-    "modifier":["designer","builder","quizzer","env_querier"],
-    "env_querier":["designer","builder","quizzer","modifier"],
-}
-
 # --- env config ---
 LIFECYCLE = 0.2  # game atomic clock
 MACHINE_TXT_FILENAMES = [

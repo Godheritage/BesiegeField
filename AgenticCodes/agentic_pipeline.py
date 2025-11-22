@@ -148,6 +148,13 @@ class AgenticPipeline:
                 agent_num = builder_nums
             else: agent_num =1
             
+            if self.exp_type=="abl-no-besiege":
+                metadesigner_prompt_type="deafult_nobesiege"
+                designer_prompt_type="short_nobesiege"
+                inspector_prompt_type="short_nobesiege"
+                refiner_prompt_type="short_nobesiege"
+                env_querier_prompt_type="short_nobesiege"
+            
             agent_prompt_type_map={
                 "meta-designer":metadesigner_prompt_type,
                 "designer":designer_prompt_type,
@@ -323,7 +330,7 @@ class AgenticPipeline:
             output = read_txt(debug_path)
 
         designer_output = extract_json_from_string(output)
-
+        # print(designer_output["design_structure"])
         conclusion_list = []
         block_limitation_list = []
         required_keys = {"build_order", "design_structure", "machine_structure"}
@@ -424,12 +431,12 @@ class AgenticPipeline:
                             st_tree = dp.abl_3djson_to_treejson(test_3drep)
                             pattern = r'(?s)```json.*?```'
                             new_st = re.sub(pattern,st_tree,test_3drep,count=1)
-                            dp.json_to_xml(new_st,xml_save_path)
+                            dp.json_to_xml(new_st,xml_save_path,LEVELMENUS[self.tasks[0]])
                         else:
                             try:
                                 xml_save_path = os.path.join(dirpath,save_name)
                                 filepath = os.path.join(dirpath, filename)
-                                dp.json_to_xml(filepath,xml_save_path)
+                                dp.json_to_xml(filepath,xml_save_path,LEVELMENUS[self.tasks[0]])
                             except:
                                 pass
                     
@@ -467,12 +474,12 @@ class AgenticPipeline:
                 metadesigner_prompt_type = "deafult"
             metadesigner_agent = self.prepare_agent_auto(
                 temperature=0.7, agent="meta-designer",
-                metadesigner_prompt_type=metadesigner_prompt_type
+                metadesigner_prompt_type=metadesigner_prompt_type,block_limitations=block_limitations
             )[0]
             
-            if block_limitations:
-                additional_blocks_str = f'{"The following are the recommended block types for building the machine. Please flexibly select the required block types based on the recommendations and other block features."}{block_limitations}'
-                user_input += "\n" + additional_blocks_str
+            # if block_limitations:
+            #     additional_blocks_str = f'{"The following are the recommended block types for building the machine. Please flexibly select the required block types based on the recommendations and other block features."}{block_limitations}'
+            #     user_input += "\n" + additional_blocks_str
 
             metadesigner_output = self.ask_metadesigner(user_input,metadesigner_agent,save=save)
 
@@ -506,13 +513,12 @@ class AgenticPipeline:
         
 
     
-    def call_designer(self, skip_designer=False, save=True, debug=False):
+    def call_designer(self, skip_designer=False, save=True, debug=False,pass_userinput_to=None):
         if skip_designer:
             return self._load_designer_results_from_disk()
 
         valid_outputs = []
         valid_chain = []
-        
         num_structures = len(self.designer_structures)
 
         for i in range(num_structures):
@@ -542,8 +548,11 @@ class AgenticPipeline:
             )
 
             current_inputs, current_structurechain = self.prepare_designer_inputs(
-                structure_instruction, is_initial_build, valid_outputs, valid_chain
+                structure_instruction, is_initial_build, valid_outputs, valid_chain,pass_userinput_to
             )
+            
+                    
+            
 
             valid_outputs, valid_chain = self.parallel_run_designer(
                 current_inputs=current_inputs, current_structurechain=current_structurechain, debug=debug,max_retry_time=5,designer_agents=designer_agents
@@ -601,12 +610,15 @@ class AgenticPipeline:
         return valid_outputs,valid_chain
 
 
-    def prepare_designer_inputs(self, structure_instruction, init_prompt, valid_outputs, valid_chain):
+    def prepare_designer_inputs(self, structure_instruction, init_prompt, valid_outputs, valid_chain,pass_userinput_to):
         if init_prompt:
             if self.exp_type=="abl-threed-rep":
                 init_json = """```json[{"GP":[0,5.05,0],"GR":[0,0,0,1]},{"id": 0, "Position":[0,0,0], "Rotation":[0,0,0,1]}]```"""
             else:
                 init_json = INITJSON
+            
+            if pass_userinput_to and init_prompt and "designer" in pass_userinput_to:
+                init_json = f"Follow above and below instructions; if conflicting, below takes precedence.\n{self.user_input}"
             
             user_input = f"{structure_instruction}\n{init_json}"
             current_inputs = [user_input] * self.designer_n
@@ -628,7 +640,8 @@ class AgenticPipeline:
                     "chain": valid_chain[i]
                 })
             except Exception as e:
-                print(f"Error processing (chain: {valid_chain[i]}): {e}")
+                tb = traceback.format_exc()
+                print(f"Error processing (chain: {valid_chain[i]}):\n{tb}")
         
         if not source_data:
             print('no source_data')
@@ -706,6 +719,7 @@ class AgenticPipeline:
         self.quizzer_model_name = model_name
     
     def _auto_get_path(self,continue_root=None):
+        # print(continue_root)
         agent_paths = {}
         if continue_root:
             agent_paths["save_root"]=continue_root
@@ -718,13 +732,16 @@ class AgenticPipeline:
         for agent in agent_names:
             model_name = self.designer_model_name.replace("/","_")
             agent_folder = f"{agent}_{model_name}"
+            
             agent_paths[agent] = os.path.join(agent_paths["save_root"], agent_folder)
+        # print(agent_paths)
         return agent_paths
             
 
     def run(self,user_input,save,continue_root=None,skip_designer = False,skip_inspector=False,
-            skip_refiner=False,block_limitations=[],no_envloop=False,mcts_search_times=5):
+            skip_refiner=False,block_limitations=[],no_envloop=False,mcts_search_times=5,pass_userinput_to=None):
 
+        self.user_input = user_input
         self.agentic_paths = self._auto_get_path(continue_root=continue_root)
         if self.exp_type=="abl-metadesigner":
             self.abl_call_designer(user_input,block_limitations=block_limitations)
@@ -739,7 +756,7 @@ class AgenticPipeline:
                     "block_limitation_list": block_limitations,
                 }
             
-            valid_outputs,valid_chain = self.call_designer(skip_designer = skip_designer,debug=True)
+            valid_outputs,valid_chain = self.call_designer(skip_designer = skip_designer,debug=True,pass_userinput_to=pass_userinput_to)
             if valid_outputs==[] and valid_chain==[]:
                 print("error! designer no valid results")
                 return
@@ -1461,7 +1478,11 @@ class AgenticPipeline:
         valid_chain=self.agentic_paths["structure_chain"]
         
         for chain in valid_chain:
-            designer_id = chain.split("-")[-1]
+            if "-" not in chain:
+                designer_id= chain.split("_")[-1]
+            else:
+                designer_id = chain.split("-")[-1]
+            
             valid_machine_root = os.path.join(self.agentic_paths["designer"], f"designer_{designer_id}", chain)
             valid_machine_path = os.path.join(valid_machine_root, "output.txt")
             
@@ -1717,9 +1738,16 @@ class AgenticPipeline:
             total_input[i] += "-fail_history_steps_exp-"
             total_input[i] += str(max_retry_time)
             total_input[i] += "-----"
-            total_input[i] += str(refine_result.get("modify_step", ""))
-            refiner_output[i]=refine_result["result"]
-            refiner_machine[i]=refine_result["refine_result"]
+            if refine_result:
+                total_input[i] += str(refine_result.get("modify_step", ""))
+                refiner_output[i]=refine_result["result"]
+                refiner_machine[i]=refine_result["refine_result"]
+            else:
+                total_input[i] += ""
+                refiner_output[i]=""
+                refiner_machine[i]=""
+                
+            
         
         return total_input,refiner_output,refiner_machine
 
@@ -1765,6 +1793,8 @@ class AgenticPipeline:
             existing_indices=[]
         save_paths = [path for i, path in enumerate(save_paths) if i not in existing_indices]
         quizes = [quiz for i, quiz in enumerate(quizes) if i not in existing_indices]
+
+
 
         for i, quiz in enumerate(quizes):
             print(f"processing machine {i}")
@@ -1928,7 +1958,7 @@ class AgenticPipeline:
 
         is_win=False
         for output in env_outputs:
-            if "Win" in output:
+            if "LevelWin" in output:
                 is_win=True
 
         cleaned_outputs = []
@@ -2033,7 +2063,7 @@ class AgenticPipeline:
                 if check_result is True:
                     random_name = generate_random_string()
                     tmp_path = os.path.join(old_kargs["tmp_path"], f"{random_name}.bsg")
-                    dp.json_to_xml(response,tmp_path)
+                    dp.json_to_xml(response,tmp_path,LEVELMENUS[self.tasks[0]])
                     env_feedback = self.env_simulate(task=self.tasks[0],
                                     machine_bsg=tmp_path,
                                     use_querier=False,

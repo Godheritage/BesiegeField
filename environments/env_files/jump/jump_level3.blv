@@ -1,0 +1,66 @@
+﻿<Level>
+	<LevelSettings EditorVersion="0.9" UseVoting="False" CurtainMode="False" AllowExcessPlayers="True" HidePlayerLabels="False" AllowCopyMachine="True" allowModMachines="True" Environment="None">
+		<DisableFire Enabled="False" Locked="False" />
+		<DisableExplosions Enabled="False" Locked="False" />
+		<DisableProjectiles Enabled="False" Locked="False" />
+		<ZeroG Enabled="False" Locked="False" />
+		<InfiniteAmmo Enabled="False" Locked="False" />
+		<Invincibility Enabled="False" Locked="False" />
+		<ExplosiveCannonballs Enabled="False" Locked="False" />
+		<DisableBounds Enabled="False" Locked="False" />
+	</LevelSettings>
+	<CustomData>
+		<StringArray key="requiredMods" />
+	</CustomData>
+	<Objects>
+		<Object ID="7253980961525997874" Prefab="9001">
+			<Position x="0" y="25" z="0" />
+			<Data />
+		</Object>
+		<Object ID="6786419917733318148" Prefab="7000">
+			<Position x="0" y="0" z="15" />
+			<Scale x="20" y="20" z="40" />
+			<Data>
+				<Boolean key="bmt-lel-enable-physics">False</Boolean>
+			</Data>
+		</Object>
+		<Object ID="578248125098598762" Prefab="7000">
+			<Position x="0" y="0" z="62" />
+			<Scale x="20" y="20" z="40" />
+			<Data>
+				<Boolean key="bmt-lel-enable-physics">False</Boolean>
+			</Data>
+		</Object>
+		<Object ID="574963530076240490" Prefab="7000">
+			<Position x="-10" y="20" z="62.06583" />
+			<Scale x="1" y="10" z="40" />
+			<Data>
+				<Boolean key="bmt-lel-enable-physics">False</Boolean>
+			</Data>
+		</Object>
+		<Object ID="4194451549285352700" Prefab="7000">
+			<Position x="10" y="20" z="62.04997" />
+			<Scale x="1" y="10" z="40" />
+			<Data>
+				<String key="bmt-lel-name">立方体</String>
+				<Boolean key="bmt-lel-enable-physics">False</Boolean>
+			</Data>
+		</Object>
+		<Object ID="-1198712083285699658" Prefab="9003">
+			<Position x="0" y="20.04433" z="65.47942" />
+			<Scale x="2.4" y="1" z="4" />
+			<Data>
+				<Boolean key="bmt-hide-visual">False</Boolean>
+				<String key="lel-logic0-type">Enter</String>
+				<Integer key="lel-logic0-id">23365</Integer>
+				<StringArray key="lel-logic0-targets">
+					<String>63564|Picker|Block|0|0</String>
+				</StringArray>
+				<Boolean key="lel-logic0-all-targets">False</Boolean>
+				<StringArray key="lel-logic0-events">
+					<String>27765|GameWin|Progress</String>
+				</StringArray>
+			</Data>
+		</Object>
+	</Objects>
+</Level>

@@ -1,0 +1,18 @@
+**Building Principles**
+1.  **Collision Prevention and Size**:
+    *   New blocks must not overlap with any existing blocks.
+    *   The overall mechanical size must be kept within the range of `17(length Z) x 17(width X) x 9.5(height Y)`.
+2.  **Function-Oriented**:
+    *   **Exclusive Connection Points**: A constructible point can only be connected once, but linear blocks can use occupied connection points.
+    *   **Correct Orientation**: Ensure that functional blocks such as wheels and hinges are oriented correctly to achieve the intended function.
+3.  **Efficiency First**:
+    *   Complete the design goal with the fewest blocks possible.
+    *   **Ignore the Ground**: The ground will automatically adapt to the lowest point of the mechanism, so there is no need to consider ground penetration.
+
+**Output Requirements**
+1.  **Strict Structure**: Your response **must only contain** two parts: Construction Plan and Final JSON. **Prohibit** any additional greetings, explanations, or comments.
+2.  **Pure JSON**:
+    *   The complete JSON code block must be placed within ```json ... ```.
+    *   **Prohibit** modifying the initial structure.
+    *   **Prohibit** modifying the `scale` property of any block.
+    *   **Prohibit** adding comments or non-existent properties in the JSON.

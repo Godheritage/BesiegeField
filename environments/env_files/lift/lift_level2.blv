@@ -1,0 +1,88 @@
+﻿<Level>
+	<LevelSettings EditorVersion="0.9" UseVoting="False" CurtainMode="False" AllowExcessPlayers="True" HidePlayerLabels="False" AllowCopyMachine="True" allowModMachines="True" Environment="Barren">
+		<DisableFire Enabled="False" Locked="False" />
+		<DisableExplosions Enabled="False" Locked="False" />
+		<DisableProjectiles Enabled="False" Locked="False" />
+		<ZeroG Enabled="False" Locked="False" />
+		<InfiniteAmmo Enabled="False" Locked="False" />
+		<Invincibility Enabled="False" Locked="False" />
+		<ExplosiveCannonballs Enabled="False" Locked="False" />
+		<DisableBounds Enabled="False" Locked="False" />
+	</LevelSettings>
+	<CustomData>
+		<StringArray key="requiredMods" />
+	</CustomData>
+	<Objects>
+		<Object ID="7869292524401069635" Prefab="9001">
+			<Position x="0" y="5.072" z="0" />
+			<Data />
+		</Object>
+		<Object ID="2512581914216915560" Prefab="7000">
+			<Position x="0" y="10" z="0" />
+			<Scale x="4" y="4" z="4" />
+			<Data>
+				<Single key="bmt-lel-mass">20</Single>
+			</Data>
+		</Object>
+		<Object ID="4296554170914659060" Prefab="9003">
+			<Position x="0" y="12" z="0" />
+			<Scale x="2.2" y="0.1" z="2.2" />
+			<Data>
+				<String key="bmt-lel-name">Trigger_2</String>
+				<String key="lel-logic0-type">Enter</String>
+				<Integer key="lel-logic0-id">48583</Integer>
+				<StringArray key="lel-logic0-targets">
+					<String>36337|Picker|Entity|7000|0|2512581914216915560</String>
+				</StringArray>
+				<Boolean key="lel-logic0-all-targets">False</Boolean>
+				<StringArray key="lel-logic0-events">
+					<String>7444|Transform|(0, 0, 0)|(0, 0, 0)|Lerp|WorldDirection|1|AroundWorldAxis|2512581914216915560</String>
+					<String>56123|Repeat|Infinity</String>
+				</StringArray>
+			</Data>
+		</Object>
+		<Object ID="-1172900222925817009" Prefab="9003">
+			<Position x="0" y="10" z="0" />
+			<Scale x="2.2" y="0.1" z="2.2" />
+			<Data>
+				<Color key="bmt-colour">
+					<R>0.5019608</R>
+					<G>0.5019608</G>
+					<B>1</B>
+				</Color>
+				<String key="bmt-lel-name">触发器Trigger_1</String>
+				<String key="lel-logic0-type">Enter</String>
+				<Integer key="lel-logic0-id">48583</Integer>
+				<StringArray key="lel-logic0-targets">
+					<String>36337|AnyBlock|0</String>
+				</StringArray>
+				<Boolean key="lel-logic0-all-targets">False</Boolean>
+				<StringArray key="lel-logic0-events">
+					<String>60817|Deactivate|4296554170914659060</String>
+				</StringArray>
+			</Data>
+		</Object>
+		<Object ID="3322908574380930322" Prefab="9003">
+			<Position x="0" y="15" z="0" />
+			<Scale x="10" y="0.1" z="10" />
+			<Data>
+				<Color key="bmt-colour">
+					<R>0.5019608</R>
+					<G>0.5019608</G>
+					<B>1</B>
+				</Color>
+				<String key="bmt-lel-name">触发器Trigger_3</String>
+				<Boolean key="bmt-hide-visual">False</Boolean>
+				<String key="lel-logic0-type">Enter</String>
+				<Integer key="lel-logic0-id">48583</Integer>
+				<StringArray key="lel-logic0-targets">
+					<String>36337|Picker|Entity|7000|0|2512581914216915560</String>
+				</StringArray>
+				<Boolean key="lel-logic0-all-targets">False</Boolean>
+				<StringArray key="lel-logic0-events">
+					<String>3606|GameWin|Progress</String>
+				</StringArray>
+			</Data>
+		</Object>
+	</Objects>
+</Level>

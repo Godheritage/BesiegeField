@@ -130,7 +130,7 @@ def besiege_level_menus(besiege_env: BesiegeEnv, bsgfile_path: str, instruction_
         # print(instruct)
         if "sleep" in instruct:
             _, duration = instruct.split(" ")
-            time.sleep(int(duration))
+            time.sleep(float(duration))
         elif "LoadMachine:" in instruct:
             load_command = f"LoadMachine:{bsgfile_path}"
             besiege_env.send_message_waiting_receive(load_command, "MachineLoaded")

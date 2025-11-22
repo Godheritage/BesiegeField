@@ -1,0 +1,62 @@
+﻿<Level>
+	<LevelSettings EditorVersion="0.9" UseVoting="False" CurtainMode="False" AllowExcessPlayers="True" HidePlayerLabels="False" AllowCopyMachine="True" allowModMachines="True" Environment="None">
+		<DisableFire Enabled="False" Locked="False" />
+		<DisableExplosions Enabled="False" Locked="False" />
+		<DisableProjectiles Enabled="False" Locked="False" />
+		<ZeroG Enabled="False" Locked="False" />
+		<InfiniteAmmo Enabled="False" Locked="False" />
+		<Invincibility Enabled="False" Locked="False" />
+		<ExplosiveCannonballs Enabled="False" Locked="False" />
+		<DisableBounds Enabled="False" Locked="False" />
+	</LevelSettings>
+	<CustomData>
+		<StringArray key="requiredMods" />
+	</CustomData>
+	<Objects>
+		<Object ID="7253980961525997874" Prefab="9001">
+			<Position x="0" y="25" z="0" />
+			<Data />
+		</Object>
+		<Object ID="-3648541502433015817" Prefab="7000">
+			<Position x="0" y="20" z="26" />
+			<Scale x="20" y="1" z="1" />
+			<Data>
+				<Boolean key="bmt-lel-enable-physics">False</Boolean>
+				<String key="lel-logic0-type">LevelStart</String>
+				<Integer key="lel-logic0-id">31703</Integer>
+				<StringArray key="lel-logic0-events">
+					<String>54860|Transform|(0, 0, -1)|(0, 0, 0)|Lerp|WorldDirection|0.2|AroundWorldAxis|</String>
+					<String>44028|Repeat|Infinity</String>
+				</StringArray>
+			</Data>
+		</Object>
+		<Object ID="6786419917733318148" Prefab="7000">
+			<Position x="0" y="0" z="0" />
+			<Scale x="20" y="20" z="100" />
+			<Data>
+				<Boolean key="bmt-lel-enable-physics">False</Boolean>
+			</Data>
+		</Object>
+		<Object ID="-641442498568894956" Prefab="9003">
+			<Position x="1" y="20.04433" z="45.7431" />
+			<Scale x="2.2" y="1" z="4.8" />
+			<Data>
+				<String key="lel-logic0-type">LevelStart</String>
+				<Integer key="lel-logic0-id">31703</Integer>
+				<StringArray key="lel-logic0-events">
+					<String>54860|Transform|(0, 0, -1)|(0, 0, 0)|Lerp|WorldDirection|0.2|AroundWorldAxis|</String>
+					<String>44028|Repeat|Infinity</String>
+				</StringArray>
+				<String key="lel-logic1-type">Enter</String>
+				<Integer key="lel-logic1-id">54242</Integer>
+				<StringArray key="lel-logic1-targets">
+					<String>10891|Picker|Block|0|0</String>
+				</StringArray>
+				<Boolean key="lel-logic1-all-targets">False</Boolean>
+				<StringArray key="lel-logic1-events">
+					<String>5382|GameWin|Progress</String>
+				</StringArray>
+			</Data>
+		</Object>
+	</Objects>
+</Level>

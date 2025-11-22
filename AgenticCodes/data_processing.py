@@ -85,10 +85,10 @@ def modify_json(data, operations):
         error_dict["reason"]=reason
         return error_dict
 
-    def process_valid_check(data,error_reason,old_parent_to_new_parent,processing_block_id=None):
+    def process_valid_check(data,error_reason,old_parent_to_new_parent,processing_block_id=None,level_menus=None):
         
         if "size error" in error_reason:
-            threeD_infos = get_machine_3D_infos(data)
+            threeD_infos = get_machine_3D_infos(data,level_menus = level_menus)
             old_size = threeD_infos["size"]
             error_reason_list = error_reason.split(";")
             error_reason_size=None
@@ -197,7 +197,7 @@ def modify_json(data, operations):
                     new_parent = int(op_list[1]) 
                     new_buildingpoint = int(op_list[2])
                 except:
-                    return log_error(operation,f"wrong operation type")
+                    return log_error(operation,f"MOVE operation format error.")
 
                 if new_parent<order_ids:
                     new_parent_type = data[new_parent]["id"]
@@ -258,10 +258,14 @@ def modify_json(data, operations):
                 tmp_data = move_block(moving_block,new_parent,new_buildingpoint)
                 
                 tmp_data_forcheck,old_parent_to_new_parent = complete_modify(tmp_data)
+                if tmp_data_forcheck=="Error":
+                    return log_error(operations[-1],"Modify Failed")
                 new_threeDinfo_list = get_3Dinfos_from_json(tmp_data_forcheck)
 
                 
                 tmp_old_data,old_mapping = complete_modify(data)
+                if tmp_old_data=="Error":
+                    return log_error(operations[-1],"Modify Failed")
                 old_threeDinfo_list = get_3Dinfos_from_json(tmp_old_data)
                 
                 if "parent" in data[moving_block]:
@@ -295,11 +299,14 @@ def modify_json(data, operations):
                 
                 data = tmp_data
             elif len(op_list)==5:
-                moving_block = int(op_list[0])
-                new_parent_a = int(op_list[1]) 
-                new_buildingpoint_a = int(op_list[2])
-                new_parent_b = int(op_list[3]) 
-                new_buildingpoint_b = int(op_list[4])
+                try:
+                    moving_block = int(op_list[0])
+                    new_parent_a = int(op_list[1]) 
+                    new_buildingpoint_a = int(op_list[2])
+                    new_parent_b = int(op_list[3]) 
+                    new_buildingpoint_b = int(op_list[4])
+                except:
+                    return log_error(operation,"MOVE operation format error.")
 
                 if new_parent_a<order_ids:
                     new_parent_type_a = data[new_parent_a]["id"]
@@ -382,20 +389,27 @@ def modify_json(data, operations):
                                       new_parent_b,new_buildingpoint_b)
                 
                 tmp_data_forcheck,old_parent_to_new_parent = complete_modify(tmp_data)
+                if tmp_data_forcheck=="Error":
+                    return log_error(operations[-1],"Modify Failed")
                 new_threeDinfo_list = get_3Dinfos_from_json(tmp_data_forcheck)
 
                 
                 tmp_old_data,old_mapping = complete_modify(data)
+                if tmp_old_data=="Error":
+                    return log_error(operations[-1],"Modify Failed")
                 old_threeDinfo_list = get_3Dinfos_from_json(tmp_old_data)
                 
                 data = tmp_data
 
         elif "Remove" in operation:
             if len(op_list)!=1:
-                print(f"wrong remove format{operation}")
+                print(f"wrong remove format {operation}")
                 a_head = "wrong remove format"
                 return log_error(operation,f"{a_head}")
-            removing_block = int(op_list[0])
+            try:
+                removing_block = int(op_list[0])
+            except:
+                return log_error(operation,"Remove operation format error.")
             if removing_block in removed_blocks:
                 a_head = "can not Remove Blocks that have already been removed"
                 return log_error(operation,f"order_id {a_head} {removing_block}")
@@ -446,9 +460,12 @@ def modify_json(data, operations):
         elif "Add" in operation:
             
             if len(op_list)==3:
-                new_block_type = str(op_list[0])
-                new_parent = int(op_list[1])
-                new_buildingpoint = int(op_list[2])
+                try:
+                    new_block_type = str(op_list[0])
+                    new_parent = int(op_list[1])
+                    new_buildingpoint = int(op_list[2])
+                except:
+                    return log_error(operation,"ADD operation format error.")
 
                 if new_parent<order_ids:
                     new_parent_type = data[new_parent]["id"]
@@ -491,9 +508,15 @@ def modify_json(data, operations):
 
                 
                 tmp_data_forcheck,old_parent_to_new_parent = complete_modify(tmp_data)
+                if tmp_data_forcheck=="Error":
+                    return log_error(operations[-1],"Modify Failed")
+                                    
                 new_threeDinfo_list = get_3Dinfos_from_json(tmp_data_forcheck)
                 
                 tmp_old_data,old_mapping = complete_modify(data)
+                if tmp_old_data=="Error":
+                    return log_error(operations[-1],"Modify Failed")
+                
                 old_threeDinfo_list = get_3Dinfos_from_json(tmp_old_data)
                 try:
                     new_facing = new_threeDinfo_list[-1]["abs"]["orient"]
@@ -518,11 +541,15 @@ def modify_json(data, operations):
                 data = tmp_data
 
             elif len(op_list)==5:
-                new_block_type = str(op_list[0])
-                new_parent_a = int(op_list[1])
-                new_buildingpoint_a = int(op_list[2])
-                new_parent_b = int(op_list[3])
-                new_buildingpoint_b = int(op_list[4])
+                try:
+                    new_block_type = str(op_list[0])
+                    new_parent_a = int(op_list[1])
+                    new_buildingpoint_a = int(op_list[2])
+                    new_parent_b = int(op_list[3])
+                    new_buildingpoint_b = int(op_list[4])
+                except:
+                    return log_error(operation,"ADD operation format error.")
+                    
                 # print(new_parent_a)
 
                 if new_parent_a>=order_ids:
@@ -561,47 +588,51 @@ def modify_json(data, operations):
                           new_parent_b,new_buildingpoint_b)
             else:
                 print("Wrong ADD format")
-        
-    return complete_modify(data)
+    
+    new_blocks,old_orderid_to_new_orderid = complete_modify(data)
+    if new_blocks=="Error":
+        return log_error(operations[-1],"Modify Failed")
+    
+    
+    return new_blocks,old_orderid_to_new_orderid
 
 def complete_modify(data):
-    new_blocks=[]
-    old_orderid_to_new_orderid={-1:-1,0:0}
-    for block in data:
-        if "parent" in block and block["parent"]!=-100:
-            old_order_id = block["order_id"]
-            new_order_id = len(new_blocks)
-            old_parent = block["parent"]
-            new_block = copy.deepcopy(block)
-            new_block["order_id"] = new_order_id
-            new_block["parent"] = old_parent
-            new_blocks.append(new_block)
-            old_orderid_to_new_orderid[old_order_id] = new_order_id
-        elif "parent_a" in block and  block["parent_a"]!=-100:
-            old_order_id = block["order_id"]
-            new_order_id = len(new_blocks)
-            old_parent_a = block["parent_a"]
-            old_parent_b = block["parent_b"]
-            new_block = copy.deepcopy(block)
-            new_block["order_id"] = new_order_id
-            new_block["parent_a"] = old_parent_a
-            new_block["parent_b"] = old_parent_b
-            new_blocks.append(new_block)
-            old_orderid_to_new_orderid[old_order_id] = new_order_id
-    for block in new_blocks:
-        if "parent" in block:
-            old_parent = block["parent"]
-
-            block["parent"] = old_orderid_to_new_orderid[old_parent]
-        elif "parent_a" in block:
-            old_parent_a = block["parent_a"]
-            old_parent_b = block["parent_b"]
-            try:
+    try:
+        new_blocks=[]
+        old_orderid_to_new_orderid={-1:-1,0:0}
+        for block in data:
+            if "parent" in block and block["parent"]!=-100:
+                old_order_id = block["order_id"]
+                new_order_id = len(new_blocks)
+                old_parent = block["parent"]
+                new_block = copy.deepcopy(block)
+                new_block["order_id"] = new_order_id
+                new_block["parent"] = old_parent
+                new_blocks.append(new_block)
+                old_orderid_to_new_orderid[old_order_id] = new_order_id
+            elif "parent_a" in block and  block["parent_a"]!=-100:
+                old_order_id = block["order_id"]
+                new_order_id = len(new_blocks)
+                old_parent_a = block["parent_a"]
+                old_parent_b = block["parent_b"]
+                new_block = copy.deepcopy(block)
+                new_block["order_id"] = new_order_id
+                new_block["parent_a"] = old_parent_a
+                new_block["parent_b"] = old_parent_b
+                new_blocks.append(new_block)
+                old_orderid_to_new_orderid[old_order_id] = new_order_id
+        for block in new_blocks:
+            if "parent" in block:
+                old_parent = int(block["parent"])
+                block["parent"] = old_orderid_to_new_orderid[old_parent]
+            elif "parent_a" in block:
+                old_parent_a = block["parent_a"]
+                old_parent_b = block["parent_b"]
                 block["parent_a"] = old_orderid_to_new_orderid[old_parent_a]
                 block["parent_b"] = old_orderid_to_new_orderid[old_parent_b]
-            except:
-                print(data)
-                quit()
+    except:
+        # may have more perfect modification here
+        return "Error","Error"
     return new_blocks,old_orderid_to_new_orderid
 
 def generate_modify_history(modify_step_list, modify_return):
@@ -652,7 +683,7 @@ def abl_3djson_to_treejson(output,save_path=None):
         
         block_id = info['id']
         
-        if info['id']=='18_1':
+        if str(info['id'])=='181' or str(info['id'])=='182':
             block_id ='18'
         
         block = ET.SubElement(blocks_elem, "Block", id=str(block_id), guid=generate_guid())
@@ -741,7 +772,7 @@ def abl_3djson_to_treejson(output,save_path=None):
         return f"```json```"
 
 
-def valid_check(output, return_error_reason=False):
+def valid_check(output, return_error_reason=False,level_menus=None):
     try:
         content = output if isinstance(output, list) else extract_json_from_string(output)
         if not content:
@@ -751,7 +782,8 @@ def valid_check(output, return_error_reason=False):
         xml_block_details, processed_details, illegal_feedback = llm2xml_filetree(
             block_details,
             BLOCKPROPERTYPATH,
-            selected_menu=None
+            selected_menu=None,
+            level_menus=level_menus
         )
         if illegal_feedback:
             
@@ -789,7 +821,7 @@ def valid_check(output, return_error_reason=False):
     
     return (True, "无") if return_error_reason else True
 
-def json_to_xml(input_obj,save_path):
+def json_to_xml(input_obj,save_path,level_menus):
     if isinstance(input_obj,str):
         content = extract_json_from_string(input_obj)
     elif isinstance(input_obj,list):
@@ -801,7 +833,7 @@ def json_to_xml(input_obj,save_path):
     block_details = convert_to_numpy(block_details)
     xml_block_details,block_details,_ = llm2xml_filetree(block_details,
                                                         BLOCKPROPERTYPATH,
-                                                        selected_menu=None)
+                                                        selected_menu=None,level_menus=level_menus)
     _,_,_,_,_,_,_,_ = llm_feedback_3d(block_sizes=BLOCKPROPERTYPATH,
                                     xml_block_details=xml_block_details,
                                     block_details = block_details)
@@ -814,6 +846,7 @@ def json_to_xml(input_obj,save_path):
 
 
 def get_bpfacing(type_id,bp_id):
+    return BLOCKPROPERTY[str(type_id)]["construable points properties"][int(bp_id)]["relative orientation"]
     for block_intro in BLOCKINTRO:
         if int(block_intro["tid"])==int(type_id):
             return block_intro["construable points properties"][int(bp_id)]["relative orientation"]
@@ -875,7 +908,7 @@ def get_3Dinfos_from_json(formatted_json):
         elif type_id != "0":
             # Handle normal blocks
             parent_info = threeDinfo["rel"]["parent"]
-            parent_type_id = block_details[block["parent"]]["id"]
+            parent_type_id = block_details[int(block["parent"])]["id"]
             parent_facing = get_bpfacing(parent_type_id, block["bp_id"])
             
             parent_info.update({
@@ -901,7 +934,7 @@ def get_3Dinfos_from_json(formatted_json):
                 "rot": np.round(euler_angles).astype(int).tolist()
             })
 
-            parent_real_facing = threeDinfo_list[block["parent"]]["abs"]["orient"]
+            parent_real_facing = threeDinfo_list[int(block["parent"])]["abs"]["orient"]
             try:
                 threeDinfo["abs"]["orient"] = FACINGMAP[parent_real_facing][parent_facing]
             except KeyError:
@@ -974,7 +1007,7 @@ def get_3Dinfos_from_json(formatted_json):
 
     return threeDinfo_list
 
-def get_machine_3D_infos(output):
+def get_machine_3D_infos(output,level_menus=None):
     if isinstance(output,list):
             content = output
     else:
@@ -983,7 +1016,8 @@ def get_machine_3D_infos(output):
     block_details = convert_to_numpy(block_details)
     xml_block_details,block_details,blocks_to_delete_feedback = llm2xml_filetree(block_details,
                                                                                  BLOCKPROPERTYPATH,
-                                                                                 selected_menu=None)
+                                                                                 selected_menu=None,
+                                                                                 level_menus=level_menus)
     _,_,env_fail,long,wide,height,_,overlap_infos = llm_feedback_3d(block_sizes=BLOCKPROPERTYPATH,
                                                                     xml_block_details=xml_block_details,
                                                                     block_details = block_details)
@@ -1439,12 +1473,38 @@ def get_env_feedback(sim_time, game_state_dict, simulate_menu, bsg_machine,is_wi
         feedback = feedback_overallmachine(bsg_machine,game_state_dict,sim_time,check_time,feedback)
         feedback,target_block_infos= feedback_get_target(game_state_dict,feedback,f"GOAL_{target_name}",parabola=False,focus_period=[0,21])
         scores = target_block_infos["distance"]
+    elif win_condition=="Target_lift":
+        feedback+=f"Target name:GOAL_{target_name}\n"
+        check_time = sim_time
+        feedback = feedback_overallmachine(bsg_machine,game_state_dict,sim_time,check_time,feedback)
+        feedback,target_block_infos= feedback_get_target(game_state_dict,feedback,f"GOAL_{target_name}",parabola=False,focus_period=[0,21],need_max_height=True)
+        scores = target_block_infos["max_height"]
     elif win_condition=="Boulder_throw_with_target":
         check_time = sim_time
         feedback = feedback_overallmachine(bsg_machine,game_state_dict,sim_time,check_time,feedback)
         
         feedback,selected_obj_infos= feedback_distance_between_objs(game_state_dict,feedback,"Boulder",obj_b_name=f"GOAL_{target_name}",need_a_position=True,need_b_position=False)
         scores = selected_obj_infos["distance"]     
+    elif win_condition=="Jump":
+        check_time = sim_time
+        feedback = feedback_overallmachine(bsg_machine,game_state_dict,sim_time,check_time,feedback)
+        feedback,starting_block_infos= feedback_get_target(game_state_dict,feedback,"startingBlock"
+                                                         ,need_distance=True,parabola=False,need_max_speed=True,need_max_height=True,
+                                                         need_avg_speed=True,need_position=False)
+        scores = starting_block_infos["max_height"]
+    elif win_condition=="Fly":
+        check_time = sim_time
+        feedback = feedback_overallmachine(bsg_machine,game_state_dict,sim_time,check_time,feedback)
+        feedback,starting_block_infos= feedback_get_target(game_state_dict,feedback,"startingBlock"
+                                                         ,need_distance=False,parabola=False,need_max_speed=False,need_max_height=True,
+                                                         need_avg_speed=False,need_position=True,focus_period=[0,12])
+        scores = starting_block_infos["max_height"]
+    elif win_condition=="Trigger_Win": 
+        feedback="The environment only tells you if game win in binary task."   
+        if is_win:
+            scores =1.0
+        else:
+            scores =0.0
     else:
         raise TypeError("unknown task type")
      

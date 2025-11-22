@@ -327,5 +327,118 @@
         "WHEEL_AUTO_ON":false,
         "deafult_prompt":"There is a deep well, inside the well, there is an iron ball. Design a machine that can drive near the well, and get the ball out. The automatic control pipeline can let the machine drive near the well and use component to get the ball out(if you have used right blocks).",
         "block_limitations":[0,1,2,4,9,15,16,22,27,35,41,45,63]
+    },
+    "jump/jump_level1":{"instructions":[
+            "sleep 3",
+            "LoadMachine:",
+            "sleep 1",
+            "ToggleSimulate:_",
+            "sleep 6",
+            "SwitchKey:H_T",
+            "sleep 0.5",
+            "SwitchKey:H_F",
+            "WaitingStop 2"
+        ],
+        "win_condition":"Jump",
+        "WHEEL_AUTO_ON":true,
+        "deafult_prompt":"In 20m front of the machine, there is a 1m high wall, it is moving towards the machine with speed 5m/s. Design a machine that can jump over the wall.",
+        "block_limitations":[0,1,15,63,182,56]
+    },
+    "lift/lift_level1":{"instructions":[
+            "sleep 3",
+            "LoadMachine:",
+            "sleep 1",
+            "ToggleSimulate:_",
+            "sleep 1",
+            "SwitchKey:H_T",
+            "sleep 4",
+            "SwitchKey:H_F",
+            "WaitingStop 3"
+        ],
+        "win_condition":"Target_lift",
+        "target_name":"Cube",
+        "WHEEL_AUTO_ON":false,
+        "deafult_prompt":"A 4*4*4 cube rests 10 m above the machine; design a mechanism to lift it even higher.",
+        "block_limitations":[0,1,15,63,182,56]
+    },
+    "lift/lift_level5":{"instructions":[
+            "sleep 3",
+            "LoadMachine:",
+            "sleep 1",
+            "ToggleSimulate:_",
+            "sleep 1",
+            "SwitchKey:UpArrow_T",
+            "sleep 2.5",
+            "SwitchKey:UpArrow_F",
+	        "sleep 1",
+	        "SwitchKey:H_T",
+	        "sleep 1",
+            "SwitchKey:H_F",
+            "WaitingStop 3"
+        ],
+        "win_condition":"Target_lift",
+        "target_name":"CubeLift",
+        "WHEEL_AUTO_ON":false,
+        "deafult_prompt": "An elongated cube is positioned 10 meters in front of the machine, 5.6 meters above ground. Immediately in front of it, at 9.5 meters from the machine and 6 meters high, is a slender railing. This railing prevents the machine's main body from getting closer to the cube, but due to its thin profile, it does not obstruct machine parts that are below or above 6 meters from passing over.\nDesign a machine to approach the cube, and lift the cube to a height of 7.5 meters.\nNote: If your machine has mobility capabilities, we will position it in front of the cube. If your design includes a lifting mechanism and is correctly positioned, we will ensure it can approach the cube to attempt the lift.",
+        "block_limitations":[0,1,15,63,181,2,46]
+    },
+    "fly/fly_level1":{"instructions":[
+            "sleep 3",
+            "LoadMachine:",
+            "sleep 1",
+            "ToggleSimulate:_",
+            "sleep 1",
+            "SwitchKey:O_T",
+            "sleep 10",
+            "SwitchKey:O_F",
+            "WaitingStop 3"
+        ],
+        "win_condition":"Fly",
+        "WHEEL_AUTO_ON":false,
+        "deafult_prompt": "A 10m * 10m * 10m destination area is located 160 meters directly above the machine. Design a machine capable of vertical ascent and flight to reach it.",
+        "block_limitations":[0,1,15,63,14,25,35]
+    },
+    "fly/fly_level2":{"instructions":[
+            "sleep 3",
+            "LoadMachine:",
+            "sleep 1",
+            "ToggleSimulate:_",
+            "sleep 1",
+            "SwitchKey:O_T",
+            "sleep 20",
+            "SwitchKey:O_F",
+            "WaitingStop 3"
+        ],
+        "win_condition":"Fly",
+        "WHEEL_AUTO_ON":false,
+        "deafult_prompt": "A 10m * 10m * 10m destination area is located 140 meters directly above the machine. A constant wind of 1m/s blows throughout the entire space in the Z+ direction. Design a machine capable of vertical flight to the destination while resisting the wind's influence.",
+        "block_limitations":[0,1,15,63,14,25,35]
+    },
+    "cogplate/cogplate_level1":{"instructions":[
+            "sleep 3",
+            "LoadMachine:",
+            "sleep 1",
+            "ToggleSimulate:_",
+            "WaitingStop 4"
+        ],
+        "win_condition":"Trigger_Win",
+        "WHEEL_AUTO_ON":true,
+        "deafult_prompt": "Here is a “gear board”: a wooden tabletop made of Starting Block (0) and Log (63).\nOn its two diagonal corners sit a Powered Medium Cog (39) rotates clockwise and an Unpowered Large Cog (51).\nA Wooden Pole (41) is stacked on the Unpowered Large Cog to show whether it turns.\n\nYour job: place any number of Unpowered Medium or Large Cogs anywhere on the tabletop so that the original Unpowered Large Cog (51) starts to spin.\nYou may NOT change or remove any block that is already on the board!\n\n“gear board” json:\n[{\"id\": \"0\", \"order_id\": 0, \"parent\": -1, \"bp_id\": -1}, {\"id\": \"63\", \"order_id\": 1, \"parent\": 0, \"bp_id\": 0}, {\"id\": \"63\", \"order_id\": 2, \"parent\": 1, \"bp_id\": 3}, {\"id\": \"63\", \"order_id\": 3, \"parent\": 1, \"bp_id\": 2}, {\"id\": \"63\", \"order_id\": 4, \"parent\": 1, \"bp_id\": 1}, {\"id\": \"63\", \"order_id\": 5, \"parent\": 1, \"bp_id\": 6}, {\"id\": \"63\", \"order_id\": 6, \"parent\": 1, \"bp_id\": 5}, {\"id\": \"63\", \"order_id\": 7, \"parent\": 1, \"bp_id\": 4}, {\"id\": \"63\", \"order_id\": 8, \"parent\": 0, \"bp_id\": 2}, {\"id\": \"63\", \"order_id\": 9, \"parent\": 0, \"bp_id\": 3}, {\"id\": \"63\", \"order_id\": 10, \"parent\": 0, \"bp_id\": 1}, {\"id\": \"63\", \"order_id\": 11, \"parent\": 10, \"bp_id\": 5}, {\"id\": \"63\", \"order_id\": 12, \"parent\": 10, \"bp_id\": 6}, {\"id\": \"63\", \"order_id\": 13, \"parent\": 10, \"bp_id\": 1}, {\"id\": \"63\", \"order_id\": 14, \"parent\": 10, \"bp_id\": 2}, {\"id\": \"63\", \"order_id\": 15, \"parent\": 10, \"bp_id\": 3}, {\"id\": \"51\", \"order_id\": 16, \"parent\": 5, \"bp_id\": 9}, {\"id\": \"39\", \"order_id\": 17, \"parent\": 12, \"bp_id\": 9}, {\"id\": \"63\", \"order_id\": 18, \"parent\": 10, \"bp_id\": 4}, {\"id\": \"41\", \"order_id\": 19, \"parent\": 16, \"bp_id\": 1}]",
+        "block_limitations":[38,51],
+        "pass_userinput_to":["designer"]
+    },
+    "cogplate/cogplate_level0":{"instructions":[
+            "sleep 3",
+            "LoadMachine:",
+            "sleep 1",
+            "ToggleSimulate:_",
+            "WaitingStop 4"
+        ],
+        "win_condition":"Trigger_Win",
+        "WHEEL_AUTO_ON":true,
+        "deafult_prompt": "Here is a “gear board”: a wooden tabletop made of Starting Block (0) and Wooden Blocks (1).\nOn its two diagonal corners sit a Powered Medium Cog (39) rotates clockwise and an Unpowered Large Cog (51).\nA Wooden Pole (41) is stacked on the Unpowered Large Cog to show whether it turns.\n\nYour job: ONLY use Unpowered Medium Cog (38), place ONLY 2 Unpowered Medium Cog (38) anywhere on the tabletop so that the original Unpowered Large Cog (51) starts to spin.\nYou may NOT change or remove any block that is already on the board!\n\n“gear board” json:\n[{\"id\": \"0\", \"order_id\": 0, \"parent\": -1, \"bp_id\": -1}, {\"id\": \"1\", \"order_id\": 1, \"parent\": 0, \"bp_id\": 0}, {\"id\": \"1\", \"order_id\": 2, \"parent\": 1, \"bp_id\": 2}, {\"id\": \"1\", \"order_id\": 3, \"parent\": 1, \"bp_id\": 1}, {\"id\": \"1\", \"order_id\": 4, \"parent\": 1, \"bp_id\": 4}, {\"id\": \"1\", \"order_id\": 5, \"parent\": 1, \"bp_id\": 3}, {\"id\": \"1\", \"order_id\": 6, \"parent\": 0, \"bp_id\": 2}, {\"id\": \"1\", \"order_id\": 7, \"parent\": 6, \"bp_id\": 2}, {\"id\": \"1\", \"order_id\": 8, \"parent\": 6, \"bp_id\": 1}, {\"id\": \"1\", \"order_id\": 9, \"parent\": 0, \"bp_id\": 3}, {\"id\": \"1\", \"order_id\": 10, \"parent\": 9, \"bp_id\": 4}, {\"id\": \"1\", \"order_id\": 11, \"parent\": 9, \"bp_id\": 3}, {\"id\": \"1\", \"order_id\": 12, \"parent\": 0, \"bp_id\": 1}, {\"id\": \"39\", \"order_id\": 13, \"parent\": 7, \"bp_id\": 6}, {\"id\": \"51\", \"order_id\": 14, \"parent\": 4, \"bp_id\": 6}, {\"id\": \"41\", \"order_id\": 15, \"parent\": 14, \"bp_id\": 1}]",
+        "block_limitations":[38,51],
+        "pass_userinput_to":["designer"]
     }
+
 }

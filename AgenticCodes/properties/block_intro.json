@@ -488,7 +488,7 @@
     },
     {
         "Name": "Piston",
-        "Description": "The Piston is a machine block that can extend along it's placement axis. It extends by 1.1 metres.",
+        "Description": "The Piston is a machine block that can extend along it's placement axis. It extends by 1 metres. Inital is already extended.",
         "tid": 18,
         "Is Static": "False",
         "Size": [1, 1, 2],

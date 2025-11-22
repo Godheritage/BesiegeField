@@ -63,6 +63,33 @@ metadesigner_prompt = {
             "warning": PROMPTBASE_PATH / "metadesigner_knowledge/deafult_en/warning.txt"
         },  
     },
+    "deafult_nobesiege_en": {
+        "prompt": """
+        You are a mechanical designer, and your task is to design a machine in the environment based on the user's requirements. Please gain a general understanding of the environment based on the following information:
+        I. Environment Introduction:
+        {game_intro}
+        II. Block Introduction:
+        {block_intro}
+        III. Mechanical Design Requirements:
+        {design_requirments}
+        IV. Output Format Requirements:
+        {output_format}
+        V. Note:
+        {warning}
+
+        I will provide the user input below, 
+        please generate a mechanical overview in JSON format based on the user's description.
+        """,
+        "example":
+        [],
+        "kargs":{
+            "game_intro": PROMPTBASE_PATH / "metadesigner_knowledge/deafult_nobesiege_en/game_intro.txt",
+            "block_intro": PROMPTBASE_PATH / "metadesigner_knowledge/deafult_nobesiege_en/block_intro.txt",
+            "output_format": PROMPTBASE_PATH / "metadesigner_knowledge/deafult_nobesiege_en/output_format.txt",
+            "design_requirments": PROMPTBASE_PATH / "metadesigner_knowledge/deafult_nobesiege_en/design_requirments.txt",
+            "warning": PROMPTBASE_PATH / "metadesigner_knowledge/deafult_nobesiege_en/warning.txt"
+        },  
+    },
     "ablation_en": {
         "prompt": """
         You are a mechanical designer, and your task is to design a machine in the game Besiege based on the user's requirements. Please gain a general understanding of the game based on the following information:
@@ -151,6 +178,35 @@ designer_prompt = {
             "output_format": PROMPTBASE_PATH / "designer_knowledge/short_en/output_format.txt"
         }   
     },
+    "short_nobesiege_en": {
+        "prompt": """
+        You are a mechanical builder.  
+        Your task is to add new blocks to an existing machine structure according to user requests and finally output the complete machine JSON data.
+        I. Environment Introduction:
+        {game_intro}
+        II. Introduction to Blocks:
+        {block_intro}
+        III. Introduction to JSON Format:
+        {json_intro}
+        IV. Construction Guidance:
+        {build_guidance}
+        V. Output Format Requirements:
+        {output_format}
+        VI. Note:
+        {warning}
+        Next I will provide user input, please generate a JSON based on the description.
+        """,
+        "example":
+        [],
+        "kargs":{
+            "game_intro": PROMPTBASE_PATH / "designer_knowledge/short_nobesiege_en/game_intro.txt",
+            "block_intro": PROMPTBASE_PATH / "designer_knowledge/short_nobesiege_en/block_intro.txt",
+            "json_intro": PROMPTBASE_PATH / "designer_knowledge/short_nobesiege_en/json_intro.txt",
+            "build_guidance": PROMPTBASE_PATH / "designer_knowledge/short_nobesiege_en/build_guidance.txt",
+            "warning": PROMPTBASE_PATH / "designer_knowledge/short_nobesiege_en/warning.txt",
+            "output_format": PROMPTBASE_PATH / "designer_knowledge/short_nobesiege_en/output_format.txt"
+        }   
+    },
     "ablation_singleagent_en":{
         "prompt": """
         {single_agent}
@@ -190,6 +246,62 @@ inspector_prompt = {
             "input_intro": PROMPTBASE_PATH / "inspector_knowledge/short_en/input_intro.txt",
             "output_intro":PROMPTBASE_PATH / "inspector_knowledge/short_en/output_intro.txt",
             "warning": PROMPTBASE_PATH / "inspector_knowledge/short_en/warning.txt"
+        },
+        "userquestion":"""
+            Task Introduction
+            {task_definition}
+            JSON Information
+            {json_file}
+            3D Information
+            {threedinfo}
+            Mechanical Structure Information
+            {structure_info}
+            Initial State of the Machine
+            The machine is initially placed on the ground, facing in the z+ direction, with the target direction being z+.
+            
+            Questions:
+            1. Output the position and orientation of all dynamic blocks, and analyze:
+                a. The impact of dynamic blocks on the machine
+                b. The direction of force provided by dynamic blocks
+                c. The impact on sub-blocks and the direction of force on the machine
+
+            2. Output static blocks other than basic structural blocks, and analyze the rationality of their orientation and position.
+
+            3. Balance Check (self-gravity)
+                a. The center of gravity of the machine (find the block closest to the center of gravity)
+                b. Whether parts of the machine will sink due to gravity
+            4. Comprehensive Analysis
+                a. Summarize the direction of all forces to analyze the movement of the machine
+                b. Identify logically unreasonable blocks, output their hierarchical structure and reasons for unreasonableness
+            """,
+        
+    },
+    "short_nobesiege_en": {
+        "prompt": """
+        I'll provide you with a mission in the environment, 
+        along with the machine designed for it in JSON format and its 3D information. 
+        Please identify and summarize the unreasonable parts of the machine design. 
+        Here's the introduction to the game and construction knowledge.
+        I. Environment Introduction:
+        {game_intro}
+        II. Introduction to Blocks:
+        {block_intro}
+        III. Introduction to JSON and 3D Information:
+        {input_intro}
+        IV. Introduction to Output Format:
+        {output_intro}
+        V. Notes:
+        {warning}
+        Below, I will provide you with JSON and 3D information. Please answer the user's question based on this information.
+        """,
+        "example":
+        [],
+        "kargs":{
+            "game_intro": PROMPTBASE_PATH / "inspector_knowledge/short_nobesiege_en/game_intro.txt",
+            "block_intro": PROMPTBASE_PATH / "inspector_knowledge/short_nobesiege_en/block_intro.txt",
+            "input_intro": PROMPTBASE_PATH / "inspector_knowledge/short_nobesiege_en/input_intro.txt",
+            "output_intro":PROMPTBASE_PATH / "inspector_knowledge/short_nobesiege_en/output_intro.txt",
+            "warning": PROMPTBASE_PATH / "inspector_knowledge/short_nobesiege_en/warning.txt"
         },
         "userquestion":"""
             Task Introduction
@@ -324,6 +436,49 @@ refiner_prompt = {
             Please provide the modification steps to help improve the machine.
             """, 
     },
+    "short_nobesiege_en": {
+        "prompt": """
+        I will give you a task in the environment, as well as the 3D information of the machine designed to complete this task. There are some unreasonable aspects in the design of this machine, and I would like you to modify these parts:
+        I. Environment Introduction:
+        {game_intro}
+        II. Block Introduction:
+        {block_intro}
+        III. Input Introduction:
+        {input_intro}
+        IV. Modification Method Introduction:
+        {modify_guide}
+        V. Output Format Introduction:
+        {output_intro}
+        VI. Note:
+        {warning}
+        Below, I will provide you with the json and 3D information. Please modify the machine accordingly.
+        """,
+        "example":
+        [],
+        "kargs":{
+            "game_intro": PROMPTBASE_PATH / "refiner_knowledge/short_nobesiege_en/game_intro.txt",
+            "block_intro": PROMPTBASE_PATH / "refiner_knowledge/short_nobesiege_en/block_intro.txt",
+            "input_intro": PROMPTBASE_PATH / "refiner_knowledge/short_nobesiege_en/input_intro.txt",
+            "output_intro":PROMPTBASE_PATH / "refiner_knowledge/short_nobesiege_en/output_intro.txt",
+            "modify_guide":PROMPTBASE_PATH / "refiner_knowledge/short_nobesiege_en/modify_guide.txt",
+            "warning": PROMPTBASE_PATH / "refiner_knowledge/short_nobesiege_en/warning.txt"
+        },
+        "userquestion":"""
+            Task Introduction
+            {task_definition}
+            Machine JSON Structure
+            {jsoninfo}
+            3D Information
+            {threedinfo}
+            Machine Defective Structure
+            {focus_info}
+            Machine Defective Structure Report
+            {focus_report}
+            Machine Initial State
+            The machine is initially placed on the ground, facing the z+ direction, with the target direction being z+.
+            Please provide the modification steps to help improve the machine.
+            """, 
+    },
     "env_short_en": {
         "prompt": """
         I will give you a task in the game Besiege, as well as the information of the machine designed to complete this task. 
@@ -417,6 +572,48 @@ env_querier_prompt = {
             Initial State of the Machine
             The machine is initially placed on the ground, facing the z+ direction, with the target direction being z+.
             """, 
+    },
+    "short_nobesiege_en": {
+        "prompt": """
+        I will give you a task in the game Besiege, as well as the information of the machine designed to complete this task. 
+        The machine has finished the task simulation and returned some environmental feedback to describe its performance.
+        Please analyze the issues with the machine based on the feedback and request more feedback if needed.
+        I. Game Introduction:
+        {game_intro}
+        II. Block Introduction:
+        {block_intro}
+        III. Input Introduction:
+        {input_intro}
+        IV. Query Introduction:
+        {modify_guide}
+        V. Output Format Introduction:
+        {output_intro}
+        VI. Note:
+        {warning}
+        Below, I will provide you with the json and 3D information, as well as the environmental feedback. Please request more feedback as needed.
+        """,
+        "example":
+        [],
+        "kargs":{
+            "game_intro": PROMPTBASE_PATH / "env_querier_knowledge/short_nobesiege_en/game_intro.txt",
+            "block_intro": PROMPTBASE_PATH / "env_querier_knowledge/short_nobesiege_en/block_intro.txt",
+            "input_intro": PROMPTBASE_PATH / "env_querier_knowledge/short_nobesiege_en/input_intro.txt",
+            "output_intro":PROMPTBASE_PATH / "env_querier_knowledge/short_nobesiege_en/output_intro.txt",
+            "modify_guide":PROMPTBASE_PATH / "env_querier_knowledge/short_nobesiege_en/modify_guide.txt",
+            "warning": PROMPTBASE_PATH / "env_querier_knowledge/short_nobesiege_en/warning.txt"
+        },
+        "userquestion":"""
+            Task Introduction
+            {task_definition}
+            Mechanical JSON Structure
+            {jsoninfo}
+            3D Information
+            {threedinfo}
+            Environment Feedback  
+            {env_feedback}
+            Initial State of the Machine
+            The machine is initially placed on the ground, facing the z+ direction, with the target direction being z+.
+            """, 
     }
 }
 
@@ -470,11 +667,13 @@ def format_agentic_systemprompt(agent,prompt_type="short",block_limitations=None
     
     for key in prompt_infos["kargs"].keys():
         file_type = Path(prompt_infos["kargs"][key]).suffix.replace(".", "")
-        if key == "block_intro" and agent!="meta-designer":
+        # if key == "block_intro" and agent!="meta-designer":
+        if key == "block_intro":
             block_infos = read_file(prompt_infos["kargs"][key], file_type=file_type)
             match = re.match(r'^(.*?)```json\n(.*?)```', block_infos, re.DOTALL)
             main_content = match.group(1).strip()
             json_data = json.loads(match.group(2).strip())
+            # print(json_data)
             limited_block_infos = [info for info in json_data if info["Type ID"] in block_limitations]
             kwargs[key] = f"{main_content}\n{limited_block_infos}\n"
         else:

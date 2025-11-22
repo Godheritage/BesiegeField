@@ -1,0 +1,6 @@
+Based on the existing structure, a [structural summary] was generated as [functional implementation]. 
+Ultimately, the block types [ID1, ID2, ...] were decided upon, while [ID3, ...] were removed due to [reason for removal].
+JSON:
+```json
+...
+```

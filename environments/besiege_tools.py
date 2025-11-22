@@ -489,7 +489,11 @@ def delete_blocks(data, to_delete):
     return new_data
 
 
-def llm2xml_filetree(block_details, block_sizes_path, selected_menu=None):
+def llm2xml_filetree(block_details, block_sizes_path, selected_menu=None,level_menus=None):
+    wheel_auto_on = WHEEL_AUTO_ON
+    if level_menus and "WHEEL_AUTO_ON" in level_menus:
+        wheel_auto_on = level_menus["WHEEL_AUTO_ON"]
+    
     with open(block_sizes_path, 'r', encoding='utf-8') as file:
         block_sizes = json.load(file)
     
@@ -614,7 +618,7 @@ def llm2xml_filetree(block_details, block_sizes_path, selected_menu=None):
             manu_lr = R.from_matrix(block["manu_lr"]).as_quat() if block["manu_lr"].shape == (3, 3) else block["manu_lr"]
             xml_info["Transform"] = {"Position": block["manu_lp"], "Rotation": manu_lr, "Scale": block["scale"]}
             if "flip" in block: 
-                if WHEEL_AUTO_ON:
+                if wheel_auto_on:
                     wheel_auto=True
                 else:
                     wheel_auto=False
@@ -751,7 +755,7 @@ def create_xml(data):
         
         block_id = info['id']
         
-        if info['id']=='18_1':
+        if str(info['id'])=='181' or str(info['id'])=='182':
             block_id ='18'
         
         block = ET.SubElement(blocks_elem, "Block", id=str(block_id), guid=info['guid'])
@@ -802,9 +806,32 @@ def create_xml(data):
         if str(info['id'])=="35":
             bmt = ET.SubElement(block_data,"Single",key = "bmt-mass")
             bmt.text = "3"
+            
+        if str(info['id'])=="18":
+            bmt = ET.SubElement(block_data,"Boolean",key = "preextended")
+            bmt.text = "True"
+        if str(info['id'])=="181":
+            bmt = ET.SubElement(block_data,"Boolean",key = "preextended")
+            bmt.text = "False"
+        if str(info['id'])=="182":
+            bmt = ET.SubElement(block_data,"Boolean",key = "preextended")
+            bmt.text = "False"
+            bmt = ET.SubElement(block_data,"Single",key = "bmt-speed")
+            bmt.text = "50"
+            bmt = ET.SubElement(block_data,"Single",key = "bmt-push-power")
+            bmt.text = "30"
+        
+        if str(info['id'])=="56":
+            bmt = ET.SubElement(block_data,"StringArray",key = "bmt-shoot")
+            bmt.text = "H"
+            bmt = ET.SubElement(block_data,"Boolean",key = "bmt-hold-to-fire")
+            bmt.text = "True"
+            bmt = ET.SubElement(block_data,"Single",key = "bmt-strength")
+            bmt.text = "75"
+            
 
 
-        if "auto" in info:
+        if "auto" in info and info["auto"]:
             bmt = ET.SubElement(block_data, "Boolean", key="bmt-automatic")
             bmt.text = "True"
             bmt = ET.SubElement(block_data, "Boolean", key="bmt-auto-brake")
@@ -903,7 +930,7 @@ def llm_feedback_3d(block_sizes, xml_block_details, block_details, autofit_gt=Tr
     return (corners_feedback_forquizzer, corners_feedback_forbuilder, env_fail, 
             long, wide, height, machine_structure_error, overlap_infos)
 
-FLIP_SENSITIVE_BLOCKS = ["2","46"]
+FLIP_SENSITIVE_BLOCKS = ["2","46","39"]
 def are_quaternions_similar(q1, angle_threshold=1e-3):
     
     q2 = np.array([0, -0.7071068, 0, 0.7071068])

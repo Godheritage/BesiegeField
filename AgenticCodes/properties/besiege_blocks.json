@@ -43,6 +43,14 @@
                 -0.5,
                 0.0
             ]
+        ],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 0.5], "relative orientation": "Front"},
+            {"ID": 1, "Relative Position": [0, 0, -0.5], "relative orientation": "Back"},
+            {"ID": 2, "Relative Position": [-0.5, 0, 0], "relative orientation": "Left"},
+            {"ID": 3, "Relative Position": [0.5, 0, 0], "relative orientation": "Right"},
+            {"ID": 4, "Relative Position": [0, 0.5, 0], "relative orientation": "Up"},
+            {"ID": 5, "Relative Position": [0, -0.5, 0], "relative orientation": "Down"}
         ]
     },
     "15": {
@@ -84,6 +92,13 @@
                 -0.5,
                 0.5
             ]
+        ],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 1], "relative orientation": "Front"},
+            {"ID": 1, "Relative Position": [-0.5, 0, 0.5], "relative orientation": "Left"},
+            {"ID": 2, "Relative Position": [0.5, 0, 0.5], "relative orientation": "Right"},
+            {"ID": 3, "Relative Position": [0, 0.5, 0.5], "relative orientation": "Up"},
+            {"ID": 4, "Relative Position": [0, -0.5, 0.5], "relative orientation": "Down"}
         ]
     },
     "1": {
@@ -145,6 +160,17 @@
                 -0.5,
                 1.5
             ]
+        ],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 2], "relative orientation": "Front"},
+            {"ID": 1, "Relative Position": [-0.5, 0, 0.5], "relative orientation": "Left"},
+            {"ID": 2, "Relative Position": [-0.5, 0, 1.5], "relative orientation": "Left"},
+            {"ID": 3, "Relative Position": [0.5, 0, 0.5], "relative orientation": "Right"},
+            {"ID": 4, "Relative Position": [0.5, 0, 1.5], "relative orientation": "Right"},
+            {"ID": 5, "Relative Position": [0, 0.5, 0.5], "relative orientation": "Up"},
+            {"ID": 6, "Relative Position": [0, 0.5, 1.5], "relative orientation": "Up"},
+            {"ID": 7, "Relative Position": [0, -0.5, 0.5], "relative orientation": "Down"},
+            {"ID": 8, "Relative Position": [0, -0.5, 1.5], "relative orientation": "Down"}
         ]
     },
     "41": {
@@ -206,6 +232,17 @@
                 -0.5,
                 1.5
             ]
+        ],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 2], "relative orientation": "Front"},
+            {"ID": 1, "Relative Position": [-0.5, 0, 0.5], "relative orientation": "Left"},
+            {"ID": 2, "Relative Position": [-0.5, 0, 1.5], "relative orientation": "Left"},
+            {"ID": 3, "Relative Position": [0.5, 0, 0.5], "relative orientation": "Right"},
+            {"ID": 4, "Relative Position": [0.5, 0, 1.5], "relative orientation": "Right"},
+            {"ID": 5, "Relative Position": [0, 0.5, 0.5], "relative orientation": "Up"},
+            {"ID": 6, "Relative Position": [0, 0.5, 1.5], "relative orientation": "Up"},
+            {"ID": 7, "Relative Position": [0, -0.5, 0.5], "relative orientation": "Down"},
+            {"ID": 8, "Relative Position": [0, -0.5, 1.5], "relative orientation": "Down"}
         ]
     },
     "63": {
@@ -287,6 +324,21 @@
                 -0.5,
                 2.5
             ]
+        ],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 3], "relative orientation": "Front"},
+            {"ID": 1, "Relative Position": [-0.5, 0, 0.5], "relative orientation": "Left"},
+            {"ID": 2, "Relative Position": [-0.5, 0, 1.5], "relative orientation": "Left"},
+            {"ID": 3, "Relative Position": [-0.5, 0, 2.5], "relative orientation": "Left"},
+            {"ID": 4, "Relative Position": [0.5, 0, 0.5], "relative orientation": "Right"},
+            {"ID": 5, "Relative Position": [0.5, 0, 1.5], "relative orientation": "Right"},
+            {"ID": 6, "Relative Position": [0.5, 0, 2.5], "relative orientation": "Right"},
+            {"ID": 7, "Relative Position": [0, 0.5, 0.5], "relative orientation": "Up"},
+            {"ID": 8, "Relative Position": [0, 0.5, 1.5], "relative orientation": "Up"},
+            {"ID": 9, "Relative Position": [0, 0.5, 2.5], "relative orientation": "Up"},
+            {"ID": 10, "Relative Position": [0, -0.5, 0.5], "relative orientation": "Down"},
+            {"ID": 11, "Relative Position": [0, -0.5, 1.5], "relative orientation": "Down"},
+            {"ID": 12, "Relative Position": [0, -0.5, 2.5], "relative orientation": "Down"}
         ]
     },
     "28": {
@@ -308,6 +360,9 @@
                 0.0,
                 1.0
             ]
+        ],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 1], "relative orientation": "Front"}
         ]
     },
     "13": {
@@ -349,6 +404,13 @@
                 -0.5,
                 0.5
             ]
+        ],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 1], "relative orientation": "Front"},
+            {"ID": 1, "Relative Position": [-0.5, 0, 0.5], "relative orientation": "Left"},
+            {"ID": 2, "Relative Position": [0.5, 0, 0.5], "relative orientation": "Right"},
+            {"ID": 3, "Relative Position": [0, 0.5, 0.5], "relative orientation": "Up"},
+            {"ID": 4, "Relative Position": [0, -0.5, 0.5], "relative orientation": "Down"}
         ]
     },
     "2": {
@@ -370,6 +432,9 @@
                 0.0,
                 0.5
             ]
+        ],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 0.5], "relative orientation": "Front"}
         ]
     },
     "40": {
@@ -391,6 +456,9 @@
                 0.0,
                 0.5
             ]
+        ],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 0.5], "relative orientation": "Front"}
         ]
     },
     "46": {
@@ -452,6 +520,17 @@
                 -1.5,
                 0.5
             ]
+        ],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 1], "relative orientation": "Front"},
+            {"ID": 1, "Relative Position": [-1.5, 0, 1], "relative orientation": "Front"},
+            {"ID": 2, "Relative Position": [1.5, 0, 1], "relative orientation": "Front"},
+            {"ID": 3, "Relative Position": [0, 1.5, 1], "relative orientation": "Front"},
+            {"ID": 4, "Relative Position": [0, -1.5, 1], "relative orientation": "Front"},
+            {"ID": 5, "Relative Position": [-1.5, 0, 0.5], "relative orientation": "Left"},
+            {"ID": 6, "Relative Position": [1.5, 0, 0.5], "relative orientation": "Right"},
+            {"ID": 7, "Relative Position": [0, 1.5, 0.5], "relative orientation": "Up"},
+            {"ID": 8, "Relative Position": [0, -1.5, 0.5], "relative orientation": "Down"}
         ]
     },
     "60": {
@@ -513,6 +592,17 @@
                 -1.5,
                 0.5
             ]
+        ],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 1], "relative orientation": "Front"},
+            {"ID": 1, "Relative Position": [-1.5, 0, 1], "relative orientation": "Front"},
+            {"ID": 2, "Relative Position": [1.5, 0, 1], "relative orientation": "Front"},
+            {"ID": 3, "Relative Position": [0, 1.5, 1], "relative orientation": "Front"},
+            {"ID": 4, "Relative Position": [0, -1.5, 1], "relative orientation": "Front"},
+            {"ID": 5, "Relative Position": [-1.5, 0, 0.5], "relative orientation": "Left"},
+            {"ID": 6, "Relative Position": [1.5, 0, 0.5], "relative orientation": "Right"},
+            {"ID": 7, "Relative Position": [0, 1.5, 0.5], "relative orientation": "Up"},
+            {"ID": 8, "Relative Position": [0, -1.5, 0.5], "relative orientation": "Down"}
         ]
     },
     "50": {
@@ -528,7 +618,8 @@
             0.0,
             0.75
         ],
-        "bc_bp": []
+        "bc_bp": [],
+        "construable points properties": []
     },
     "86": {
         "name": "Roller Wheel",
@@ -543,7 +634,8 @@
             0.0,
             0.5
         ],
-        "bc_bp": []
+        "bc_bp": [],
+        "construable points properties": []
     },
     "19": {
         "name": "Swivel Joint",
@@ -584,6 +676,13 @@
                 -0.5,
                 0.5
             ]
+        ],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 1], "relative orientation": "Front"},
+            {"ID": 1, "Relative Position": [-0.5, 0, 0.5], "relative orientation": "Left"},
+            {"ID": 2, "Relative Position": [0.5, 0, 0.5], "relative orientation": "Right"},
+            {"ID": 3, "Relative Position": [0, 0.5, 0.5], "relative orientation": "Up"},
+            {"ID": 4, "Relative Position": [0, -0.5, 0.5], "relative orientation": "Down"}
         ]
     },
     "5": {
@@ -625,6 +724,13 @@
                 -0.5,
                 0.5
             ]
+        ],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 1], "relative orientation": "Front"},
+            {"ID": 1, "Relative Position": [-0.5, 0, 0.5], "relative orientation": "Left"},
+            {"ID": 2, "Relative Position": [0.5, 0, 0.5], "relative orientation": "Right"},
+            {"ID": 3, "Relative Position": [0, 0.5, 0.5], "relative orientation": "Up"},
+            {"ID": 4, "Relative Position": [0, -0.5, 0.5], "relative orientation": "Down"}
         ]
     },
     "44": {
@@ -666,6 +772,13 @@
                 -0.5,
                 0.5
             ]
+        ],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 1], "relative orientation": "Front"},
+            {"ID": 1, "Relative Position": [-0.5, 0, 0.5], "relative orientation": "Left"},
+            {"ID": 2, "Relative Position": [0.5, 0, 0.5], "relative orientation": "Right"},
+            {"ID": 3, "Relative Position": [0, 0.5, 0.5], "relative orientation": "Up"},
+            {"ID": 4, "Relative Position": [0, -0.5, 0.5], "relative orientation": "Down"}
         ]
     },
     "76": {
@@ -687,6 +800,9 @@
                 0.0,
                 1.0
             ]
+        ],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 1], "relative orientation": "Front"}
         ]
     },
     "22": {
@@ -728,6 +844,13 @@
                 -0.5,
                 0.5
             ]
+        ],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 1], "relative orientation": "Front"},
+            {"ID": 1, "Relative Position": [-0.5, 0, 0.5], "relative orientation": "Left"},
+            {"ID": 2, "Relative Position": [0.5, 0, 0.5], "relative orientation": "Right"},
+            {"ID": 3, "Relative Position": [0, 0.5, 0.5], "relative orientation": "Up"},
+            {"ID": 4, "Relative Position": [0, -0.5, 0.5], "relative orientation": "Down"}
         ]
     },
     "27": {
@@ -749,6 +872,9 @@
                 0.0,
                 1.0
             ]
+        ],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 1], "relative orientation": "Front"}
         ]
     },
     "20": {
@@ -764,7 +890,9 @@
             0.0,
             1.25
         ],
-        "bc_bp": []
+        "bc_bp": [],
+        "construable points properties": [
+        ]
     },
     "3": {
         "name": "Metal Blade",
@@ -779,7 +907,9 @@
             0.0,
             2.0
         ],
-        "bc_bp": []
+        "bc_bp": [],
+        "construable points properties": [
+        ]
     },
     "11": {
         "name": "Cannon",
@@ -794,7 +924,9 @@
             -0.5,
             0.5
         ],
-        "bc_bp": []
+        "bc_bp": [],
+        "construable points properties": [
+        ]
     },
     "23": {
         "name": "Bomb",
@@ -809,7 +941,9 @@
             0.0,
             0.95
         ],
-        "bc_bp": []
+        "bc_bp": [],
+        "construable points properties": [
+        ]
     },
     "36": {
         "name": "Boulder",
@@ -824,7 +958,9 @@
             0.0,
             0.95
         ],
-        "bc_bp": []
+        "bc_bp": [],
+        "construable points properties": [
+        ]
     },
     "49": {
         "name": "Grip Pad",
@@ -839,7 +975,9 @@
             0.0,
             0.1
         ],
-        "bc_bp": []
+        "bc_bp": [],
+        "construable points properties": [
+        ]
     },
     "87": {
         "name": "Elastic Pad",
@@ -854,7 +992,9 @@
             0.0,
             0.1
         ],
-        "bc_bp": []
+        "bc_bp": [],
+        "construable points properties": [
+        ]
     },
     "30": {
         "name": "Container",
@@ -873,7 +1013,10 @@
             0.0,
             0.0,
             1.0
-        ]]
+        ]],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 1], "relative orientation": "Front"}
+        ]
     },
     "6": {
         "name": "Spike Ball",
@@ -888,7 +1031,9 @@
             0.0,
             1.25
         ],
-        "bc_bp": []
+        "bc_bp": [],
+        "construable points properties": [
+        ]
     },
     "16": {
         "name": "Suspension",
@@ -931,6 +1076,13 @@
                 -0.5,
                 1.5
             ]
+        ],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 2], "relative orientation": "Front"},
+            {"ID": 1, "Relative Position": [-0.5, 0, 1.5], "relative orientation": "Left"},
+            {"ID": 2, "Relative Position": [0.5, 0, 1.5], "relative orientation": "Right"},
+            {"ID": 3, "Relative Position": [0, 0.5, 1.5], "relative orientation": "Up"},
+            {"ID": 4, "Relative Position": [0, -0.5, 1.5], "relative orientation": "Down"}
         ]
     },
     "7":{
@@ -938,14 +1090,18 @@
         "block_type": "Basic",
         "bbox_size": [],
         "bc_gc": [],
-        "bc_bp": []
+        "bc_bp": [],
+        "construable points properties": [
+        ]
     },
     "9":{
         "name": "Constractible Spring",
         "block_type": "Mechanical",
         "bbox_size": [],
         "bc_gc": [],
-        "bc_bp": []
+        "bc_bp": [],
+        "construable points properties": [
+        ]
     },
     "35": {
         "name": "Ballast",
@@ -986,6 +1142,13 @@
                 -0.5,
                 0.5
             ]
+        ],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 1], "relative orientation": "Front"},
+            {"ID": 1, "Relative Position": [-0.5, 0, 0.5], "relative orientation": "Left"},
+            {"ID": 2, "Relative Position": [0.5, 0, 0.5], "relative orientation": "Right"},
+            {"ID": 3, "Relative Position": [0, 0.5, 0.5], "relative orientation": "Up"},
+            {"ID": 4, "Relative Position": [0, -0.5, 0.5], "relative orientation": "Down"}
         ]
     },
     "32": {
@@ -1002,6 +1165,8 @@
             0.15
         ],
         "bc_bp": [
+        ],
+        "construable points properties": [
         ]
     },
     "24": {
@@ -1018,6 +1183,8 @@
             0.15
         ],
         "bc_bp": [
+        ],
+        "construable points properties": [
         ]
     },
     "18": {
@@ -1061,9 +1228,16 @@
                 -0.5,
                 1.5
             ]
+        ],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 2], "relative orientation": "Front"},
+            {"ID": 1, "Relative Position": [-0.5, 0, 1.5], "relative orientation": "Left"},
+            {"ID": 2, "Relative Position": [0.5, 0, 1.5], "relative orientation": "Right"},
+            {"ID": 3, "Relative Position": [0, 0.5, 1.5], "relative orientation": "Up"},
+            {"ID": 4, "Relative Position": [0, -0.5, 1.5], "relative orientation": "Down"}
         ]
     },
-    "18_1": {
+    "181": {
         "name": "Piston (Retracted)",
         "block_type": "Mechanical",
         "bbox_size": [
@@ -1102,6 +1276,61 @@
                 -0.5,
                 0.5
             ]
+        ],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 1], "relative orientation": "Front"},
+            {"ID": 1, "Relative Position": [-0.5, 0, 0.5], "relative orientation": "Left"},
+            {"ID": 2, "Relative Position": [0.5, 0, 0.5], "relative orientation": "Right"},
+            {"ID": 3, "Relative Position": [0, 0.5, 0.5], "relative orientation": "Up"},
+            {"ID": 4, "Relative Position": [0, -0.5, 0.5], "relative orientation": "Down"}
+        ]
+    },
+    "182": {
+        "name": "Piston (Strong)",
+        "block_type": "Mechanical",
+        "bbox_size": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "bc_gc": [
+            0.0,
+            0.0,
+            0.5
+        ],
+        "bc_bp": [
+            [
+                0.0,
+                0.0,
+                1.0
+            ],
+            [
+                -0.5,
+                0.0,
+                0.5
+            ],
+            [
+                0.5,
+                0.0,
+                0.5
+            ],
+            [
+                0.0,
+                0.5,
+                0.5
+            ],
+            [
+                0.0,
+                -0.5,
+                0.5
+            ]
+        ],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 1], "relative orientation": "Front"},
+            {"ID": 1, "Relative Position": [-0.5, 0, 0.5], "relative orientation": "Left"},
+            {"ID": 2, "Relative Position": [0.5, 0, 0.5], "relative orientation": "Right"},
+            {"ID": 3, "Relative Position": [0, 0.5, 0.5], "relative orientation": "Up"},
+            {"ID": 4, "Relative Position": [0, -0.5, 0.5], "relative orientation": "Down"}
         ]
     },
     "51": {
@@ -1145,6 +1374,17 @@
                 -1.0,
                 1.0
             ]
+        ],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 1], "relative orientation": "Front"},
+            {"ID": 1, "Relative Position": [-1.5, 0, 1], "relative orientation": "Front"},
+            {"ID": 2, "Relative Position": [1.5, 0, 1], "relative orientation": "Front"},
+            {"ID": 3, "Relative Position": [0, 1.5, 1], "relative orientation": "Front"},
+            {"ID": 4, "Relative Position": [0, -1.5, 1], "relative orientation": "Front"},
+            {"ID": 5, "Relative Position": [-1.5, 0, 0.5], "relative orientation": "Left"},
+            {"ID": 6, "Relative Position": [1.5, 0, 0.5], "relative orientation": "Right"},
+            {"ID": 7, "Relative Position": [0, 1.5, 0.5], "relative orientation": "Up"},
+            {"ID": 8, "Relative Position": [0, -1.5, 0.5], "relative orientation": "Down"}
         ]
     },
     "17": {
@@ -1161,11 +1401,13 @@
             0.25
         ],
         "bc_bp": [
+        ],
+        "construable points properties": [          
         ]
     },
     "14": {
         "name": "Flying Block",
-        "block_type": "Locomotion",
+        "block_type": "Flight",
         "bbox_size": [
             1,
             1,
@@ -1177,10 +1419,30 @@
             0.5
         ],
         "bc_bp": [
+        ],
+        "construable points properties": [          
         ]
     },
-    "39": {
-        "name": "Powered Cog",
+    "25": {
+        "name": "Wing",
+        "block_type": "Flight",
+        "bbox_size": [
+            3,
+            0.5,
+            6
+        ],
+        "bc_gc": [
+            1.5,
+            0.0,
+            3
+        ],
+        "bc_bp": [
+        ],
+        "construable points properties": [          
+        ]
+    },
+    "38": {
+        "name": "Unpowered Medium Cog",
         "block_type": "Locomotion",
         "bbox_size": [
             2,
@@ -1198,6 +1460,33 @@
                 0.0,
                 1.0
             ]
+        ],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 1], "relative orientation": "Front"}
+        ]
+    },
+    "39": {
+        "name": "Powered Medium Cog",
+        "block_type": "Locomotion",
+        "bbox_size": [
+            2,
+            2,
+            1
+        ],
+        "bc_gc": [
+            0.0,
+            0.0,
+            0.5
+        ],
+        "bc_bp": [
+            [
+                0.0,
+                0.0,
+                1.0
+            ]
+        ],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 1], "relative orientation": "Front"}
         ]
     },
     "4": {
@@ -1239,6 +1528,9 @@
                 -0.5,
                 0.5
             ]
+        ],
+        "construable points properties": [
+            {"ID": 0, "Relative Position": [0, 0, 1], "relative orientation": "Front"}
         ]
     },
     "74": {
@@ -1279,7 +1571,8 @@
                 -1.5,
                 1.5
             ]
-        ]
+        ],
+        "construable points properties": []
     },
     "29": {
         "name": "Armour Plate",
@@ -1295,14 +1588,33 @@
             0.15
         ],
         "bc_bp": [
-        ]
+        ],
+        "construable points properties": []
     },
     "45":{
         "name": "Winch",
         "block_type": "Mechanical",
         "bbox_size": [],
         "bc_gc": [],
-        "bc_bp": []
+        "bc_bp": [],
+        "construable points properties": []
+    },
+    "56": {
+        "name": "Water Cannon",
+        "block_type": "Weaponry",
+        "bbox_size": [
+            1,
+            2,
+            1
+        ],
+        "bc_gc": [
+            0.0,
+            0.0,
+            0.5
+        ],
+        "bc_bp": [
+        ],
+        "construable points properties": []
     }
 
 }

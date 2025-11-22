@@ -1,0 +1,37 @@
+<Level>
+	<LevelSettings EditorVersion="0.9" UseVoting="False" CurtainMode="False" AllowExcessPlayers="True" HidePlayerLabels="False" AllowCopyMachine="True" allowModMachines="True" Environment="None">
+		<DisableFire Enabled="False" Locked="False" />
+		<DisableExplosions Enabled="False" Locked="False" />
+		<DisableProjectiles Enabled="False" Locked="False" />
+		<ZeroG Enabled="False" Locked="False" />
+		<InfiniteAmmo Enabled="False" Locked="False" />
+		<Invincibility Enabled="False" Locked="False" />
+		<ExplosiveCannonballs Enabled="False" Locked="False" />
+		<DisableBounds Enabled="False" Locked="False" />
+	</LevelSettings>
+	<CustomData>
+		<StringArray key="requiredMods" />
+	</CustomData>
+	<Objects>
+		<Object ID="524381389537972347" Prefab="9001">
+			<Position x="0" y="5.072" z="0" />
+			<Data />
+		</Object>
+		<Object ID="1790795071954318383" Prefab="9003">
+			<Position x="0" y="160" z="0" />
+			<Scale x="2.5" y="2.5" z="2.5" />
+			<Data>
+				<Boolean key="bmt-hide-visual">False</Boolean>
+				<String key="lel-logic0-type">Enter</String>
+				<Integer key="lel-logic0-id">26755</Integer>
+				<StringArray key="lel-logic0-targets">
+					<String>13769|Picker|Block|0|0</String>
+				</StringArray>
+				<Boolean key="lel-logic0-all-targets">False</Boolean>
+				<StringArray key="lel-logic0-events">
+					<String>2819|GameWin|Progress</String>
+				</StringArray>
+			</Data>
+		</Object>
+	</Objects>
+</Level>

@@ -1,0 +1,71 @@
+**1. Task & Context**
+
+*   **Task Objective:**
+    *   [Insert task description here]
+*   **Preceding Information (if any):**
+    *   **Defect Report:**
+        *   [Insert the defect analysis of the machine here]
+    *   **Modification History:**
+        *   [Insert previous modification records here, leave blank if none]
+    *   **Environmental Feedback:**
+        *   [Insert information on the movement of certain parts of the machine after it enters the environment]
+
+**2. Machine Data**
+
+The received machine data is composed of the following sections:
+
+*   **A. Explanation of the 3D Information Structure**
+    This is key to understanding the machine's state. The information structure for each block is as follows:
+    *   `Name`, `Type ID`, `Order ID`: Basic identifiers for the block.
+    *   `On Ground`: `True`/`False`, indicates if the block is touching the ground.
+    *   `Relative Info`: Describes the block's **connection relationships**.
+        *   `Parent Info`: Which parent block and "build point" the current block is attached to, along with its relative orientation.
+        *   `Child Info`: Which child blocks are attached to this block.
+    *   `Absolute Info`: Describes the block's state in the **world coordinate system**.
+        *   `Center Point Coordinates`: The geometric center position of the block.
+        *   `Orientation`: The block's global orientation (e.g., z+, z-, x+).
+    *   `Special Attributes`: Unique properties of functional blocks, for example:
+        *   `Propulsion Direction`: The direction of force provided by a wheel.
+    Here are abbreviation of these properties in 3D info:
+    *   Name -> n
+    *   Type ID -> tid
+    *   Order ID -> id
+    *   Relative Information -> rel
+    *   Parent Block Information -> parent
+    *   Child Block Information -> children
+    *   Absolute Information -> abs
+    *   Center Point Coordinates -> center
+    *   Build Point Coordinates -> buildPt
+    *   Orientation -> orient
+    *   Rotation -> rot
+    *   Contact with Ground -> onGround
+    *   Constructible Point -> cpt
+    *   Relative Orientation -> relOrient
+    *   Build Point ID -> bpid
+
+*   **B. JSON Format Specification**
+    ```json
+    [
+        {"id":"0","order_id":0,"parent":-1,"bp_id":-1},
+        {"id":"Block Type ID","order_id":"Block Order ID","parent":"Parent Block Order ID","bp_id":"Constructible Point ID in Parent Block"},
+        ...
+    ]
+    ```
+    If it is a linear block (Type ID is 7 or 9, other blocks are not linear blocks), it will be:
+    ```json
+    {
+        "id":"Block Type ID",
+        "order_id":"Block Order ID",
+        "parent_a":"Parent A Block Order ID",
+        "bp_id_a":"Constructible Point ID in Parent A Block",
+        "parent_b":"Parent B Block Order ID",
+        "bp_id_b":"Constructible Point ID in Parent B Block"
+    }
+    ```
+
+*   **C. Key Defective Blocks**
+    *   Only the 3D information of blocks reported as defective is listed here for focused analysis.
+
+**3. Output Requirement**
+
+Based on all the information above, please analyze the problem and provide an optimal set of **modification operations**.

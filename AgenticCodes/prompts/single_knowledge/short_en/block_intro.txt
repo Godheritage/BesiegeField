@@ -7,7 +7,7 @@ Each block's information follows the dict format. Attributes that a block does n
    c. Linear: The block is used to connect two existing points rather than being attached to a single point.
    If there are no tags, it is a regular static and stable block.
 2. Constructible Points:
-   The key is in the format of Point ID, coordinates (relative coordinates), orientation (relative orientation).
+   The key is in the format of Point ID, coordinates (relative coordinates), orientation (Orientation).
 II. Key Special Rules
 1. Powered Wheel Rule (applicable to all powered wheels): The direction of power provided by the wheel is not the same as its orientation.
    - Forward (Z+ direction): The wheel should face sideways (X+ or X-).
@@ -230,6 +230,80 @@ II. Key Special Rules
         "Mass": 0.5
     },
     {
+        "Name": "Piston",
+        "Description": "The Piston is a machine block that can extend along it's placement axis. It extends by 1 metres. Inital is already extended",
+        "Type ID": 18,
+        "Size": [1, 1, 2],
+        "construable points properties": [
+            {"ID": 0, "Coordinates": [0, 0, 2], "Orientation": "Front"},
+            {"ID": 1, "Coordinates": [-0.5, 0, 1.5], "Orientation": "Left"},
+            {"ID": 2, "Coordinates": [0.5, 0, 1.5], "Orientation": "Right"},
+            {"ID": 3, "Coordinates": [0, 0.5, 1.5], "Orientation": "Up"},
+            {"ID": 4, "Coordinates": [0, -0.5, 1.5], "Orientation": "Down"}
+        ],
+        "Special Attributes": {
+            "Powered":"True",
+            "NonStable":"True",
+            "Extract-speed":1.0,
+            "Extract-power":1.0
+        },
+        "Mass": 0.5
+    },
+    {
+        "Name": "Piston (Retracted)",
+        "Description": "The Piston is a machine block that can extend along it's placement axis. It extends by 1 metres. Inital is retracted",
+        "Type ID": 181,
+        "Size": [1, 1, 1],
+        "construable points properties": [
+            {"ID": 0, "Coordinates": [0, 0, 1], "Orientation": "Front"},
+            {"ID": 1, "Coordinates": [-0.5, 0, 0.5], "Orientation": "Left"},
+            {"ID": 2, "Coordinates": [0.5, 0, 0.5], "Orientation": "Right"},
+            {"ID": 3, "Coordinates": [0, 0.5, 0.5], "Orientation": "Up"},
+            {"ID": 4, "Coordinates": [0, -0.5, 0.5], "Orientation": "Down"}
+        ],
+        "Special Attributes": {
+            "Powered":"True",
+            "NonStable":"True",
+            "Extract-speed":1.0,
+            "Extract-power":1.0
+        },
+        "Mass": 0.5
+    },
+    {
+        "Name": "Piston (Strong)",
+        "Description": "The Piston is a machine block that can extend along it's placement axis. It extends by 1 metres. Inital is retracted",
+        "Type ID": 182,
+        "Size": [1, 1, 1],
+        "construable points properties": [
+            {"ID": 0, "Coordinates": [0, 0, 1], "Orientation": "Front"},
+            {"ID": 1, "Coordinates": [-0.5, 0, 0.5], "Orientation": "Left"},
+            {"ID": 2, "Coordinates": [0.5, 0, 0.5], "Orientation": "Right"},
+            {"ID": 3, "Coordinates": [0, 0.5, 0.5], "Orientation": "Up"},
+            {"ID": 4, "Coordinates": [0, -0.5, 0.5], "Orientation": "Down"}
+        ],
+        "Special Attributes": {
+            "Powered":"True",
+            "NonStable":"True",
+            "Extract-speed":50,
+            "Extract-power":30
+        },
+        "Mass": 0.5
+    },
+    {
+        "Name": "Water Cannon (Strong)",
+        "Description": "Water cannons can provide mechanical thrust as high-pressure jets surge forth.",
+        "Type ID": 56,
+        "Size": [1, 2, 1],
+        "construable points properties": [
+        ],
+        "Special Attributes": {
+            "Powered":"True",
+            "NonStable":"True",
+            "Power":75
+        },
+        "Mass": 1.5
+    },
+    {
         "Name": "Skateboard Wheel",
         "Description": "Same as the small wheel.",
         "Type ID": 86,
@@ -446,6 +520,28 @@ II. Key Special Rules
         "Mass": 0.4
     },
     {
+        "Name": "Flying Block",
+        "Description": "The Flying Block propels itself along its placement axis.",
+        "Type ID": 14,
+        "Size": [1, 1, 1],
+        "Constructible Points Properties": [
+        ],
+        "Special Attributes": {
+            "NonStatic":"True",
+            "Flying Speed":1.0 
+        },
+        "Mass": 0.5
+    },
+    {
+        "Name": "Wing",
+        "Description": "The Wing is an aerodynamic surface. Unlike most blocks, this block has directional drag - as it goes faster, it will create more drag against its flat sides",
+        "Type ID": 25,
+        "Size": [3, 0.5, 6],
+        "Constructible Points Properties": [
+        ],
+        "Mass": 0.3
+    },
+    {
         "Name": "Ballast",
         "Description": "It serves as a counterweight, has a large mass, and is shaped like a cube.",
         "Type ID": 35,
@@ -481,6 +577,50 @@ II. Key Special Rules
             "NonStatic":"True"
         },
         "Mass": 0.4
+    },
+    {
+        "Name": "Unpowered Medium Cog",
+        "Description": "The Unpowered Medium Cog can rotate freely around its placement axis. Its teeth can mesh with Powered Cog and Unpowered Cog to transfer power.",
+        "Type ID": 38,
+        "Size": [2, 2, 1],
+        "Constructible Points Properties": [
+            {"ID": 0, "Coordinates": [0, 0, 1], "Orientation": "Front"}
+        ],
+        "Mass": 0.5
+    },
+    {
+        "Name": "Powered Medium Cog",
+        "Description": "The Powered Medium Cog can rotate around its placement axis. Its teeth can mesh with Unpowered Cog to transfer power.",
+        "Type ID": 39,
+        "Size": [2, 2, 1],
+        "Constructible Points Properties": [
+            {"ID": 0, "Coordinates": [0, 0, 1], "Orientation": "Front"}
+        ],
+        "Special Attributes": {
+            "Rotation Axis": "Front",
+            "PoweredWheel":"True",
+            "NonStatic":"True",
+            "NonStable":"True"
+        },
+        "Mass": 0.5
+    },
+    {
+        "Name": "Unpowered Large Cog",
+        "Description": "The Unpowered Large Cog can rotate freely around its placement axis. Its teeth can mesh with Powered Cog and Unpowered Cog to transfer power.",
+        "Type ID": 51,
+        "Size": [5, 5, 1],
+        "Constructible Points Properties": [
+            {"ID": 0, "Coordinates": [0, 0, 1], "Orientation": "Front"},
+            {"ID": 1, "Coordinates": [-1.5, 0, 1], "Orientation": "Front"},
+            {"ID": 2, "Coordinates": [1.5, 0, 1], "Orientation": "Front"},
+            {"ID": 3, "Coordinates": [0, 1.5, 1], "Orientation": "Front"},
+            {"ID": 4, "Coordinates": [0, -1.5, 1], "Orientation": "Front"},
+            {"ID": 5, "Coordinates": [-1.5, 0, 0.5], "Orientation": "Left"},
+            {"ID": 6, "Coordinates": [1.5, 0, 0.5], "Orientation": "Right"},
+            {"ID": 7, "Coordinates": [0, 1.5, 0.5], "Orientation": "Up"},
+            {"ID": 8, "Coordinates": [0, -1.5, 0.5], "Orientation": "Down"}
+        ],
+        "Mass": 1
     }
 ]
 ```
